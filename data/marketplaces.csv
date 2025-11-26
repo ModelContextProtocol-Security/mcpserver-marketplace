@@ -1,0 +1,35 @@
+id,name,type,url,operator,status,server_count,priority,last_verified,notes
+official-mcp-registry,Official MCP Registry,registry,https://registry.modelcontextprotocol.io,Anthropic / MCP Steering Committee,active,,tier-1,2025-11-19,Official registry - preview launched Sept 2025
+github-mcp-registry,GitHub MCP Registry,registry,https://github.com/mcp,GitHub / Microsoft,active,,tier-1,2025-11-19,Recently launched - working with Anthropic
+docker-mcp-catalog,Docker MCP Catalog,registry,https://docs.docker.com/ai/mcp-catalog-and-toolkit/catalog/,Docker,active,200+,tier-1,2025-11-19,Containerized servers with publisher verification
+mcp-marketplace-pypi,mcp-marketplace (PyPI),registry,https://pypi.org/project/mcp-marketplace/,Unknown,unknown,,tier-2,2025-11-19,Needs investigation - unclear if marketplace or tooling
+claude-desktop,Claude Desktop Extensions,built-in-app,https://claude.ai/download,Anthropic,active,,tier-1,2025-11-19,Built-in marketplace + manual config
+mcp-so,MCP.so,catalog-site,https://mcp.so/,Unknown,active,17040,tier-1,2025-11-19,Largest catalog - unknown verification
+mcpservers-org,mcpservers.org,catalog-site,https://mcpservers.org/,Community,active,,tier-1,2025-11-19,Curated collection - awesome-mcp-servers
+pulsemcp,PulseMCP,catalog-site,https://www.pulsemcp.com/servers,Unknown,active,6480+,tier-1,2025-11-19,Daily updates claimed - likely automated
+mcp-server-finder,MCP Server Finder,catalog-site,https://www.mcpserverfinder.com/,Unknown,active,,tier-2,2025-11-19,Needs investigation
+mcp-server-directory,MCP Server Directory,catalog-site,https://www.mcpserver.directory/,Unknown,active,,tier-2,2025-11-19,Needs investigation
+mcp-market,MCP Market,catalog-site,https://mcpmarket.com/server,Unknown,active,,tier-2,2025-11-19,Needs investigation
+portkey-mcp,Portkey.ai MCP Servers,catalog-site,https://portkey.ai/mcp-servers,Portkey.ai,active,138,tier-2,2025-11-19,Smaller potentially curated list
+lobehub-mcp,LobeHub MCP,catalog-site,https://lobehub.com/mcp/,LobeHub,active,,tier-2,2025-11-19,Part of larger AI platform
+smithery,Smithery.ai,code-hosting,https://smithery.ai/,Smithery AI,active,,tier-1,2025-11-19,Had major security incident - path traversal
+glama,Glama.ai,code-hosting,https://glama.ai/mcp/servers,Glama AI,active,,tier-1,2025-11-19,AI workspace + MCP hosting platform
+modelcontextprotocol-servers,modelcontextprotocol/servers,code-hosting,https://github.com/modelcontextprotocol/servers,Anthropic / MCP Project,active,,tier-1,2025-11-19,Official reference implementations
+microsoft-mcp,Microsoft MCP,code-hosting,https://github.com/microsoft/mcp,Microsoft,active,,tier-1,2025-11-19,Official Microsoft implementations
+mcp-discord,MCP Official Discord,community-forum,https://discord.com/invite/model-context-protocol-1312302100125843476,Anthropic / MCP Project,active,10500+,tier-1,2025-11-19,Official community - high influence
+mcp-docs,Official MCP Documentation,tutorial,https://modelcontextprotocol.io/,Anthropic / MCP Project,active,,tier-1,2025-11-19,Canonical installation instructions
+wong2-awesome,wong2/awesome-mcp-servers,catalog-site,https://github.com/wong2/awesome-mcp-servers,Community,active,,tier-1,2025-11-19,Popular awesome list
+appcypher-awesome,appcypher/awesome-mcp-servers,catalog-site,https://github.com/appcypher/awesome-mcp-servers,Community,active,,tier-1,2025-11-19,Community awesome list
+habitoai-awesome,habitoai/awesome-mcp-servers,catalog-site,https://github.com/habitoai/awesome-mcp-servers,Community,active,,tier-1,2025-11-19,Tools-focused awesome list
+tensorblock-awesome,TensorBlock/awesome-mcp-servers,catalog-site,https://github.com/TensorBlock/awesome-mcp-servers,Community,active,7260,tier-1,2025-11-19,Largest awesome list
+punkpeye-awesome,punkpeye/awesome-mcp-servers,catalog-site,https://github.com/punkpeye/awesome-mcp-servers,Community,active,,tier-2,2025-11-19,Community awesome list
+rohitg00-devops-awesome,rohitg00/awesome-devops-mcp-servers,catalog-site,https://github.com/rohitg00/awesome-devops-mcp-servers,Community,active,,tier-2,2025-11-19,DevOps focused
+agenticdevops-awesome,agenticdevops/awesome-devops-mcp,catalog-site,https://github.com/agenticdevops/awesome-devops-mcp,Community,active,,tier-2,2025-11-19,Agentic DevOps focused
+towards-data-science-tutorial,Towards Data Science MCP Tutorial,tutorial,https://towardsdatascience.com/model-context-protocol-mcp-tutorial-build-your-first-mcp-server-in-6-steps/,Towards Data Science,active,,tier-2,2025-11-19,Build your first MCP server
+datacamp-tutorial,DataCamp MCP Tutorial,tutorial,https://www.datacamp.com/tutorial/mcp-model-context-protocol,DataCamp,active,,tier-2,2025-11-19,Guide with demo project
+microsoft-dotnet-tutorial,Microsoft .NET MCP Tutorial,tutorial,https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/,Microsoft,active,,tier-2,2025-11-19,C# MCP server guide
+northflank-tutorial,Northflank MCP Tutorial,tutorial,https://northflank.com/blog/how-to-build-and-deploy-a-model-context-protocol-mcp-server,Northflank,active,,tier-2,2025-11-19,Build and deploy guide
+medium-nimrita-tutorial,Medium MCP Tutorial,tutorial,https://medium.com/@nimritakoul01/the-model-context-protocol-mcp-a-complete-tutorial-a3abe8a7f4ef,Medium / Dr. Nimrita Koul,active,,tier-3,2025-11-19,Complete tutorial
+newstack-tutorial,The New Stack MCP Tutorial,tutorial,https://thenewstack.io/how-to-set-up-a-model-context-protocol-server/,The New Stack,active,,tier-3,2025-11-19,Setup guide
+simplescraper-tutorial,Simplescraper MCP Guide,tutorial,https://simplescraper.io/blog/how-to-mcp,Simplescraper,active,,tier-3,2025-11-19,How to MCP complete guide
+apidog-tutorial,Apidog MCP Tutorial,tutorial,https://apidog.com/blog/build-an-mcp-server/,Apidog,active,,tier-3,2025-11-19,Beginner guide

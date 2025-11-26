@@ -1,0 +1,26 @@
+id,name,vendor,url,type,status,has_builtin_marketplace,marketplace_name,allows_manual_config,config_method,runtime_sandboxing,permission_model,last_verified,notes
+5ire,5ire,,https://github.com/nanbingxyz/5ire,desktop,active,unknown,,yes,json-file,unknown,unknown,2025-11-19,
+agentai,AgentAI,,https://github.com/AdamStrojek/rust-agentai,framework,active,no,,yes,config-file,unknown,unknown,2025-11-19,Rust framework
+agenticflow,AgenticFlow,AgenticFlow,https://agenticflow.ai/mcp,web,active,unknown,,unknown,,unknown,unknown,2025-11-19,
+aiql-tuui,AIQL TUUI,,https://github.com/AI-QL/tuui,cli,active,no,,yes,config-file,unknown,unknown,2025-11-19,Terminal UI
+amazon-q-cli,Amazon Q CLI,Amazon,https://github.com/aws/amazon-q-developer-cli,cli,active,unknown,,yes,config-file,unknown,unknown,2025-11-19,AWS developer CLI
+amazon-q-ide,Amazon Q IDE,Amazon,https://aws.amazon.com/q/developer,ide,active,unknown,,unknown,,unknown,unknown,2025-11-19,AWS IDE integration
+amp,Amp,Sourcegraph,https://ampcode.com,ide,active,unknown,,unknown,,unknown,unknown,2025-11-19,From Sourcegraph
+apify-mcp-tester,Apify MCP Tester,Apify,https://apify.com/jiri.spilka/tester-mcp-client,web,active,no,,yes,gui,unknown,unknown,2025-11-19,Testing tool
+augment-code,Augment Code,Augment,https://augmentcode.com,ide,active,unknown,,unknown,,unknown,unknown,2025-11-19,Limited docs available
+avatar-shell,Avatar Shell,,https://github.com/mfukushim/avatar-shell,cli,active,no,,yes,config-file,unknown,unknown,2025-11-19,
+beeai-framework,BeeAI Framework,BeeAI,https://framework.beeai.dev,framework,active,no,,yes,config-file,unknown,unknown,2025-11-19,AI framework
+boltai,BoltAI,BoltAI,https://boltai.com,desktop,active,unknown,,unknown,,unknown,unknown,2025-11-19,macOS app - limited docs
+call-chirp,Call Chirp,Call Chirp,https://www.call-chirp.com,web,active,unknown,,unknown,,unknown,unknown,2025-11-19,Limited docs
+chatbox,Chatbox,,https://chatboxai.app,desktop,active,unknown,,unknown,,unknown,unknown,2025-11-19,Cross-platform
+chatframe,ChatFrame,ChatFrame,https://chatframe.co,desktop,active,unknown,,unknown,,unknown,unknown,2025-11-19,
+chatgpt,ChatGPT,OpenAI,https://chatgpt.com,web,active,yes,Connectors,yes,gui,unknown,unknown,2025-11-19,Developer mode required
+chatwise,ChatWise,ChatWise,https://chatwise.app,desktop,active,unknown,,unknown,,unknown,unknown,2025-11-19,
+chorus,Chorus,,https://chorus.sh,cli,active,unknown,,unknown,,unknown,unknown,2025-11-19,Docs unavailable
+claude-code,Claude Code,Anthropic,https://claude.com/product/claude-code,cli,active,no,,yes,json-file,yes,capability-based,2025-11-19,Has sandboxing
+claude-desktop,Claude Desktop,Anthropic,https://claude.ai/download,desktop,active,yes,Extensions,yes,json-file,no,user-approval,2025-11-19,Detailed evaluation done
+claude-ai,Claude.ai,Anthropic,https://claude.ai,web,active,yes,Integrations,no,,unknown,unknown,2025-11-19,Web interface
+cline,Cline,,https://github.com/cline/cline,ide,active,no,,yes,ai-generated,unknown,user-approval,2025-11-19,AI-driven tool creation
+codegpt,CodeGPT,CodeGPT,https://codegpt.co,ide,active,unknown,,unknown,,unknown,unknown,2025-11-19,VS Code extension
+continue,Continue,,https://github.com/continuedev/continue,ide,active,unknown,,yes,config-file,unknown,unknown,2025-11-19,Open source IDE assistant
+copilot-mcp,Copilot-MCP,,https://github.com/VikashLoomba/copilot-mcp,ide,active,no,,yes,config-file,unknown,unknown,2025-11-19,GitHub Copilot MCP bridge
