@@ -1,0 +1,42 @@
+Marketplace Name,Marketplace URL,Source Code URL,Is Marketplace,Is Aggregator,Is List Of Marketplaces
+MCP Registry,https://registry.modelcontextprotocol.io/docs#/operations/list-servers-v0.1,,no,no,no
+Registry Aggregators (Doc),https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/registry-aggregators.mdx,https://github.com/modelcontextprotocol/registry,no,no,no
+MCP Bench,https://mcpbench.ai,,yes,yes,no
+MCP Registry Database (Datasette),https://lite.datasette.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Frosmur%2Fofficial-mcp-registry-database%2Fmain%2Fofficial_mcp_registry.db#/official_mcp_registry/servers,https://github.com/rosmur/official-mcp-registry-database,yes,yes,no
+TeamSpark ToolCatalog (Registry),https://teamsparkai.github.io/ToolCatalog/registry,https://github.com/TeamSparkAI/ToolCatalog,yes,yes,no
+MCP.so,https://mcp.so,https://github.com/chatmcp/mcpso,yes,yes,no
+MCP Hub,https://mcphub.io,,yes,yes,no
+PulseMCP,https://www.pulsemcp.com,,yes,yes,no
+ToolSDK MCP Registry,https://toolsdk.ai,https://github.com/toolsdk-ai/toolsdk-mcp-registry,yes,yes,no
+Glama,https://glama.ai,,yes,yes,no
+mcp.run,https://mcp.run,,yes,yes,no
+MCP Market,https://mcpmarket.com,,yes,yes,no
+Smithery Playground,https://smithery.ai/playground,,yes,yes,no
+Composio,https://composio.dev,,yes,yes,no
+Claude Desktop Extensions Directory,https://www.anthropic.com/engineering/desktop-extensions,,yes,no,no
+Cline MCP Marketplace,https://cline.bot/mcp-marketplace,https://github.com/cline/mcp-marketplace,yes,no,no
+LobeChat MCP Marketplace,https://lobehub.com/mcp,https://github.com/lobehub/lobe-chat,yes,no,no
+XPack MCP Marketplace,https://github.com/xpack-ai/XPack-MCP-Marketplace,https://github.com/xpack-ai/XPack-MCP-Marketplace,yes,no,no
+MCP Jungle,https://github.com/mcpjungle/MCPJungle,https://github.com/mcpjungle/MCPJungle,yes,yes,no
+Storm MCP Marketplace,https://github.com/gorilli-team/storm,https://github.com/gorilli-team/storm,yes,yes,no
+aiagenta2z MCP Marketplace,https://github.com/aiagenta2z/mcp-marketplace,https://github.com/aiagenta2z/mcp-marketplace,yes,yes,no
+TP-Lab MCP Marketplace,https://github.com/TP-Lab/mcp-marketplace,https://github.com/TP-Lab/mcp-marketplace,yes,yes,no
+Nabhag8848 MCP Marketplace,https://github.com/Nabhag8848/mcp-marketplace,https://github.com/Nabhag8848/mcp-marketplace,yes,yes,no
+Awesome MCP Servers (appcypher),https://github.com/appcypher/awesome-mcp-servers,https://github.com/appcypher/awesome-mcp-servers,no,yes,no
+Awesome MCP Servers (wong2),https://github.com/wong2/awesome-mcp-servers,https://github.com/wong2/awesome-mcp-servers,no,yes,no
+Docker MCP Catalog,https://hub.docker.com/mcp,https://github.com/docker/mcp-registry,yes,yes,no
+Archestra Private MCP Registry,https://archestra.ai/docs/platform-private-registry,https://github.com/archestra-ai/archestra,yes,yes,no
+mcpm.sh Registry CLI,https://github.com/pathintegral-institute/mcpm.sh,https://github.com/pathintegral-institute/mcpm.sh,yes,yes,no
+Agentic Community MCP Gateway & Registry,https://github.com/agentic-community/mcp-gateway-registry,https://github.com/agentic-community/mcp-gateway-registry,yes,yes,no
+ToolHive Registry,https://toolhive.dev,https://github.com/stacklok/toolhive,yes,yes,no
+ToolHive Registry Server (API),https://github.com/stacklok/toolhive-registry-server,https://github.com/stacklok/toolhive-registry-server,yes,yes,no
+Community MCP Registry (ravitemer),https://github.com/ravitemer/mcp-registry,https://github.com/ravitemer/mcp-registry,yes,yes,no
+Langchain4j AIDeepin MCP Marketplace,http://www.aideepin.com,https://github.com/moyangzhan/langchain4j-aideepin,yes,yes,no
+langchain4j-aideepin (Web Client),https://github.com/moyangzhan/langchain4j-aideepin-web,https://github.com/moyangzhan/langchain4j-aideepin-web,yes,yes,no
+MCP Hub (KR) – ip99202/mcp_hub,https://github.com/ip99202/mcp_hub,https://github.com/ip99202/mcp_hub,yes,yes,no
+ShareMCP 导航,https://sharemcp.com/,https://github.com/ArcStellars/ShareMCP,yes,yes,no
+MCP Directory (AI),https://mcpdirectory.ai/,,yes,yes,no
+MCP Server Directory,https://mcpserverdirectory.org/,,yes,yes,no
+Cursor Directory – MCPs,https://cursor.directory/mcp,,yes,yes,no
+My Favorite MCP Directories (dev.to),https://dev.to/techgirl1908/my-favorite-mcp-directories-573n,,no,yes,yes
+MCP Directory (.io),https://mcpdirectory.io/,,yes,yes,no
