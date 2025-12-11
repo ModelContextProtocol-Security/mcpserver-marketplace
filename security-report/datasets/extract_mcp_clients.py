@@ -131,12 +131,16 @@ def extract_from_punkpeye(filepath: str) -> list[dict]:
     return clients
 
 
-def extract_from_modelcontextprotocol(filepath: str) -> list[dict]:
+def extract_from_modelcontextprotocol(filepath: str) -> tuple[list[dict], set[str]]:
     """
     Extract MCP client info from the modelcontextprotocol.io clients page.
     This page has a main table with client information (first column has client name + link).
+
+    Returns:
+        tuple: (list of client dicts, set of normalized client names for lookup)
     """
     clients = []
+    client_names_normalized = set()
 
     with open(filepath, 'r', encoding='utf-8') as f:
         html = f.read()
@@ -187,7 +191,10 @@ def extract_from_modelcontextprotocol(filepath: str) -> list[dict]:
                     'source_url': source_url
                 })
 
-    return clients
+                # Track normalized name for lookup
+                client_names_normalized.add(normalize_name(name))
+
+    return clients, client_names_normalized
 
 
 def normalize_name(name: str) -> str:
@@ -205,9 +212,15 @@ def normalize_name(name: str) -> str:
     return result
 
 
-def merge_clients(list1: list[dict], list2: list[dict]) -> list[dict]:
+def merge_clients(list1: list[dict], list2: list[dict], mcp_official_names: set[str]) -> list[dict]:
     """
     Merge two lists of clients, avoiding duplicates based on normalized name.
+    Tracks whether each client is listed on modelcontextprotocol.io.
+
+    Args:
+        list1: First list of clients (e.g., from punkpeye)
+        list2: Second list of clients (e.g., from modelcontextprotocol.io)
+        mcp_official_names: Set of normalized names that appear on modelcontextprotocol.io
     """
     merged = {}
 
@@ -219,7 +232,8 @@ def merge_clients(list1: list[dict], list2: list[dict]) -> list[dict]:
             merged[name_normalized] = {
                 'name': name,
                 'main_url': client['main_url'],
-                'source_url': client['source_url']
+                'source_url': client['source_url'],
+                'listed_on_mcp_official': name_normalized in mcp_official_names
             }
         else:
             # Update if we have better info
@@ -236,12 +250,13 @@ def write_csv(clients: list[dict], output_path: str):
     """Write clients to CSV file."""
     with open(output_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['MCP Client Name', 'MCP Client Main URL', 'MCP Client Source Code URL'])
+        writer.writerow(['MCP Client Name', 'MCP Client Main URL', 'MCP Client Source Code URL', 'Listed In modelcontextprotocol.io'])
         for client in clients:
             writer.writerow([
                 client['name'],
                 client['main_url'],
-                client['source_url']
+                client['source_url'],
+                'Yes' if client.get('listed_on_mcp_official', False) else 'No'
             ])
 
 
@@ -345,8 +360,9 @@ def main():
         print(f"  ... and {len(punkpeye_clients) - 10} more")
 
     print("\nExtracting clients from modelcontextprotocol.io...")
-    mcp_clients = extract_from_modelcontextprotocol(str(mcp_official_file))
+    mcp_clients, mcp_official_names = extract_from_modelcontextprotocol(str(mcp_official_file))
     print(f"  Found {len(mcp_clients)} entries")
+    print(f"  (Tracking {len(mcp_official_names)} unique normalized names)")
 
     print("\nExtracted clients from modelcontextprotocol.io:")
     for c in mcp_clients[:10]:
@@ -355,8 +371,12 @@ def main():
         print(f"  ... and {len(mcp_clients) - 10} more")
 
     print("\nMerging datasets...")
-    merged = merge_clients(punkpeye_clients, mcp_clients)
+    merged = merge_clients(punkpeye_clients, mcp_clients, mcp_official_names)
     print(f"  Total unique clients: {len(merged)}")
+
+    # Count how many are listed on official site
+    official_count = sum(1 for c in merged if c.get('listed_on_mcp_official', False))
+    print(f"  Listed on modelcontextprotocol.io: {official_count}")
 
     print(f"\nWriting CSV to {output_file}...")
     write_csv(merged, str(output_file))

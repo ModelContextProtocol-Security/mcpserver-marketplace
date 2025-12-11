@@ -1,133 +1,133 @@
-MCP Client Name,MCP Client Main URL,MCP Client Source Code URL
-5ire,https://5ire.app/,https://github.com/nanbingxyz/5ire
-Agent-cli,https://github.com/belowthetree/agent-cli,https://github.com/belowthetree/agent-cli
-AgentAI,https://github.com/AdamStrojek/rust-agentai,https://github.com/AdamStrojek/rust-agentai
-AgenticFlow,https://agenticflow.ai/mcp,
-AIaW,https://aiaw.app/,https://github.com/NitroRCr/AIaW
-AIQL TUUI,https://github.com/AI-QL/tuui,https://github.com/AI-QL/tuui
-Amazon Q CLI,https://github.com/aws/amazon-q-developer-cli,https://github.com/aws/amazon-q-developer-cli
-Amazon Q IDE,https://aws.amazon.com/q/developer,
-Amp,https://ampcode.com,
-Apify MCP Tester,https://apify.com/jiri.spilka/tester-mcp-client,
-Argo-LocalAI,https://xark-argo.com,https://github.com/xark-argo/argo
-askit-mcp,https://github.com/johnrobinsn/askit,https://github.com/johnrobinsn/askit
-Augment Code,https://augmentcode.com,
-Avatar Shell,https://github.com/mfukushim/avatar-shell,https://github.com/mfukushim/avatar-shell
-BeeAI Framework,https://framework.beeai.dev,
-BoltAI,https://boltai.com,
-BrowseWiz,https://browsewiz.com,
-Call Chirp,https://www.call-chirp.com,
-CarrotAI,https://jintongshu.com/solutions/agent/,https://github.com/Xingsandesu/CarrotAI
-Chainlit,https://chainlit.io/,https://github.com/chainlit/chainlit
-Chatbox,https://chatboxai.app,
-ChatFrame,https://chatframe.co,
-ChatGPT,https://chatgpt.com,
-ChatMCP,https://github.com/daodao97/chatmcp,https://github.com/daodao97/chatmcp
-ChatWise,https://chatwise.app,
-Cherry Studio,https://cherry-ai.com,https://github.com/CherryHQ/cherry-studio
-Chorus,https://chorus.sh,
-Claude Code,https://claude.com/product/claude-code,
-Claude Desktop,https://claude.ai/download,
-Claude Desktop App,https://claude.ai/download,
-Claude.ai,https://claude.ai,
-ClaudeMind,https://claudemind.com/,
-Cline,https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev,https://github.com/cline/cline
-CodeGPT,https://codegpt.co,
-console-chat-gpt,https://github.com/amidabuddha/console-chat-gpt,https://github.com/amidabuddha/console-chat-gpt
-Continue,https://continue.dev/,https://github.com/continuedev/continue
-Copilot-MCP,https://github.com/VikashLoomba/copilot-mcp,https://github.com/VikashLoomba/copilot-mcp
-Cursor,https://cursor.com,https://github.com/getcursor/cursor
-Daydreams Agents,https://github.com/daydreamsai/daydreams,https://github.com/daydreamsai/daydreams
-DeepChat,https://deepchat.thinkinai.xyz/,https://github.com/thinkinaixyz/deepchat
-Dolphin-MCP,https://github.com/cognitivecomputations/dolphin-mcp,https://github.com/cognitivecomputations/dolphin-mcp
-ECA,https://eca.dev,
-eechat,https://www.ee.chat/,https://github.com/Lucassssss/eechat
-Emacs Mcp,https://github.com/lizqwerscott/mcp.el,https://github.com/lizqwerscott/mcp.el
-Enconvo,https://enconvo.com,https://github.com/Enconvo
-fast-agent,https://github.com/evalstate/fast-agent,https://github.com/evalstate/fast-agent
-FlowDown,https://github.com/Lakr233/FlowDown,https://github.com/Lakr233/FlowDown
-FLUJO,https://github.com/mario-andreschak/FLUJO,https://github.com/mario-andreschak/FLUJO
-Gemini CLI,https://goo.gle/gemini-cli,
-GenAIScript,https://microsoft.github.io/genaiscript/reference/scripts/mcp-tools/,
-Genkit,https://github.com/firebase/genkit,https://github.com/firebase/genkit
-GitHub Copilot coding agent,https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/about-copilot-coding-agent,https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/about-copilot-coding-agent
-Glama,https://glama.ai/chat,
-Glue,https://glue.ai,
-Goose,https://github.com/block/goose,https://github.com/block/goose
-gptme,https://github.com/gptme/gptme,https://github.com/gptme/gptme
-HyperAgent,https://github.com/hyperbrowserai/HyperAgent,https://github.com/hyperbrowserai/HyperAgent
-HyperChat,https://github.com/BigSweetPotatoStudio/HyperChat,https://github.com/BigSweetPotatoStudio/HyperChat
-Jenova,https://www.jenova.ai,
-JetBrains AI Assistant,https://plugins.jetbrains.com/plugin/22282-jetbrains-ai-assistant,
-JetBrains Junie,https://www.jetbrains.com/junie,
-kibitz,https://kibi.tz,https://github.com/nick1udwig/kibitz
-Kilo Code,https://github.com/Kilo-Org/kilocode,https://github.com/Kilo-Org/kilocode
-Kiro,https://kiro.dev,https://github.com/kirodotdev/Kiro
-Klavis AI Slack/Discord/Web,https://www.klavis.ai/,
-Langdock,https://docs.langdock.com/resources/integrations/mcp,
-Langflow,https://github.com/langflow-ai/langflow,https://github.com/langflow-ai/langflow
-LibreChat,https://www.librechat.ai/,https://github.com/danny-avila/LibreChat
-LM Studio,https://lmstudio.ai,
-LM-Kit.NET,https://lm-kit.com/products/lm-kit-net/,
-Lutra,https://lutra.ai,
-MCP Bundler for MacOS,https://mcp-bundler.maketry.xyz,
-MCP Chatbot,https://github.com/3choff/mcp-chatbot,https://github.com/3choff/mcp-chatbot
-MCP CLI client,https://github.com/adhikasp/mcp-client-cli,https://github.com/adhikasp/mcp-client-cli
-MCP Simple Slackbot,https://github.com/sooperset/mcp-client-slackbot,https://github.com/sooperset/mcp-client-slackbot
-MCP SuperAssistant,https://mcpsuperassistant.ai/,https://github.com/srbhptl39/MCP-SuperAssistant
-mcp-agent,https://github.com/lastmile-ai/mcp-agent,https://github.com/lastmile-ai/mcp-agent
-mcp-client-chatbot,https://github.com/cgoinglove/mcp-client-chatbot,https://github.com/cgoinglove/mcp-client-chatbot
-mcp-use,https://github.com/pietrozullo/mcp-use,https://github.com/pietrozullo/mcp-use
-MCPCLIHost,https://github.com/vincent-pli/mcp-cli-host,https://github.com/vincent-pli/mcp-cli-host
-MCPHub,https://github.com/ravitemer/mcphub.nvim,https://github.com/ravitemer/mcphub.nvim
-McPico,https://github.com/cryptax/mcpico,https://github.com/cryptax/mcpico
-MCPJam,https://github.com/MCPJam/inspector,https://github.com/MCPJam/inspector
-MCPOmni Connect,https://github.com/Abiorh001/mcp_omni_connect,https://github.com/Abiorh001/mcp_omni_connect
-Memex,https://memex.tech/,
-Microsoft Copilot Studio,https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-extend-action-mcp,
-MindPal,https://mindpal.io,https://github.com/mindpal-ai/mindpal
-Mistral AI: Le Chat,https://chat.mistral.ai,
-modelcontextchat.com,https://modelcontextchat.com,
-MooPoint,https://moopoint.io,
-Msty Studio,https://msty.ai,
-Needle,https://needle.app,
-Nerve,https://github.com/evilsocket/nerve,https://github.com/evilsocket/nerve
-NextChat,https://nextchat.club/,https://github.com/ChatGPTNextWeb/NextChat
-NVIDIA Agent Intelligence toolkit,https://github.com/NVIDIA/AIQToolkit,https://github.com/NVIDIA/AIQToolkit
-OpenSumi,https://github.com/opensumi/core,https://github.com/opensumi/core
-oterm,https://github.com/ggozad/oterm,https://github.com/ggozad/oterm
-Postman,https://postman.com/downloads,
-Qordinate,https://qordinate.ai/,
-RecurseChat,https://recurse.chat/,
-Replit,https://replit.com,
-Roo Code,https://roocode.com,
-Runbear,https://runbear.io,https://github.com/runbear-io
-SeekChat,https://seekrays.com/chat/,https://github.com/seekrays/seekchat
-Shortwave,https://www.shortwave.com,
-Simple AI,https://simple-ai.io,https://github.com/gcc3/simple-ai-chat
-Simtheory,https://simtheory.ai,
-Slack MCP Client,https://github.com/tuannvm/slack-mcp-client,https://github.com/tuannvm/slack-mcp-client
-Smithery Playground,https://smithery.ai/playground,
-SpinAI,https://docs.spinai.dev,
-Superinterface,https://superinterface.ai,https://github.com/supercorp-ai/superinterface
-Superjoin,https://superjoin.ai,
-Swarms,https://github.com/kyegomez/swarms,https://github.com/kyegomez/swarms
-systemprompt,https://systemprompt.io,
-Tambo,https://tambo.co,https://github.com/tambo-ai/tambo
-Tencent CloudBase AI DevKit,https://docs.cloudbase.net/ai/agent/mcp,
-Tester MCP Client,https://apify.com/jiri.spilka/tester-mcp-client,https://github.com/apify/tester-mcp-client
-TheiaAI/TheiaIDE,https://eclipsesource.com/blogs/2024/12/19/theia-ide-and-theia-ai-support-mcp/,
-Tome,https://runebook.ai,https://github.com/runebookai/tome
-TypingMind App,https://www.typingmind.com,
-Vercade,https://discord.gg/EMnkGjAh9v,https://github.com/lintyourcode/vercade
-VS Code GitHub Copilot,https://code.visualstudio.com/,https://github.com/microsoft/vscode
-VT Code,https://github.com/vinhnx/vtcode,https://github.com/vinhnx/vtcode
-Warp,https://www.warp.dev/,
-WhatsMCP,https://wassist.app/mcp/,
-Windsurf,https://codeium.com/windsurf,
-Windsurf Editor,https://codeium.com/windsurf,
-Witsy,https://witsyai.com,https://github.com/nbonamy/witsy
-y-cli,https://github.com/luohy15/y-cli,https://github.com/luohy15/y-cli
-Zed,https://zed.dev/,https://github.com/zed-industries/zed
-Zencoder,https://zencoder.ai,
-Zin-MCP-Client,https://github.com/zinja-coder/zin-mcp-client,https://github.com/zinja-coder/zin-mcp-client
+MCP Client Name,MCP Client Main URL,MCP Client Source Code URL,Listed In modelcontextprotocol.io
+5ire,https://5ire.app/,https://github.com/nanbingxyz/5ire,Yes
+Agent-cli,https://github.com/belowthetree/agent-cli,https://github.com/belowthetree/agent-cli,No
+AgentAI,https://github.com/AdamStrojek/rust-agentai,https://github.com/AdamStrojek/rust-agentai,Yes
+AgenticFlow,https://agenticflow.ai/mcp,,Yes
+AIaW,https://aiaw.app/,https://github.com/NitroRCr/AIaW,No
+AIQL TUUI,https://github.com/AI-QL/tuui,https://github.com/AI-QL/tuui,Yes
+Amazon Q CLI,https://github.com/aws/amazon-q-developer-cli,https://github.com/aws/amazon-q-developer-cli,Yes
+Amazon Q IDE,https://aws.amazon.com/q/developer,,Yes
+Amp,https://ampcode.com,,Yes
+Apify MCP Tester,https://apify.com/jiri.spilka/tester-mcp-client,,Yes
+Argo-LocalAI,https://xark-argo.com,https://github.com/xark-argo/argo,No
+askit-mcp,https://github.com/johnrobinsn/askit,https://github.com/johnrobinsn/askit,No
+Augment Code,https://augmentcode.com,,Yes
+Avatar Shell,https://github.com/mfukushim/avatar-shell,https://github.com/mfukushim/avatar-shell,Yes
+BeeAI Framework,https://framework.beeai.dev,,Yes
+BoltAI,https://boltai.com,,Yes
+BrowseWiz,https://browsewiz.com,,No
+Call Chirp,https://www.call-chirp.com,,Yes
+CarrotAI,https://jintongshu.com/solutions/agent/,https://github.com/Xingsandesu/CarrotAI,No
+Chainlit,https://chainlit.io/,https://github.com/chainlit/chainlit,No
+Chatbox,https://chatboxai.app,,Yes
+ChatFrame,https://chatframe.co,,Yes
+ChatGPT,https://chatgpt.com,,Yes
+ChatMCP,https://github.com/daodao97/chatmcp,https://github.com/daodao97/chatmcp,No
+ChatWise,https://chatwise.app,,Yes
+Cherry Studio,https://cherry-ai.com,https://github.com/CherryHQ/cherry-studio,No
+Chorus,https://chorus.sh,,Yes
+Claude Code,https://claude.com/product/claude-code,,Yes
+Claude Desktop,https://claude.ai/download,,No
+Claude Desktop App,https://claude.ai/download,,Yes
+Claude.ai,https://claude.ai,,Yes
+ClaudeMind,https://claudemind.com/,,No
+Cline,https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev,https://github.com/cline/cline,Yes
+CodeGPT,https://codegpt.co,,Yes
+console-chat-gpt,https://github.com/amidabuddha/console-chat-gpt,https://github.com/amidabuddha/console-chat-gpt,No
+Continue,https://continue.dev/,https://github.com/continuedev/continue,Yes
+Copilot-MCP,https://github.com/VikashLoomba/copilot-mcp,https://github.com/VikashLoomba/copilot-mcp,Yes
+Cursor,https://cursor.com,https://github.com/getcursor/cursor,Yes
+Daydreams Agents,https://github.com/daydreamsai/daydreams,https://github.com/daydreamsai/daydreams,Yes
+DeepChat,https://deepchat.thinkinai.xyz/,https://github.com/thinkinaixyz/deepchat,No
+Dolphin-MCP,https://github.com/cognitivecomputations/dolphin-mcp,https://github.com/cognitivecomputations/dolphin-mcp,No
+ECA,https://eca.dev,,Yes
+eechat,https://www.ee.chat/,https://github.com/Lucassssss/eechat,No
+Emacs Mcp,https://github.com/lizqwerscott/mcp.el,https://github.com/lizqwerscott/mcp.el,Yes
+Enconvo,https://enconvo.com,https://github.com/Enconvo,No
+fast-agent,https://github.com/evalstate/fast-agent,https://github.com/evalstate/fast-agent,Yes
+FlowDown,https://github.com/Lakr233/FlowDown,https://github.com/Lakr233/FlowDown,Yes
+FLUJO,https://github.com/mario-andreschak/FLUJO,https://github.com/mario-andreschak/FLUJO,Yes
+Gemini CLI,https://goo.gle/gemini-cli,,Yes
+GenAIScript,https://microsoft.github.io/genaiscript/reference/scripts/mcp-tools/,,Yes
+Genkit,https://github.com/firebase/genkit,https://github.com/firebase/genkit,Yes
+GitHub Copilot coding agent,https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/about-copilot-coding-agent,https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/about-copilot-coding-agent,Yes
+Glama,https://glama.ai/chat,,Yes
+Glue,https://glue.ai,,No
+Goose,https://github.com/block/goose,https://github.com/block/goose,Yes
+gptme,https://github.com/gptme/gptme,https://github.com/gptme/gptme,Yes
+HyperAgent,https://github.com/hyperbrowserai/HyperAgent,https://github.com/hyperbrowserai/HyperAgent,Yes
+HyperChat,https://github.com/BigSweetPotatoStudio/HyperChat,https://github.com/BigSweetPotatoStudio/HyperChat,No
+Jenova,https://www.jenova.ai,,Yes
+JetBrains AI Assistant,https://plugins.jetbrains.com/plugin/22282-jetbrains-ai-assistant,,Yes
+JetBrains Junie,https://www.jetbrains.com/junie,,Yes
+kibitz,https://kibi.tz,https://github.com/nick1udwig/kibitz,No
+Kilo Code,https://github.com/Kilo-Org/kilocode,https://github.com/Kilo-Org/kilocode,Yes
+Kiro,https://kiro.dev,https://github.com/kirodotdev/Kiro,No
+Klavis AI Slack/Discord/Web,https://www.klavis.ai/,,Yes
+Langdock,https://docs.langdock.com/resources/integrations/mcp,,Yes
+Langflow,https://github.com/langflow-ai/langflow,https://github.com/langflow-ai/langflow,Yes
+LibreChat,https://www.librechat.ai/,https://github.com/danny-avila/LibreChat,Yes
+LM Studio,https://lmstudio.ai,,Yes
+LM-Kit.NET,https://lm-kit.com/products/lm-kit-net/,,Yes
+Lutra,https://lutra.ai,,Yes
+MCP Bundler for MacOS,https://mcp-bundler.maketry.xyz,,Yes
+MCP Chatbot,https://github.com/3choff/mcp-chatbot,https://github.com/3choff/mcp-chatbot,No
+MCP CLI client,https://github.com/adhikasp/mcp-client-cli,https://github.com/adhikasp/mcp-client-cli,No
+MCP Simple Slackbot,https://github.com/sooperset/mcp-client-slackbot,https://github.com/sooperset/mcp-client-slackbot,No
+MCP SuperAssistant,https://mcpsuperassistant.ai/,https://github.com/srbhptl39/MCP-SuperAssistant,No
+mcp-agent,https://github.com/lastmile-ai/mcp-agent,https://github.com/lastmile-ai/mcp-agent,Yes
+mcp-client-chatbot,https://github.com/cgoinglove/mcp-client-chatbot,https://github.com/cgoinglove/mcp-client-chatbot,Yes
+mcp-use,https://github.com/pietrozullo/mcp-use,https://github.com/pietrozullo/mcp-use,Yes
+MCPCLIHost,https://github.com/vincent-pli/mcp-cli-host,https://github.com/vincent-pli/mcp-cli-host,No
+MCPHub,https://github.com/ravitemer/mcphub.nvim,https://github.com/ravitemer/mcphub.nvim,Yes
+McPico,https://github.com/cryptax/mcpico,https://github.com/cryptax/mcpico,No
+MCPJam,https://github.com/MCPJam/inspector,https://github.com/MCPJam/inspector,Yes
+MCPOmni Connect,https://github.com/Abiorh001/mcp_omni_connect,https://github.com/Abiorh001/mcp_omni_connect,Yes
+Memex,https://memex.tech/,,Yes
+Microsoft Copilot Studio,https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-extend-action-mcp,,Yes
+MindPal,https://mindpal.io,https://github.com/mindpal-ai/mindpal,Yes
+Mistral AI: Le Chat,https://chat.mistral.ai,,Yes
+modelcontextchat.com,https://modelcontextchat.com,,Yes
+MooPoint,https://moopoint.io,,Yes
+Msty Studio,https://msty.ai,,Yes
+Needle,https://needle.app,,Yes
+Nerve,https://github.com/evilsocket/nerve,https://github.com/evilsocket/nerve,No
+NextChat,https://nextchat.club/,https://github.com/ChatGPTNextWeb/NextChat,No
+NVIDIA Agent Intelligence toolkit,https://github.com/NVIDIA/AIQToolkit,https://github.com/NVIDIA/AIQToolkit,Yes
+OpenSumi,https://github.com/opensumi/core,https://github.com/opensumi/core,Yes
+oterm,https://github.com/ggozad/oterm,https://github.com/ggozad/oterm,Yes
+Postman,https://postman.com/downloads,,Yes
+Qordinate,https://qordinate.ai/,,No
+RecurseChat,https://recurse.chat/,,Yes
+Replit,https://replit.com,,Yes
+Roo Code,https://roocode.com,,Yes
+Runbear,https://runbear.io,https://github.com/runbear-io,No
+SeekChat,https://seekrays.com/chat/,https://github.com/seekrays/seekchat,No
+Shortwave,https://www.shortwave.com,,Yes
+Simple AI,https://simple-ai.io,https://github.com/gcc3/simple-ai-chat,No
+Simtheory,https://simtheory.ai,,Yes
+Slack MCP Client,https://github.com/tuannvm/slack-mcp-client,https://github.com/tuannvm/slack-mcp-client,Yes
+Smithery Playground,https://smithery.ai/playground,,Yes
+SpinAI,https://docs.spinai.dev,,Yes
+Superinterface,https://superinterface.ai,https://github.com/supercorp-ai/superinterface,Yes
+Superjoin,https://superjoin.ai,,Yes
+Swarms,https://github.com/kyegomez/swarms,https://github.com/kyegomez/swarms,Yes
+systemprompt,https://systemprompt.io,,Yes
+Tambo,https://tambo.co,https://github.com/tambo-ai/tambo,Yes
+Tencent CloudBase AI DevKit,https://docs.cloudbase.net/ai/agent/mcp,,Yes
+Tester MCP Client,https://apify.com/jiri.spilka/tester-mcp-client,https://github.com/apify/tester-mcp-client,No
+TheiaAI/TheiaIDE,https://eclipsesource.com/blogs/2024/12/19/theia-ide-and-theia-ai-support-mcp/,,Yes
+Tome,https://runebook.ai,https://github.com/runebookai/tome,Yes
+TypingMind App,https://www.typingmind.com,,Yes
+Vercade,https://discord.gg/EMnkGjAh9v,https://github.com/lintyourcode/vercade,No
+VS Code GitHub Copilot,https://code.visualstudio.com/,https://github.com/microsoft/vscode,Yes
+VT Code,https://github.com/vinhnx/vtcode,https://github.com/vinhnx/vtcode,Yes
+Warp,https://www.warp.dev/,,Yes
+WhatsMCP,https://wassist.app/mcp/,,Yes
+Windsurf,https://codeium.com/windsurf,,No
+Windsurf Editor,https://codeium.com/windsurf,,Yes
+Witsy,https://witsyai.com,https://github.com/nbonamy/witsy,Yes
+y-cli,https://github.com/luohy15/y-cli,https://github.com/luohy15/y-cli,No
+Zed,https://zed.dev/,https://github.com/zed-industries/zed,Yes
+Zencoder,https://zencoder.ai,,Yes
+Zin-MCP-Client,https://github.com/zinja-coder/zin-mcp-client,https://github.com/zinja-coder/zin-mcp-client,No
