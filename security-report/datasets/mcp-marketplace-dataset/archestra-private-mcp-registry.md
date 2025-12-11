@@ -56,22 +56,38 @@ last_evaluated: "2025-12-11"
 # Archestra Private MCP Registry
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Vendor documentation page describing a private MCP registry within the Archestra platform. Vercel-hosted docs; many example http:// literals in text.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: N/A (docs page)
+- API: Describes platform endpoints and config
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (vendor documentation)
+
+Discovery & Metadata Delivery:
+- Docs: https://archestra.ai/docs/platform-private-registry
+- Repo: https://github.com/archestra-ai/archestra
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 200` |
+| TLS/security headers | ⚠️ Partial | HSTS set; CSP/XFO/XCTO not observed at root |
+| No mixed content | ✅ Yes | http:// literals are examples; no subresources detected |
+| Contact/Legal | ✅ Yes | `/privacy`, `/terms`, `/about`, robots/sitemap present |
+
+DNS/Hosting:
+- NS: GoDaddy (domaincontrol.com); A: Vercel
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Rich docs include config snippets and platform endpoint examples; useful for evaluating enterprise/private registry design.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -147,4 +163,3 @@ How found: `tools/tier1_audit.py` executed with target URL; outputs include head
   - github: https://github.com/archestra-ai/archestra/blob/main/platform/dev/grafana/dashboards/platform.json)\n\n##
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

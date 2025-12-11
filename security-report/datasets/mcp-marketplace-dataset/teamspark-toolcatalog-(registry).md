@@ -15,19 +15,37 @@ evidence:
 # TeamSpark ToolCatalog (Registry)
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub Pages static site rendering a registry view for tools/MCP entries. Informational browser, not a hosted registry API.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (static site)
+- One‑click install: N/A
+- Curated list/recommendations: Yes
+- API: N/A
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub Pages registry browser)
+
+Discovery & Metadata Delivery:
+- Website: https://teamsparkai.github.io/ToolCatalog/registry
+- Source: https://github.com/TeamSparkAI/ToolCatalog
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub Pages `HTTP/2 200` |
+| TLS/security headers | ⚠️ Partial | HSTS present; CSP/XFO/XCTO not visible on page response |
+| No mixed content | ✅ Yes | 0 HTTP subresource loads |
+| Contact/Legal | ❌ No | No policy pages at the GitHub Pages root |
+
+DNS/Hosting:
+- GitHub Pages IPs (A/AAAA); GitHub-controlled NS
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Simple, transparent static registry browser; security depends on GitHub Pages delivery.

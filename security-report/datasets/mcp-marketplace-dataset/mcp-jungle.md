@@ -32,22 +32,35 @@ last_evaluated: "2025-12-11"
 # MCP Jungle
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub-hosted marketplace list and associated content. Acts as a curated resource rather than a hosted registry.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (via GitHub repository content)
+- One‑click install: N/A
+- Curated list/recommendations: Yes
+- API: N/A
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub repository)
+
+Discovery & Metadata Delivery:
+- Website: https://github.com/mcpjungle/MCPJungle
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub `HTTP/2 200` |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
+| No mixed content | ✅ Yes | HTTP literals are examples (e.g., host.docker.internal) |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Content includes dev placeholders (e.g., `host.docker.internal`)—not active subresources.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -66,4 +79,3 @@ Other details, links, screenshots, etc.
   - github: https://github.com/mcpjungle/MCPJungle&quot;,&quot;user_id&quot;:null}}
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

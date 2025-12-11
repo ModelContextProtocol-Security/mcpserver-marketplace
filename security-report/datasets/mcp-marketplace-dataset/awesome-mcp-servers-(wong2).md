@@ -64,22 +64,32 @@ last_evaluated: "2025-12-11"
 # Awesome MCP Servers (wong2)
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Community-maintained GitHub list of MCP servers by wong2. Informational, not a hosted registry.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Via GitHub README list
+- Curated list/recommendations: Yes (community curated)
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub list)
+
+Discovery & Metadata Delivery:
+- Repo: https://github.com/wong2/awesome-mcp-servers
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Wide coverage; evaluate linked repos for provenance and security posture individually.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -136,4 +146,3 @@ How found: `tools/tier1_audit.py` executed with target URL; outputs include head
   - github: https://github.com/features/copilot
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

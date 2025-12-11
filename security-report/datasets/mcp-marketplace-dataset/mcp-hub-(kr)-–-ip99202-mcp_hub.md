@@ -32,22 +32,33 @@ last_evaluated: "2025-12-11"
 # MCP Hub (KR) – ip99202/mcp_hub
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub repository hosting MCP hub content (Korean). Curated resources rather than a hosted registry.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Via repo content
+- Curated list/recommendations: Yes
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub repository)
+
+Discovery & Metadata Delivery:
+- Repo: https://github.com/ip99202/mcp_hub
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub `HTTP/2 200` |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
+| Mixed content | ✅ None | HTTP literals present are examples (not subresources) |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Example endpoints in README (e.g., `sk-axstudio.com:8000/mcp/fakestore_api`) appear as text, not active loads.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -66,4 +77,3 @@ Other details, links, screenshots, etc.
   - github: https://github.com/features/copilot
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

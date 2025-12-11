@@ -15,19 +15,39 @@ evidence:
 # MCP Registry Database (Datasette)
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Datasette Lite view over the official MCP registry SQLite database hosted via GitHub Pages. Read-only browser for servers table; useful for quick inspection.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (Datasette filtering/search)
+- One‑click install: N/A
+- Curated list/recommendations: No (pure browser)
+- API: N/A (static; no Datasette API endpoints here)
+- Client integration: N/A
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (registry browser)
+
+Discovery & Metadata Delivery:
+- Website: Datasette Lite (GitHub Pages), URL-embedded SQLite source
+- Source Repo: https://github.com/rosmur/official-mcp-registry-database
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 200` on GitHub Pages |
+| TLS/security headers | ❌ Missing | Minimal headers; no HSTS/CSP/XFO/XCTO on page response |
+| No mixed content | ✅ Yes | 0 HTTP subresource loads |
+| Contact/Legal | ❌ No | No policy pages at root of `lite.datasette.io` |
+
+DNS/Hosting:
+- CNAME: `simonw.github.io`; A/AAAA GitHub Pages IPs
+- NS: Vercel DNS (domain uses Vercel DNS to CNAME to GitHub Pages)
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Handy read-only browser of official registry; security posture depends on GitHub Pages delivery; no dynamic backend here.

@@ -32,22 +32,32 @@ last_evaluated: "2025-12-11"
 # langchain4j-aideepin (Web Client)
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub repository for a web client related to AIDeepin + Langchain4j. Repo acts as code source, not a hosted marketplace.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Via repo content
+- API: N/A (code repo)
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub repository)
+
+Discovery & Metadata Delivery:
+- Repo: https://github.com/moyangzhan/langchain4j-aideepin-web
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub responses |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- AIDeepin website (http) is reachable but does not expose policy/API endpoints; not used for this repo entry.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -66,4 +76,3 @@ Other details, links, screenshots, etc.
   - github: https://github.com/features/copilot
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

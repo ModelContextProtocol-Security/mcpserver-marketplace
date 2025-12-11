@@ -36,22 +36,45 @@ last_evaluated: "2025-12-11"
 # Composio
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Composio provides an MCP-labeled directory within a broader tools/agents platform. Hosted on Cloudflare; privacy/terms and basic API path present.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (site directory)
+- One‑click install: ❓ Unknown (platform-dependent)
+- Curated list/recommendations: Yes (platform curation)
+- API: `/api` 200 (undocumented at root)
+- Client integration: ❓ Unknown
+
+## Marketplace Classification (Tier 0)
+
+Type: directory within tools platform
+
+Discovery & Metadata Delivery:
+- Website: https://composio.dev
+- Registry API: ⚠️ Partial (root `/api` 200; no OpenAPI at root)
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 103` via Cloudflare |
+| TLS/security headers | ⚠️ Partial | HSTS; `nosniff`; XFO/CSP not observed at root |
+| No mixed content | ✅ Yes | 0 HTTP subresource loads |
+| Contact/Legal | ✅ Yes | `/privacy`, `/terms`, `/robots.txt`, `/sitemap.xml` 200 |
+
+DNS/Hosting:
+- A: 104.18.20.5, 104.18.21.5; NS: Cloudflare (`serenity`/`simon`)
+- Provider: Cloudflare
+
+Policy/API Endpoints:
+- `/api` 200; no OpenAPI at root
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- GitHub org link detected (https://github.com/composiohq/composio/).
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -89,4 +112,3 @@ How found: `tools/tier1_audit.py` executed with target URL; outputs include head
   - github: https://github.com/login/oauth/authorize?client_id={CLIENT_ID}&amp;scope=repo
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

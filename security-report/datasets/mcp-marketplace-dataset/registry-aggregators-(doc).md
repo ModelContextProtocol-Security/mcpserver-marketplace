@@ -15,19 +15,30 @@ evidence:
 # Registry Aggregators (Doc)
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Documentation page in the official MCP Registry repo describing registry aggregators/sub-registries. Informational guidance.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: N/A (documentation)
+- API: Linked via repo
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (documentation)
+
+Discovery & Metadata Delivery:
+- URL: https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/registry-aggregators.mdx
+- Raw: https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/modelcontextprotocol-io/registry-aggregators.mdx
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Provides design guidance for aggregators; useful for evaluating marketplace architecture choices.

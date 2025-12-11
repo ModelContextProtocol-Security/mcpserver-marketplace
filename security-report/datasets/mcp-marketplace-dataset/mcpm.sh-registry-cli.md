@@ -15,19 +15,29 @@ evidence:
 # mcpm.sh Registry CLI
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub repository for a CLI-based MCP registry (`mcpm.sh`). Informational/code—not a hosted marketplace.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Via CLI and repo content
+- API/CLI: CLI-based tool
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub repository for CLI)
+
+Discovery & Metadata Delivery:
+- Repo: https://github.com/pathintegral-institute/mcpm.sh
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub responses (occasionally 503 rate limiting) |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- CLI-oriented approach; evaluate token handling and signing in the repo docs.

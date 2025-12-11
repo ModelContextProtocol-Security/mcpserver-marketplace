@@ -15,19 +15,28 @@ evidence:
 # XPack MCP Marketplace
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub repository (`xpack-ai/XPack-MCP-Marketplace`) for an MCP marketplace. Informational code repo.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Via repo content
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub repository)
+
+Discovery & Metadata Delivery:
+- Repo: https://github.com/xpack-ai/XPack-MCP-Marketplace
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub responses |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Check repo docs for submission/verification processes.

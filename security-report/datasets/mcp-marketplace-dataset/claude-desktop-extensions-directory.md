@@ -28,22 +28,42 @@ last_evaluated: "2025-12-11"
 # Claude Desktop Extensions Directory
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Anthropic’s official engineering page for Desktop Extensions (built-in marketplace). Documents how to build/submit extensions and links to `anthropics/dxt` examples.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (built-in to Claude Desktop, documented on site)
+- One‑click install: Yes (mcpb bundles and in-app directory)
+- Curated list/recommendations: Yes (official curation by Anthropic)
+- API: N/A (docs page; no API at this URL)
+- Client integration: Claude Desktop
+
+## Marketplace Classification (Tier 0)
+
+Type: client-embedded (official, vendor-operated)
+
+Discovery & Metadata Delivery:
+- Docs: https://www.anthropic.com/engineering/desktop-extensions
+- Repo: `anthropics/dxt` (linked from page)
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 200` via Cloudflare |
+| TLS/security headers | ✅ Strong | HSTS preload; CSP with nonce; XFO SAMEORIGIN; `nosniff` |
+| No mixed content | ⚠️ Minor | 1 HTTP subresource and a few http literals detected |
+| Contact/Legal | ✅ Yes | Corporate site; policy pages elsewhere on anthropic.com |
+
+DNS/Hosting:
+- NS: Cloudflare (randy/isla); A/AAAA Anthropic infra
+- Provider: Cloudflare CDN
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- The page links to `anthropics/dxt` MANIFEST and examples; useful for provenance and submission references.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -100,4 +120,3 @@ How found: `tools/tier1_audit.py` executed with target URL; outputs include head
   - github: https://github.com/anthropics/dxt/tree/main/examples
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

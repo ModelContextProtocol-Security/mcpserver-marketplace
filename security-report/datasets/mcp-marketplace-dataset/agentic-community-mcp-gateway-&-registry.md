@@ -80,22 +80,33 @@ last_evaluated: "2025-12-11"
 # Agentic Community MCP Gateway & Registry
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub repository for an MCP gateway + registry implementation by Agentic Community. Acts as a codebase and documentation hub; not a hosted marketplace.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: N/A (code repository)
+- API: Code and documentation present
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub repository for registry/gateway)
+
+Discovery & Metadata Delivery:
+- Repo: https://github.com/agentic-community/mcp-gateway-registry
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub `HTTP/2 200` |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
+| Policy endpoints | ✅ GitHub | `/privacy`, `/security`, `/about`, `/robots.txt` available on GitHub domain |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Repository provides gateway + registry reference implementation in the community space.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -171,4 +182,3 @@ How found: `tools/tier1_audit.py` executed with target URL; outputs include head
   - github: https://github.com/features/copilot
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

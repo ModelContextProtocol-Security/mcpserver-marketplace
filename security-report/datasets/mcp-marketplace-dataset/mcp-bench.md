@@ -22,22 +22,43 @@ last_evaluated: "2025-12-11"
 # MCP Bench
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Public browsable directory of MCP servers with a focus on showcasing and benchmarking ecosystem entries. Nuxt-based site on nginx.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (directory UI)
+- One‑click install: ❓ Unknown
+- Curated list/recommendations: Yes (showcase/bench focus)
+- API: No public API at root
+
+## Marketplace Classification (Tier 0)
+
+Type: directory/aggregator
+
+Discovery & Metadata Delivery:
+- Website: https://mcpbench.ai
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 200` |
+| TLS/security headers | ❌ Missing | No HSTS/CSP/XFO/XCTO observed at root |
+| No mixed content | ✅ Yes | 0 HTTP subresource loads |
+| Contact/Legal | ⚠️ Minimal | `/about` present; no privacy/terms/security at tested paths |
+
+DNS/Hosting:
+- A: 34.66.85.157; NS: DNSOwl
+- Server: nginx; X-Powered-By: Nuxt
+
+Policy/API Endpoints:
+- `/about`, `/robots.txt`, `/sitemap.xml` 200; other policy paths 404
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Links to a variety of MCP repos across the ecosystem; good discovery surface.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -56,4 +77,3 @@ Other details, links, screenshots, etc.
   - github: https://github.com/MauriceIsrael/SmartMemory
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

@@ -64,22 +64,32 @@ last_evaluated: "2025-12-11"
 # Community MCP Registry (ravitemer)
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Community GitHub repository for an MCP registry by ravitemer. Informational code repo, not a hosted service.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Via repo content
+- Curated list/recommendations: Yes (community)
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (GitHub repository)
+
+Discovery & Metadata Delivery:
+- Repo: https://github.com/ravitemer/mcp-registry
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (GitHub pages)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | GitHub responses |
+| TLS/security headers | ✅ Strong | HSTS, CSP, XFO=deny, XCTO=nosniff |
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Community registry; evaluate review/PR process for curation maturity.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -136,4 +146,3 @@ How found: `tools/tier1_audit.py` executed with target URL; outputs include head
   - github: https://github.com/features/copilot
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

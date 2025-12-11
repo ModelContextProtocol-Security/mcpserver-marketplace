@@ -15,19 +15,37 @@ evidence:
 # ShareMCP 导航
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Chinese navigation directory for MCP-related resources. Static site served by OpenResty; minimal headers and no policy pages at root.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: ❓ Unknown (likely list-style navigation)
+- One‑click install: ❓ Unknown
+- Curated list/recommendations: Yes (navigation site)
+- API: N/A
+
+## Marketplace Classification (Tier 0)
+
+Type: informational (navigation portal)
+
+Discovery & Metadata Delivery:
+- Website: https://sharemcp.com/
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 200` |
+| TLS/security headers | ⚠️ Partial | HSTS present; no CSP/XFO/XCTO |
+| No mixed content | ✅ Yes | 0 HTTP subresource loads |
+| Contact/Legal | ❌ No | No policy/contact pages at tested root paths |
+
+DNS/Hosting:
+- A: 34.142.151.139; NS: hichina.com
+- Server: OpenResty
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Minimal static landing; evaluate linked resources individually.

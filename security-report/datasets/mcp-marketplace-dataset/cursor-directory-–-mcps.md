@@ -50,22 +50,43 @@ last_evaluated: "2025-12-11"
 # Cursor Directory – MCPs
 
 ## Overview
-Short description of what this marketplace/registry offers.
+Community directory for MCP servers on the `cursor.directory` domain (Vercel). Provides policy pages and exposes an API with OpenAPI/Swagger endpoints.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (directory UI)
+- One‑click install: ❓ Unknown
+- Curated list/recommendations: Yes (community curation)
+- API: ✅ Public endpoints (`/api`, `/openapi.json`, `/swagger.json`)
+- Client integration: ❓ Unknown (outside of directory use)
+
+## Marketplace Classification (Tier 0)
+
+Type: directory/aggregator with public API
+
+Discovery & Metadata Delivery:
+- Website: https://cursor.directory/mcp (Vercel)
+- API docs: Available at `/openapi.json`, `/openapi.yaml`, `/swagger.json`
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 200` |
+| TLS/security headers | ⚠️ Partial | HSTS set; CSP/XFO/XCTO not observed at root |
+| No mixed content | ✅ Yes | 0 HTTP subresource loads |
+| Contact/Legal | ✅ Yes | Privacy/terms/security/legal/about/contact, robots/sitemap all 200 |
+| API docs | ✅ Yes | `/api`, `/docs`, `/api-docs`, `/swagger`, OpenAPI endpoints all 200 |
+
+DNS/Hosting:
+- NS: Vercel DNS; A: Vercel IPs
+- Provider: Vercel
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Many GitHub links to MCP repos; API is exposed and documented (OpenAPI).
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -84,4 +105,3 @@ Other details, links, screenshots, etc.
   - github: https://github.com/caiyunapp/mcp-caiyun-weather\
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

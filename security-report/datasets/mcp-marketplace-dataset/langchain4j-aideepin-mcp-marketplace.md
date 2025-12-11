@@ -16,22 +16,31 @@ last_evaluated: "2025-12-11"
 # Langchain4j AIDeepin MCP Marketplace
 
 ## Overview
-Short description of what this marketplace/registry offers.
+GitHub repository and website for an AIDeepin + Langchain4j MCP marketplace. The website is HTTP-only landing with minimal signals; the GitHub repo is authoritative for code.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Via repo content/website
+- One‑click install: ❓ Unknown
+- Curated list/recommendations: Yes (repo-driven)
+- API: ❓ Unknown
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ❌ No | Website is HTTP (no TLS) |
+| TLS/security headers | ❌ Missing | No HSTS/CSP/XFO/XCTO on website |
+| No mixed content | ✅ Yes | No HTTP subresource loads detected (static) |
+| Policy pages | ❌ None | No policy/contact endpoints detected on website |
+
+Repo Security (GitHub): Strong headers (HSTS, CSP, XFO deny, nosniff)
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- HTTP-only website; prefer the GitHub repository for authoritative content and provenance.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -45,4 +54,3 @@ Other details, links, screenshots, etc.
 - Social links detected: 0 (showing up to 5)
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-

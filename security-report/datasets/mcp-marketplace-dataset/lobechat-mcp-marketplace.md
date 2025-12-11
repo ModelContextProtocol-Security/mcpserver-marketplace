@@ -22,22 +22,46 @@ last_evaluated: "2025-12-11"
 # LobeChat MCP Marketplace
 
 ## Overview
-Short description of what this marketplace/registry offers.
+LobeChat’s MCP marketplace page on `lobehub.com` (Cloudflare + Vercel). Lists MCP servers related to the LobeHub ecosystem and community.
 
 ## Features
-- Discovery/search:
-- One‑click install:
-- Curated list/recommendations:
-- API:
-- Client integration:
+- Discovery/search: Yes (marketplace page)
+- One‑click install: ❓ Unknown
+- Curated list/recommendations: Yes (curated content; many GitHub links)
+- API: No public API at root
+- Client integration: For LobeChat
+
+## Marketplace Classification (Tier 0)
+
+Type: client-embedded (web marketplace for LobeChat)
+
+Discovery & Metadata Delivery:
+- Website: https://lobehub.com/mcp (Cloudflare/Vercel)
+- Policy pages: `/privacy` 200; `/terms` 200; robots 200
 
 ## Security
-- Moderation:
-- Provenance/signing:
-- Isolation/runtime:
+
+### Tier 1: Automated/Observable Checks (2025‑12‑11)
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| HTTPS enforced | ✅ Yes | `HTTP/2 200` |
+| TLS/security headers | ⚠️ Partial | HSTS; CSP/XFO/XCTO not observed at root |
+| No mixed content | ✅ Yes | 0 HTTP subresource loads |
+| Contact/Legal | ✅ Partial | `/privacy`, `/terms` present; contact/security pages not at tested paths |
+
+DNS/Hosting:
+- A/AAAA: Cloudflare edges; NS: Cloudflare (kianchau/blair)
+- Provider: Cloudflare CDN; Vercel
+
+Policy/API Endpoints:
+- `/privacy` 200; `/terms` 200; `/robots.txt` 200; `/sitemap.xml` 308
+- API probes: 404
 
 ## Notes
-Other details, links, screenshots, etc.
+
+New/Interesting:
+- Numerous GitHub links to official/community MCP repos; Discord invite present.
 
 ### Automated Audit (PoC) — 2025-12-11
 
@@ -56,4 +80,3 @@ Other details, links, screenshots, etc.
   - github: https://github.com/arvinxx
 
 How found: `tools/tier1_audit.py` executed with target URL; outputs include headers, DNS, security headers, mixed-content scan, common policy/API endpoints, and social link extraction.
-
