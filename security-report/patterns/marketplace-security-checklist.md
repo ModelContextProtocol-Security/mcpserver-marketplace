@@ -33,16 +33,46 @@ Determine the primary function of the marketplace:
 
 Check ALL ways users can access the marketplace:
 
+#### Discovery & Metadata Delivery
+How users find and get information about MCP servers:
+
 | Delivery Method | How to Find | What to Check |
 |-----------------|-------------|---------------|
 | **Website** | Visit main URL | Standard web security checks |
-| **API** | Check /docs, /api, developer docs | API security, authentication |
+| **Registry API** | Check /docs, /api, developer docs | API security, authentication, what data is exposed |
 | **CLI tool** | Check for npm/pip package, GitHub releases | Package signing, update mechanism |
 | **IDE/Editor plugin** | Check VS Code marketplace, JetBrains, etc. | Plugin security, permissions |
 | **Client integration** | Check if other clients pull from this registry | How clients authenticate, what data they get |
 | **Browser extension** | Check Chrome/Firefox stores | Extension permissions, update mechanism |
 
-**Important:** A marketplace may have different security postures across delivery methods. The website might be secure while the API lacks authentication, or vice versa.
+#### Code/Server Delivery
+How the actual MCP server code/functionality reaches users:
+
+| Delivery Method | Description | Security Implications |
+|-----------------|-------------|----------------------|
+| **Link to source** | Points to GitHub repo, user clones/installs | User responsible for vetting code |
+| **Package download** | Delivers installable package (npm, pip, binary) | Package integrity, signing, supply chain |
+| **Hosted execution (PaaS/SaaS)** | Marketplace runs the MCP server, user connects via URL | Marketplace responsible for isolation, multi-tenancy security |
+| **Container image** | Delivers Docker/OCI image | Image signing, base image security, registry trust |
+| **Source bundle** | Delivers source code archive | Integrity verification, no build-time attacks |
+
+**Hosted Execution (PaaS/SaaS) - Special Considerations:**
+
+When a marketplace runs MCP servers on behalf of users (like Smithery's `server.smithery.ai/{name}/mcp`):
+
+| Check | Why It Matters |
+|-------|----------------|
+| **Multi-tenant isolation** | Can one server access another's data/secrets? |
+| **Secret storage** | How are API keys/credentials stored? (June 2025 Smithery vuln exposed secrets) |
+| **Build isolation** | Can malicious build configs access other builds? |
+| **Network isolation** | Can hosted servers make arbitrary outbound requests? |
+| **Resource limits** | CPU/memory/network limits per server? |
+| **Execution sandboxing** | What can hosted code access? (filesystem, env vars, etc.) |
+| **Credential injection** | How are user credentials passed to hosted servers? |
+| **Audit logging** | Are server actions logged? Who can access logs? |
+| **Data residency** | Where does execution happen? (region, compliance) |
+
+**Important:** A marketplace may have different security postures across delivery methods. The website might be secure while the API lacks authentication. The registry might be trustworthy but hosted execution might be vulnerable.
 
 ### 0.3 Source Accessibility
 
@@ -87,23 +117,30 @@ Does the marketplace include vendor-hosted MCP servers?
 
 **Type:** [code-hosting | code-linking | informational | api-gateway | client-embedded | hybrid]
 
-**Delivery Methods:**
+**Discovery & Metadata Delivery:**
 - [ ] Website: [URL]
-- [ ] API: [endpoint]
+- [ ] Registry API: [endpoint]
 - [ ] CLI: [package name]
 - [ ] IDE plugin: [marketplace link]
 - [ ] Client integration: [which clients]
 - [ ] Browser extension: [store link]
 
+**Code/Server Delivery:**
+- [ ] Link to source: [yes/no - links to GitHub/GitLab]
+- [ ] Package download: [npm/pip/binary]
+- [ ] Hosted execution (PaaS/SaaS): [URL pattern, e.g., server.example.com/{name}]
+- [ ] Container image: [registry URL]
+- [ ] Source bundle: [download mechanism]
+
 **Source Accessibility:**
-- [ ] Marketplace source code: [URL or "closed"]
-- [ ] API docs: [URL or "none"]
-- [ ] Self-hostable: [yes/no]
+- Marketplace source code: [URL or "closed"]
+- API docs: [URL or "none"]
+- Self-hostable: [yes/no]
 
 **Server Coverage:**
-- [ ] Lists vendor-hosted servers: [yes/no]
-- [ ] Distinguishes hosted vs local: [yes/no]
-- [ ] Number of vendor-hosted servers found: [count]
+- Lists vendor-hosted servers: [yes/no]
+- Distinguishes hosted vs local: [yes/no]
+- Vendor-hosted servers found: [list or "none"]
 ```
 
 ---
@@ -403,13 +440,19 @@ Use this template when evaluating a marketplace:
 
 **Type:** [code-hosting | code-linking | informational | api-gateway | client-embedded | hybrid]
 
-**Delivery Methods:**
+**Discovery & Metadata Delivery:**
 - [ ] Website: [URL]
-- [ ] API: [endpoint or "none"]
+- [ ] Registry API: [endpoint or "none"]
 - [ ] CLI: [package name or "none"]
 - [ ] IDE plugin: [marketplace link or "none"]
 - [ ] Client integration: [which clients or "none"]
 - [ ] Browser extension: [store link or "none"]
+
+**Code/Server Delivery:**
+- [ ] Link to source: [yes/no]
+- [ ] Package download: [format or "none"]
+- [ ] Hosted execution (PaaS/SaaS): [URL pattern or "none"]
+- [ ] Container image: [registry or "none"]
 
 **Source Accessibility:**
 - Marketplace source code: [URL or "closed source"]

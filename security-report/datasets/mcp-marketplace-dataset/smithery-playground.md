@@ -44,13 +44,19 @@ Smithery is the largest MCP server registry, hosting 3,200+ servers. Operated by
 
 **Type:** code-hosting (hybrid - hosts servers AND provides registry API)
 
-**Delivery Methods:**
+**Discovery & Metadata Delivery:**
 - [x] Website: https://smithery.ai
-- [x] API: https://registry.smithery.ai/servers (public, no auth for reads)
-- [x] CLI: `@anthropic/cli` via npm, also `npx create-smithery@latest`
+- [x] Registry API: https://registry.smithery.ai/servers (public, no auth for reads)
+- [x] CLI: `@smithery-ai/cli` via npm, also `npx create-smithery@latest`
 - [ ] IDE plugin: None directly, but integrated via client plugins
 - [x] Client integration: Cursor, Claude Desktop, VS Code extensions pull from registry
 - [ ] Browser extension: None
+
+**Code/Server Delivery:**
+- [x] Link to source: Yes - links to GitHub repos for each server
+- [ ] Package download: No direct package delivery
+- [x] Hosted execution (PaaS/SaaS): Yes - `server.smithery.ai/{name}/mcp` runs servers for users
+- [ ] Container image: Not user-facing (used internally for hosting)
 
 **Source Accessibility:**
 - Marketplace source code: Partial - CLI at github.com/smithery-ai/cli (AGPL-3.0), platform is closed source
@@ -61,6 +67,13 @@ Smithery is the largest MCP server registry, hosting 3,200+ servers. Operated by
 - Lists vendor-hosted servers: ❌ No - only GitHub repos
 - Distinguishes hosted vs local: ⚠️ Partial - `remote` field exists but not prominent
 - Vendor-hosted servers found: None (searched for Vercel, Ramp, Stripe, Cloudflare)
+
+**Hosted Execution Security:**
+- Multi-tenant isolation: ❓ Unknown - not documented
+- Secret storage: ⚠️ Vulnerable - June 2025 incident exposed secrets across tenants
+- Build isolation: ❌ Was vulnerable - path traversal allowed cross-build access (fixed)
+- Credential injection: Via OAuth or API keys in config
+- Audit logging: ❓ Unknown
 
 ### Tier 1: Automated/Observable Checks
 
