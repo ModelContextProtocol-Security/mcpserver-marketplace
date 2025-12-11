@@ -112,3 +112,21 @@ Keep evaluations current as marketplaces evolve.
     - Our published evaluations
     - Security research from others
     - Feature requests for security improvements
+
+## 9. Advanced Analysis and Tooling
+
+To move beyond documentation-based reviews and validate security claims with practical evidence.
+
+- **[ ] Implement Practical Dynamic Analysis (The Dynamic Analysis Gap):** Acknowledge that documentation review is insufficient for complete security validation. Develop a methodology to install and run MCP clients and servers in an isolated (sandboxed) environment to observe actual runtime behavior. This is critical for verifying:
+    - Filesystem access (what files are read/written?)
+    - Network activity (what domains are contacted?)
+    - Enforcement of claimed security controls (do permission prompts actually block actions?)
+    - Secure storage of secrets.
+
+- **[ ] Develop Standardized Security Test Tooling (The Tooling Gap):** Build a suite of tools to support dynamic analysis. This tooling is a foundational capability needed for the marketplace, client, and server security projects.
+    - **[ ] Create a "Malicious-but-Harmless" Test MCP Server:** A server designed to probe the security boundaries of a client. It would attempt actions like:
+        - Reading sensitive files (`~/.ssh/id_rsa`).
+        - Writing files outside of an expected directory.
+        - Making unauthorized network calls.
+        - Testing for prompt fatigue or bypass vulnerabilities.
+    - **[ ] Develop Client/Server Interaction Loggers:** Tools to intercept and log the traffic between a client and a server to analyze the protocol usage and data being exchanged.
