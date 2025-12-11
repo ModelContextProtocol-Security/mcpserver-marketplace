@@ -40,6 +40,28 @@ Smithery is the largest MCP server registry, hosting 3,200+ servers. Operated by
 
 ## Security
 
+### Tier 0: Classification
+
+**Type:** code-hosting (hybrid - hosts servers AND provides registry API)
+
+**Delivery Methods:**
+- [x] Website: https://smithery.ai
+- [x] API: https://registry.smithery.ai/servers (public, no auth for reads)
+- [x] CLI: `@anthropic/cli` via npm, also `npx create-smithery@latest`
+- [ ] IDE plugin: None directly, but integrated via client plugins
+- [x] Client integration: Cursor, Claude Desktop, VS Code extensions pull from registry
+- [ ] Browser extension: None
+
+**Source Accessibility:**
+- Marketplace source code: Partial - CLI at github.com/smithery-ai/cli (AGPL-3.0), platform is closed source
+- API docs: https://smithery.ai/docs/use/registry
+- Self-hostable: No (platform is proprietary)
+
+**Server Coverage:**
+- Lists vendor-hosted servers: ❌ No - only GitHub repos
+- Distinguishes hosted vs local: ⚠️ Partial - `remote` field exists but not prominent
+- Vendor-hosted servers found: None (searched for Vercel, Ramp, Stripe, Cloudflare)
+
 ### Tier 1: Automated/Observable Checks
 
 | Check | Status | Notes |
@@ -108,6 +130,33 @@ Smithery is the largest MCP server registry, hosting 3,200+ servers. Operated by
 - Does not list vendor-hosted MCP servers
 
 **Overall Assessment:** Moderate security posture. Good infrastructure and fast incident response, but lacks transparency on verification process, no security policy, and limited publisher security requirements. The June 2025 incident shows supply chain risks in centralized MCP hosting.
+
+### Delivery Method Security
+
+**Website (smithery.ai):**
+- HTTPS enforced ✅
+- Privacy policy present (aggressive tracking) ⚠️
+- No CSP headers observed
+- Login via GitHub OAuth
+
+**API (registry.smithery.ai):**
+- HTTPS enforced ✅
+- No authentication required for reads (public registry)
+- Authentication required for writes (GitHub OAuth)
+- Rate limiting: Unknown
+- API versioning: Not documented
+
+**CLI (@smithery-ai/cli):**
+- Published on npm (447 stars)
+- AGPL-3.0 license (open source)
+- No package signing observed
+- Updates via npm (standard npm security model)
+
+**Client Integration:**
+- Cursor, Claude Desktop, VS Code extensions consume registry API
+- Clients receive JSON with server metadata, URLs, verified status
+- No client-side verification of data integrity
+- Clients trust registry response implicitly
 
 ## Notes
 

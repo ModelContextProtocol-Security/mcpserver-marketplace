@@ -12,6 +12,102 @@ Evaluate each marketplace against these checks. For each item:
 
 ---
 
+## Tier 0: Marketplace Classification
+
+Before evaluating security, classify the marketplace type and delivery methods.
+
+### 0.1 Marketplace Type
+
+Determine the primary function of the marketplace:
+
+| Type | Description | Example | Security Implications |
+|------|-------------|---------|----------------------|
+| **code-hosting** | Hosts and runs MCP server code | Smithery, mcp.run | Highest risk - supply chain attacks, build security |
+| **code-linking** | Links to GitHub repos, user runs locally | mcp.so, awesome-mcp-servers | Medium risk - depends on linked repos |
+| **informational** | Directory/catalog, no install mechanism | Blog lists, curated lists | Lower risk - but can mislead users |
+| **api-gateway** | Provides API to access MCP servers | Enterprise gateways | High risk - centralized trust point |
+| **client-embedded** | Built into an MCP client | Claude Desktop directory | Risk depends on client vendor |
+| **hybrid** | Combination of above | Smithery (hosts + API + web) | Evaluate each component |
+
+### 0.2 Delivery Methods
+
+Check ALL ways users can access the marketplace:
+
+| Delivery Method | How to Find | What to Check |
+|-----------------|-------------|---------------|
+| **Website** | Visit main URL | Standard web security checks |
+| **API** | Check /docs, /api, developer docs | API security, authentication |
+| **CLI tool** | Check for npm/pip package, GitHub releases | Package signing, update mechanism |
+| **IDE/Editor plugin** | Check VS Code marketplace, JetBrains, etc. | Plugin security, permissions |
+| **Client integration** | Check if other clients pull from this registry | How clients authenticate, what data they get |
+| **Browser extension** | Check Chrome/Firefox stores | Extension permissions, update mechanism |
+
+**Important:** A marketplace may have different security postures across delivery methods. The website might be secure while the API lacks authentication, or vice versa.
+
+### 0.3 Source Accessibility
+
+Can we audit the marketplace itself?
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Marketplace source code public** | Search GitHub for the marketplace's own code | Can audit for vulnerabilities |
+| **API specification public** | Look for OpenAPI/Swagger docs | Understand data exposure |
+| **Data format documented** | Check if schema is published | Understand what's transmitted |
+| **Self-hostable** | Can users run their own instance? | Independence from central operator |
+
+**Examples:**
+- mcp.so: Source at github.com/chatmcp/mcpso ✅
+- Smithery: Partial - CLI is open source, platform is not ⚠️
+- Claude Desktop directory: Closed source ❌
+
+### 0.4 Server Coverage
+
+Does the marketplace include vendor-hosted MCP servers?
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Lists vendor-hosted servers** | Search for mcp.vercel.com, mcp.ramp.com, etc. | These are often the safest option |
+| **Distinguishes hosted vs local** | Are hosted servers marked differently? | Users should know what they're getting |
+| **Prioritizes official hosted** | Are vendor-hosted servers shown first/prominently? | Guide users to safest options |
+
+**Known vendor-hosted MCP servers to search for:**
+- mcp.vercel.com (Vercel)
+- mcp.ramp.com (Ramp)
+- Huggingface.co/mcp (Hugging Face)
+- Linear MCP (linear.app)
+- Stripe MCP (stripe.com)
+- Cloudflare MCP (cloudflare.com)
+
+**Critical Gap:** Most marketplaces only list GitHub repos, ignoring vendor-hosted servers. This drives users toward third-party code instead of official hosted options.
+
+### 0.5 Classification Template
+
+```markdown
+## Marketplace Classification
+
+**Type:** [code-hosting | code-linking | informational | api-gateway | client-embedded | hybrid]
+
+**Delivery Methods:**
+- [ ] Website: [URL]
+- [ ] API: [endpoint]
+- [ ] CLI: [package name]
+- [ ] IDE plugin: [marketplace link]
+- [ ] Client integration: [which clients]
+- [ ] Browser extension: [store link]
+
+**Source Accessibility:**
+- [ ] Marketplace source code: [URL or "closed"]
+- [ ] API docs: [URL or "none"]
+- [ ] Self-hostable: [yes/no]
+
+**Server Coverage:**
+- [ ] Lists vendor-hosted servers: [yes/no]
+- [ ] Distinguishes hosted vs local: [yes/no]
+- [ ] Number of vendor-hosted servers found: [count]
+```
+
+---
+
 ## Tier 1: Automated/Observable Checks
 
 These can be verified through web inspection, API calls, and automated tools.
@@ -303,33 +399,89 @@ Use this template when evaluating a marketplace:
 ### Summary
 [1-2 sentence overall assessment]
 
+### Tier 0: Classification
+
+**Type:** [code-hosting | code-linking | informational | api-gateway | client-embedded | hybrid]
+
+**Delivery Methods:**
+- [ ] Website: [URL]
+- [ ] API: [endpoint or "none"]
+- [ ] CLI: [package name or "none"]
+- [ ] IDE plugin: [marketplace link or "none"]
+- [ ] Client integration: [which clients or "none"]
+- [ ] Browser extension: [store link or "none"]
+
+**Source Accessibility:**
+- Marketplace source code: [URL or "closed source"]
+- API docs: [URL or "none"]
+- Self-hostable: [yes/no]
+
+**Server Coverage:**
+- Lists vendor-hosted servers: [yes/no]
+- Distinguishes hosted vs local: [yes/no]
+- Vendor-hosted servers found: [list any found, or "none"]
+
 ### Tier 1: Automated Checks
 | Check | Status | Notes |
 |-------|--------|-------|
 | HTTPS | ✅/⚠️/❌ | |
 | Contact info | ✅/⚠️/❌ | |
 | Issue tracker | ✅/⚠️/❌ | |
-| ... | | |
+| Provenance visible | ✅/⚠️/❌ | |
+| Official/third-party distinction | ✅/⚠️/❌ | |
+| Timestamps | ✅/⚠️/❌ | |
 
 ### Tier 2: Manual Investigation
 | Check | Status | Notes |
 |-------|--------|-------|
-| Privacy policy | ✅/⚠️/❌ | |
+| Privacy policy | ✅/⚠️/❌ | Legal entity: |
 | Report button | ✅/⚠️/❌ | |
-| ... | | |
+| Moderation policy | ✅/⚠️/❌ | |
+| Security docs | ✅/⚠️/❌ | |
+| Badge criteria documented | ✅/⚠️/❌ | |
 
-### Tier 3: Registry-Specific
+### Tier 3: Registry-Specific (if code-hosting)
 | Check | Status | Notes |
 |-------|--------|-------|
 | 2FA required | ✅/⚠️/❌ | |
 | Malware scanning | ✅/⚠️/❌ | |
-| ... | | |
+| Namespace structure | ✅/⚠️/❌ | |
+| Build isolation | ✅/⚠️/❌ | |
+| Package signing | ✅/⚠️/❌ | |
+
+### Tier 4: GitHub/Source Checks (if applicable)
+| Check | Status | Notes |
+|-------|--------|-------|
+| SECURITY.md | ✅/⚠️/❌ | |
+| GitHub org verified | ✅/⚠️/❌ | Domain: |
+| Security advisories | ✅/⚠️/❌ | |
+
+### Tier 5: Ecosystem Analysis
+| Check | Status | Notes |
+|-------|--------|-------|
+| Secret leak rate | | % of indexed repos |
+| Past vulnerabilities | | CVEs, incidents |
+| Excessive tracking | ✅/⚠️/❌ | |
+
+### Delivery Method Security
+
+**Website:**
+- [Security notes for web interface]
+
+**API:**
+- [Security notes for API - auth, rate limiting, HTTPS]
+
+**CLI:**
+- [Security notes for CLI - signing, updates]
+
+**Client Integration:**
+- [Which clients use this, how they authenticate]
 
 ### Red Flags
 - [List any red flags found]
 
 ### Security Incidents
-- [Document any known past incidents]
+- [Document any known past incidents with dates and resolution times]
 
 ### Overall Assessment
 [Detailed assessment with strengths and weaknesses]
