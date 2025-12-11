@@ -166,6 +166,50 @@ Does the marketplace include vendor-hosted MCP servers?
 
 These can be verified through web inspection, API calls, and automated tools.
 
+### 1.0 Standard Endpoints to Probe
+
+Before diving into specific checks, probe these common endpoints on the marketplace domain:
+
+**Policy & Legal:**
+- `/privacy` or `/privacy-policy` - Privacy policy
+- `/terms` or `/tos` or `/terms-of-service` - Terms of service
+- `/security` or `/security.txt` or `/.well-known/security.txt` - Security policy
+- `/legal` - Legal information
+- `/about` or `/about-us` - Company information
+- `/contact` or `/contact-us` - Contact information
+
+**Technical:**
+- `/robots.txt` - May reveal hidden paths, admin areas
+- `/sitemap.xml` - Site structure, all public pages
+- `/docs` or `/documentation` - API/product documentation
+- `/api` or `/api/docs` or `/swagger` or `/openapi.json` - API documentation
+- `/status` or `/health` - Service status page
+- `/.well-known/` - Standard well-known endpoints
+
+**GitHub (if source code URL exists):**
+- `/security` tab - Security advisories
+- `/blob/main/SECURITY.md` - Security policy
+- `/blob/main/CONTRIBUTING.md` - Contribution guidelines
+- `/issues` - Issue tracker
+- `/pulls` - Pull requests (activity indicator)
+
+**Also check:**
+- Main page (`/`) - Feature descriptions, server count, key claims
+- Footer links - Often contains policy links
+- Navigation menu - Feature pages, pricing, enterprise
+- Login/signup flow - OAuth providers, 2FA options
+
+**Evidence to capture for each endpoint:**
+```yaml
+evidence:
+  - url: "https://example.com/privacy"
+    description: "Privacy policy found - operated by Example Inc., Delaware. Collects: usage data, IP, device info. Shares with: analytics providers, ad networks."
+  - url: "https://example.com/security"
+    description: "404 - No security page found"
+  - url: "https://example.com/robots.txt"
+    description: "Disallows /admin, /internal - indicates admin panel exists"
+```
+
 ### 1.1 Basic Security
 
 | Check | How to Verify | Why It Matters |

@@ -88,6 +88,59 @@ Search the marketplace for known vendor-hosted MCP servers:
 
 These can be verified through direct inspection.
 
+#### 1.0 Standard Endpoints to Probe
+
+Before diving into specific checks, systematically probe these endpoints on the marketplace domain:
+
+**Policy & Legal:**
+| Endpoint | What to Look For |
+|----------|-----------------|
+| `/privacy` or `/privacy-policy` | Privacy policy - company name, data collection, third-party sharing |
+| `/terms` or `/tos` | Terms of service - liability, user responsibilities |
+| `/security` or `/.well-known/security.txt` | Security policy, vulnerability reporting |
+| `/legal` | Legal entity, jurisdiction |
+| `/about` or `/about-us` | Company info, team, location |
+| `/contact` | Contact email, support channels |
+
+**Technical:**
+| Endpoint | What to Look For |
+|----------|-----------------|
+| `/robots.txt` | Disallowed paths (may reveal admin areas, internal tools) |
+| `/sitemap.xml` | Site structure, all public pages |
+| `/docs` or `/documentation` | Product/API documentation |
+| `/api` or `/api/docs` or `/swagger` | API documentation, OpenAPI spec |
+| `/openapi.json` or `/swagger.json` | Machine-readable API spec |
+| `/status` or `/health` | Service status, uptime page |
+| `/.well-known/` | Standard well-known endpoints |
+
+**GitHub/Source (if source_code_url exists):**
+| Path | What to Look For |
+|------|-----------------|
+| `/security` tab | Published security advisories |
+| `/blob/main/SECURITY.md` | Vulnerability disclosure policy |
+| `/blob/main/CONTRIBUTING.md` | Contribution guidelines |
+| `/issues` | Open/closed count, response times |
+| `/pulls` | Activity level, review practices |
+
+**Also check:**
+- Main page (`/`) - Feature claims, server count, key capabilities
+- Footer links - Policy links often hidden here
+- Navigation menu - Pricing, enterprise, features pages
+- Login/signup flow - OAuth providers used, 2FA options visible
+
+**Evidence format:**
+```yaml
+evidence:
+  - url: "https://example.com/privacy"
+    description: "Privacy policy - operated by Example Inc. (Delaware). Collects: usage data, IP, device info, keystroke patterns. Shares with: Google Analytics, ad networks, affiliates."
+  - url: "https://example.com/security"
+    description: "404 - No security page found"
+  - url: "https://example.com/robots.txt"
+    description: "Disallows /admin, /internal, /_debug - suggests admin panel and debug endpoints exist"
+  - url: "https://example.com/.well-known/security.txt"
+    description: "Found - contact: security@example.com, expires: 2026-01-01"
+```
+
 #### 1.1 Basic Security
 
 | Check | How to Verify |
