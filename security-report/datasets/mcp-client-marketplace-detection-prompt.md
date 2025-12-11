@@ -139,6 +139,62 @@ evidence:
 
 Record all interesting URLs examined, even if they don't directly answer the marketplace question - this data may be useful for later research stages.
 
+## Privacy, PII, and Scope Policy (must follow)
+- Only use public information visible on the client's website/documentation or its directly linked GitHub repository.
+- Do not aggregate public information across platforms. Stay platform‑local:
+  - Allowed: a cursory look at the linked GitHub repository and its public org page.
+  - Not allowed: following links to personal social media, blogs, email archives, forums (e.g., Reddit), or third‑party data brokers.
+- Do not collect or store personal emails, postal addresses, phone numbers, or any non‑public data. If public emails appear in commit metadata, do not record them.
+- Limit contributor checks to a brief, public‑only glance:
+  - View public fields on the GitHub profile (display name, public "company", public website) and public org membership as shown on GitHub.
+  - Do not infer beyond what is explicitly public; if unclear, mark "unknown".
+- No deanonymization attempts, no cross‑referencing identities, and no scraping beyond the immediate public pages needed for the evaluation.
+- Prefer clarity over completeness. When signals are insufficient, record "unknown" with a short note.
+
+## Ownership & Hosting (surface check for MCP clients)
+1) Site‑claims (what the client/vendor says)
+- From footer/about/privacy/terms, extract any legal entity name and contact email/domain shown.
+- Record visible badges/labels (e.g., "Official", "Verified").
+- Capture links to GitHub org/repo and social profiles shown on the site.
+
+2) Quick investigative (public, non‑invasive)
+- Hosting hints from headers: CDN/edge (Cloudflare/Vercel/CloudFront/Fastly), server banner (nginx/Caddy/OpenResty), obvious framework (Next/Nuxt/etc.).
+- DNS basics: NS, A/AAAA, CNAME (hosting context only; do not treat as ownership).
+- If a GitHub repo is linked:
+  - Repo owner: user vs org; if org, note org "Verified" domain (from org profile banner).
+  - CODEOWNERS present? (yes/no).
+  - Contributors (cursory, public‑only): list up to 3 recent top contributors with login + display name + public profile "company" or website (if provided). Do not record emails.
+
+3) Cross‑check & confidence (lightweight)
+- Compare site‑claimed operator vs GitHub org (and verified domain if shown).
+- Set consistency: consistent / partial / mismatch / unknown.
+- Add a one‑line confidence note (e.g., "org verified domain matches site; repo owned by org").
+
+### Optional Ownership Fields in Client YAML
+You may add the following optional fields to the client's YAML frontmatter when ownership is relevant:
+
+```yaml
+operator_claimed:
+  name: "Vendor, Inc." # if present
+  domain: "vendor.com"  # if present
+  sources:
+    - "https://client.example.com/privacy"
+hosting_hint:
+  cdn_edge: "Cloudflare"
+  server: "nginx"
+  framework: "Next.js"
+github_glance:
+  repo_owner:
+    type: "org"
+    name: "vendor-org"
+    verified_domain: "vendor.com"
+  codeowners_present: true
+  contributors_glance:
+    - { login: "dev1", name: "Dev One", public_company_or_org: "Vendor" }
+consistency: "consistent" # site-claims vs github
+confidence_note: "Org verified domain matches site; repo in org"
+```
+
 ## Known MCP Server Registries/Marketplaces
 
 For reference, these are some known MCP server discovery platforms to look for. Note: A comprehensive registry discovery is planned as a separate stage of this research.
