@@ -50,11 +50,25 @@ How the actual MCP server code/functionality reaches users:
 
 | Delivery Method | Description | Security Implications |
 |-----------------|-------------|----------------------|
-| **Link to source** | Points to GitHub repo, user clones/installs | User responsible for vetting code |
+| **Link to source** | Points to GitHub repo, user clones/installs manually | User responsible for vetting code, highest user control |
+| **Local installation via CLI** | CLI tool downloads and installs server to run locally | Package integrity, but user controls execution environment |
 | **Package download** | Delivers installable package (npm, pip, binary) | Package integrity, signing, supply chain |
 | **Hosted execution (PaaS/SaaS)** | Marketplace runs the MCP server, user connects via URL | Marketplace responsible for isolation, multi-tenancy security |
 | **Container image** | Delivers Docker/OCI image | Image signing, base image security, registry trust |
 | **Source bundle** | Delivers source code archive | Integrity verification, no build-time attacks |
+
+**Local Installation vs Hosted Execution - Key Differences:**
+
+| Aspect | Local Installation | Hosted Execution (PaaS) |
+|--------|-------------------|------------------------|
+| **Where code runs** | User's machine | Marketplace infrastructure |
+| **Who controls execution** | User | Marketplace operator |
+| **Credential handling** | Stays on user's machine (env vars) | Passed to marketplace servers |
+| **Risk profile** | Lower - user controls environment | Higher - trust marketplace isolation |
+| **Visibility** | User can inspect/audit | Opaque - can't see what runs |
+| **Example** | Smithery CLI local install | Smithery `server.smithery.ai/{name}/mcp` |
+
+**Important:** Some marketplaces (like Smithery) offer BOTH models. Users should understand which model they're using - a "Remote" or "Hosted" label typically indicates PaaS execution.
 
 **Hosted Execution (PaaS/SaaS) - Special Considerations:**
 
@@ -127,10 +141,13 @@ Does the marketplace include vendor-hosted MCP servers?
 
 **Code/Server Delivery:**
 - [ ] Link to source: [yes/no - links to GitHub/GitLab]
+- [ ] Local installation via CLI: [yes/no - CLI installs to run locally]
 - [ ] Package download: [npm/pip/binary]
 - [ ] Hosted execution (PaaS/SaaS): [URL pattern, e.g., server.example.com/{name}]
 - [ ] Container image: [registry URL]
 - [ ] Source bundle: [download mechanism]
+
+**Note:** If marketplace offers BOTH local and hosted, document both and their security differences.
 
 **Source Accessibility:**
 - Marketplace source code: [URL or "closed"]
@@ -450,9 +467,11 @@ Use this template when evaluating a marketplace:
 
 **Code/Server Delivery:**
 - [ ] Link to source: [yes/no]
+- [ ] Local installation via CLI: [yes/no]
 - [ ] Package download: [format or "none"]
 - [ ] Hosted execution (PaaS/SaaS): [URL pattern or "none"]
 - [ ] Container image: [registry or "none"]
+- Dual model (local + hosted): [yes/no]
 
 **Source Accessibility:**
 - Marketplace source code: [URL or "closed source"]

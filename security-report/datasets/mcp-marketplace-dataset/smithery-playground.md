@@ -52,11 +52,28 @@ Smithery is the largest MCP server registry, hosting 3,200+ servers. Operated by
 - [x] Client integration: Cursor, Claude Desktop, VS Code extensions pull from registry
 - [ ] Browser extension: None
 
-**Code/Server Delivery:**
+**Code/Server Delivery (Dual Model):**
+
+Smithery supports TWO delivery models:
+
+1. **Local Installation:**
+   - CLI downloads code/bundle to user's machine
+   - User runs MCP server locally
+   - Tokens stay on user's machine via environment variables
+   - Lower risk - user controls execution environment
+
+2. **Remote/Hosted Execution (PaaS):**
+   - Smithery runs MCP server on their infrastructure
+   - User connects to `server.smithery.ai/{name}/mcp`
+   - Tokens passed to Smithery's hosted environment (claimed not stored long-term)
+   - Higher risk - Smithery controls execution, sees call metadata
+   - Labeled "Remote" or "Hosted" in UI
+   - Only HTTP transport supported
+
 - [x] Link to source: Yes - links to GitHub repos for each server
-- [ ] Package download: No direct package delivery
-- [x] Hosted execution (PaaS/SaaS): Yes - `server.smithery.ai/{name}/mcp` runs servers for users
-- [ ] Container image: Not user-facing (used internally for hosting)
+- [x] Local installation: Yes - CLI installs and runs servers locally
+- [x] Hosted execution (PaaS/SaaS): Yes - `server.smithery.ai/{name}/mcp` runs servers remotely
+- [ ] Container image: Not user-facing (Docker used internally for hosted execution)
 
 **Source Accessibility:**
 - Marketplace source code: Partial - CLI at github.com/smithery-ai/cli (AGPL-3.0), platform is closed source
