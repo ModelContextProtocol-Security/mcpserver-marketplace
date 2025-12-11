@@ -295,9 +295,13 @@ def sanitize_filename(name: str) -> str:
 def write_markdown_files(clients: list[dict], output_dir: str):
     """
     Write individual markdown files for each client with YAML frontmatter.
+    Only creates new files - skips if file already exists to preserve existing content.
     """
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
+
+    created_count = 0
+    skipped_count = 0
 
     for client in clients:
         name = client['name']
@@ -307,6 +311,11 @@ def write_markdown_files(clients: list[dict], output_dir: str):
         # Create safe filename
         filename = sanitize_filename(name) + '.md'
         filepath = output_path / filename
+
+        # Skip if file already exists
+        if filepath.exists():
+            skipped_count += 1
+            continue
 
         # Build YAML frontmatter
         yaml_lines = [
@@ -338,7 +347,9 @@ def write_markdown_files(clients: list[dict], output_dir: str):
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
 
-    return len(clients)
+        created_count += 1
+
+    return created_count, skipped_count
 
 
 def main():
@@ -382,8 +393,8 @@ def main():
     write_csv(merged, str(output_file))
 
     print(f"\nWriting markdown files to {markdown_dir}/...")
-    count = write_markdown_files(merged, str(markdown_dir))
-    print(f"  Created {count} markdown files")
+    created, skipped = write_markdown_files(merged, str(markdown_dir))
+    print(f"  Created {created} new files, skipped {skipped} existing files")
 
     print("\nDone!")
 
