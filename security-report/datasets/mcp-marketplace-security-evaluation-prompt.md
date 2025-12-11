@@ -175,6 +175,42 @@ evidence:
 | Provenance visible | Is source/author shown per server? |
 | Official vs third-party distinction | Look for badges, labels |
 
+#### 1.5 API Security (if applicable)
+
+| Check | How to Verify |
+|-------|---------------|
+| API uses HTTPS | Test API endpoints |
+| Rate limiting | Test rapid requests |
+| Authentication for writes | Check if publishing requires auth |
+| API versioning | Check docs for version strategy |
+
+#### 1.6 HTTP Security Headers
+
+| Check | How to Verify |
+|-------|---------------|
+| Content-Security-Policy (CSP) | Browser dev tools, securityheaders.com |
+| Strict-Transport-Security (HSTS) | Check response headers |
+| X-Frame-Options | Check response headers |
+| X-Content-Type-Options | Check response headers |
+
+#### 1.7 Operational Transparency
+
+| Check | How to Verify |
+|-------|---------------|
+| Status page exists | Check `/status`, look for status.example.com or example.instatus.com |
+| Uptime metrics visible | Check status page for historical uptime |
+| Incident history public | Check status page for past incidents |
+
+#### 1.8 Per-Server Metrics (if displayed)
+
+| Check | How to Verify |
+|-------|---------------|
+| Usage/popularity counts | Check individual listings for download/use counts |
+| Uptime/reliability metrics | Check for uptime %, response times, error rates |
+| Tool/capability counts | Check if number of tools per server shown |
+| Created vs last updated dates | Check for both timestamps (distinguish new vs maintained) |
+| Star/download counts | npm stars, GitHub stars, etc. |
+
 **Evidence format for each check:**
 ```
 - url: "https://example.com/contact"
@@ -224,6 +260,36 @@ These require reading documentation and policies.
 | Past incidents | Postmortems, advisories |
 | Certifications | SOC2, ISO27001, etc. |
 
+#### 2.5 Submission/Onboarding Process
+
+| Check | What to Look For |
+|-------|-----------------|
+| Submission process documented | Look for "submit", "add server", "publish" docs |
+| Review process disclosed | Is there manual review? Automated checks? |
+| Review timeline stated | How long does review take? |
+| Rejection criteria public | What causes rejection? |
+| Appeal process exists | Can rejected submissions be appealed? |
+
+**Note:** Consider actually submitting a test server to experience the process firsthand.
+
+#### 2.6 Search & Discovery Features
+
+| Check | What to Look For |
+|-------|-----------------|
+| Search type | Keyword vs semantic search? |
+| Filter syntax documented | What filters available? (owner:, is:verified, etc.) |
+| Sorting options | By popularity, date, name? |
+| Categories/tags | Are servers categorized? |
+
+#### 2.7 Client Configuration Support
+
+| Check | What to Look For |
+|-------|-----------------|
+| Config formats supported | Claude Desktop, VS Code, Cursor, etc.? |
+| One-click install | Can users install without manual config? |
+| Config generation | Does it generate config snippets? |
+| Scaffolding tools | `npx create-*` or similar? |
+
 **Evidence format:**
 ```
 - url: "https://example.com/privacy"
@@ -243,7 +309,9 @@ Only apply these if the marketplace hosts/runs code.
 | 2FA required | Check registration docs |
 | Hardware key support | WebAuthn/FIDO |
 | OAuth integration | GitHub OAuth, etc. |
+| OAuth scopes requested | What permissions are requested during OAuth? |
 | Token management | Do tokens expire? Scopes? |
+| Credential retention policy | Are tokens stored? For how long? |
 
 #### 3.2 Malware & Code Scanning
 
@@ -276,6 +344,17 @@ If marketplace runs servers:
 | Credential injection | How are user creds passed? |
 | Audit logging | What's logged? Who can access? |
 | Data residency | Where does execution happen? |
+| Transport restrictions | HTTP only for hosted? Why? |
+
+#### 3.5 Supply Chain Security
+
+| Check | What to Look For |
+|-------|-----------------|
+| Dependency scanning | Are dependencies checked for vulns? |
+| Build pipeline security | Is build process isolated? (June 2025 Smithery vuln was in build) |
+| License scanning | Are licenses checked/displayed? |
+| License type displayed | AGPL vs MIT vs proprietary visible per server? |
+| Client-side verification | Do clients verify signatures/checksums? |
 
 ---
 
@@ -298,6 +377,15 @@ If marketplace has public source code.
 |-------|---------------|
 | GitHub org verified | Look for verified badge |
 | Verified domain matches | Does domain match claimed identity? |
+
+#### 4.3 Code Quality & Licensing
+
+| Check | How to Verify |
+|-------|---------------|
+| Stars/popularity | Check star count (social proof, can be gamed) |
+| Issue response time | Check recent issues for response patterns |
+| License type | Check LICENSE file - AGPL vs MIT vs proprietary |
+| CI/CD pipeline | Check for GitHub Actions, automated testing |
 
 ---
 
@@ -331,6 +419,14 @@ Check privacy policy and site for:
 - Analytics (Google Analytics, etc.)
 - Ad networks (unusual for B2B dev tools)
 - Payment processors
+
+#### 5.4 Blog & Community Content
+
+| Check | What to Look For |
+|-------|-----------------|
+| Security blog posts | Check `/blog` for security content |
+| Auth/security guidance | Are best practices documented? |
+| Community engagement | Discord, forums, response quality |
 
 ---
 

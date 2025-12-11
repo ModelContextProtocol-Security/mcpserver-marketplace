@@ -251,6 +251,33 @@ evidence:
 | **API uses HTTPS** | Test API endpoints | Protects data in transit |
 | **Rate limiting** | Test rapid requests | Prevents abuse, DoS |
 | **Authentication for writes** | Check if publishing requires auth | Prevents unauthorized submissions |
+| **API versioning** | Check docs for version strategy | Breaking changes handling |
+
+### 1.6 HTTP Security Headers
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Content-Security-Policy (CSP)** | Browser dev tools, securityheaders.com | Prevents XSS, injection attacks |
+| **Strict-Transport-Security (HSTS)** | Check response headers | Forces HTTPS |
+| **X-Frame-Options** | Check response headers | Prevents clickjacking |
+| **X-Content-Type-Options** | Check response headers | Prevents MIME sniffing |
+
+### 1.7 Operational Transparency
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Status page exists** | Check `/status`, look for status.example.com or example.instatus.com | Shows operational maturity |
+| **Uptime metrics visible** | Check status page for historical uptime | Reliability indicator |
+| **Incident history public** | Check status page for past incidents | Transparency about outages |
+
+### 1.8 Per-Server Metrics (if displayed)
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Usage/popularity counts** | Check individual listings for download/use counts | Social proof, but can be gamed |
+| **Uptime/reliability metrics** | Check for uptime %, response times, error rates | Quality indicator |
+| **Tool/capability counts** | Check if number of tools per server shown | Helps users assess scope |
+| **Created vs last updated dates** | Check for both timestamps | Distinguishes new vs actively maintained |
 
 ---
 
@@ -303,6 +330,35 @@ These require deeper inspection of documentation, policies, and behavior.
 | **Badge process documented** | Can publishers apply for verification? | Shows systematic approach |
 | **Multiple badge types** | Official vs verified vs community? | Nuanced trust levels |
 
+### 2.6 Submission/Onboarding Process
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Submission process documented** | Look for "submit", "add server", "publish" docs | Transparency about how servers get listed |
+| **Review process disclosed** | Is there manual review? Automated checks? | Understanding quality gate |
+| **Review timeline stated** | How long does review take? | Sets expectations |
+| **Rejection criteria public** | What causes rejection? | Helps publishers, shows standards |
+| **Appeal process exists** | Can rejected submissions be appealed? | Fairness |
+
+**Note:** Consider actually submitting a test server to experience the process firsthand.
+
+### 2.7 Search & Discovery Features
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Search type** | Keyword vs semantic search? | Affects discoverability |
+| **Filter syntax documented** | What filters are available? (owner:, is:verified, etc.) | Power user features |
+| **Sorting options** | By popularity, date, name? | Affects what users see first |
+| **Categories/tags** | Are servers categorized? | Helps navigation |
+
+### 2.8 Client Configuration Support
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Config formats supported** | Claude Desktop, VS Code, Cursor, etc.? | Ease of use |
+| **One-click install** | Can users install without manual config? | User experience |
+| **Config generation** | Does it generate config snippets? | Reduces errors |
+
 ---
 
 ## Tier 3: Registry-Specific Checks
@@ -316,8 +372,10 @@ For marketplaces that host code or run servers (not just link to GitHub).
 | **2FA required for publishers** | Check registration docs | Prevents account takeover |
 | **2FA hardware key support** | Check for WebAuthn/FIDO | Strongest auth protection |
 | **OAuth/SSO integration** | Check login options | GitHub OAuth is common |
+| **OAuth scopes requested** | Check what permissions are requested during OAuth | Least privilege |
 | **Token management** | Check if API tokens expire | Long-lived tokens are risky |
 | **Token scopes** | Are permissions granular? | Least privilege |
+| **Credential retention policy** | Are tokens stored? For how long? | Privacy, security |
 
 ### 3.2 Malware & Code Scanning
 
@@ -354,6 +412,25 @@ For marketplaces that host code or run servers (not just link to GitHub).
 | **Provenance attestation** | Is there SLSA or similar? | Proves build origin |
 | **Immutability policy** | Can published versions be modified? | Prevents supply chain attacks |
 | **Audit logging** | Are changes logged? | Accountability |
+| **Client-side verification** | Do clients verify signatures/checksums? | Defense in depth |
+
+### 3.6 Supply Chain Security
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Dependency scanning** | Are dependencies checked for vulns? | Transitive risk |
+| **Build pipeline security** | Is build process isolated? Secure? | June 2025 Smithery vuln was in build pipeline |
+| **Scaffolding tools** | `npx create-*` or similar? Security of scaffolding | First-touch experience attack surface |
+| **License scanning** | Are licenses checked/displayed? | Compliance, legal risk |
+| **License type displayed** | AGPL vs MIT vs proprietary visible per server? | Users need to know |
+
+### 3.7 Transport & Protocol Security
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Supported transports** | stdio, HTTP, WebSocket? | Security varies by transport |
+| **Transport restrictions** | Is HTTP-only for hosted? Why? | May indicate security constraints |
+| **TLS requirements** | Is TLS required for all connections? | Encryption in transit |
 
 ---
 
@@ -385,6 +462,16 @@ For marketplaces with public source code or GitHub integration.
 | **CI/CD pipeline** | Check for GitHub Actions, etc. | Automated testing |
 | **Code scanning enabled** | Check for CodeQL, Dependabot | Automated vuln detection |
 | **Dependency updates** | Check Dependabot PRs | Shows maintenance |
+| **Stars/popularity** | Check star count | Social proof (can be gamed) |
+| **Issue response time** | Check recent issues for response patterns | Maintainer engagement |
+
+### 4.4 Open Source Licensing
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **License type** | Check LICENSE file | AGPL vs MIT vs proprietary has implications |
+| **License compatibility** | Are dependencies' licenses compatible? | Legal compliance |
+| **CLA requirements** | Is there a CLA for contributors? | Contribution terms |
 
 ---
 
@@ -417,6 +504,14 @@ External data sources and research findings.
 | **Analytics/tracking** | Check for Google Analytics, etc. | Privacy implications |
 | **Ad networks** | Check privacy policy | Unusual for B2B dev tools |
 | **Payment processors** | Who handles payments? | PCI compliance |
+
+### 5.4 Blog & Community Content
+
+| Check | How to Verify | Why It Matters |
+|-------|---------------|----------------|
+| **Security blog posts** | Check `/blog` for security content | Shows security awareness |
+| **Auth/security guidance** | Are best practices documented? | Helps users configure safely |
+| **Community engagement** | Discord, forums, response quality | Support ecosystem |
 
 ---
 

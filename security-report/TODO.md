@@ -37,3 +37,78 @@ To understand what marketplaces are *not* listing, we will implement a control l
 As the project matures, we will need more specialized evaluation tools.
 
 - **[ ] Develop Template for Unstructured Marketplaces:** Design a new evaluation template specifically for "Community Forums" and "AI Agent Recommendations." This will involve identifying new, relevant security signals for these less-structured environments (e.g., user reputation, voting patterns, scammer detection, resistance to prompt injection for AI agents).
+
+## 5. Supply Chain Security Deep Analysis
+
+Extend security evaluation to cover end-to-end supply chain risks beyond surface-level marketplace checks.
+
+- **[ ] Build Pipeline Security Analysis:** Investigate how each marketplace handles builds/packaging. Key questions:
+    - Is there build isolation between publishers? (June 2025 Smithery vuln was cross-build access)
+    - What build configurations are accepted? (dockerBuildPath, custom scripts, etc.)
+    - Can builds access secrets from other publishers?
+    - Are build logs exposed or protected?
+- **[ ] Dependency Chain Analysis:** Track transitive dependencies in MCP servers.
+    - What npm/pip packages do popular servers depend on?
+    - Are there common high-risk dependencies across many servers?
+    - Can we detect dependency confusion attacks?
+- **[ ] Scaffolding Tool Security:** Evaluate `npx create-*` and similar scaffolding tools offered by marketplaces.
+    - What do they download/execute during scaffolding?
+    - Are scaffolding packages verified?
+    - Could a malicious scaffolding tool compromise new developers?
+
+## 6. Submission/Onboarding Process Testing
+
+Actually submit MCP servers to each marketplace to experience and document their onboarding process.
+
+- **[ ] Create Test MCP Servers:** Build simple, legitimate MCP servers for testing submission processes. Consider:
+    - A security-scanning MCP server (useful product + tests submission)
+    - A "marketplace picker" MCP server that helps users choose marketplaces
+    - A deliberately minimal/placeholder server to test rejection criteria
+- **[ ] Document Submission Flow Per Marketplace:** For each major marketplace:
+    - **[ ] Claude Desktop:** Document their form-based submission process, review timeline, rejection criteria
+    - **[ ] Smithery:** Document GitHub OAuth flow, publishing process, verification requirements
+    - **[ ] mcp.run:** Document submission and review process
+    - **[ ] mcp.so:** Document how servers get listed (if curated vs automated)
+    - **[ ] Others as discovered
+- **[ ] Track Review Timelines:** Record how long each marketplace takes to review submissions.
+- **[ ] Test Rejection Criteria:** Attempt to understand what gets rejected by submitting edge cases:
+    - Servers with no description
+    - Servers with minimal functionality
+    - Servers with aggressive permission requests
+    - Near-typosquats of popular servers (ethical testing only)
+- **[ ] Document Appeal Processes:** If rejected, document whether and how to appeal.
+
+## 7. Marketplace Comparison Tooling
+
+Build tools to help users compare and choose marketplaces.
+
+- **[ ] MCP Server to Help Pick Marketplaces:** Build an MCP server that:
+    - Queries multiple marketplaces for a given search term
+    - Compares results across marketplaces
+    - Shows which marketplace has more servers for a category
+    - Highlights trust/verification differences
+- **[ ] Marketplace Security Scorecard:** Create a standardized scorecard format for comparing marketplaces:
+    - Security score (based on evaluation)
+    - Server count
+    - Review process (manual vs automated)
+    - Verification badges (and their meaning)
+    - Incident history
+    - Data collection practices
+
+## 8. Ongoing Evaluation Maintenance
+
+Keep evaluations current as marketplaces evolve.
+
+- **[ ] Quarterly Re-evaluation:** Schedule re-evaluation of major marketplaces quarterly to catch:
+    - New security features
+    - Policy changes
+    - Security incidents
+    - Growth/decline in server count
+- **[ ] Monitor Security Incidents:** Set up alerts for:
+    - CVEs mentioning MCP
+    - GitGuardian/security blog posts about MCP
+    - Security-related GitHub issues in marketplace repos
+- **[ ] Track Marketplace Response to Research:** Document how marketplaces respond to:
+    - Our published evaluations
+    - Security research from others
+    - Feature requests for security improvements
