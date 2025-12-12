@@ -418,14 +418,14 @@ def _detect_trackers(html: str) -> list[Tracker]:
     return trackers
 
 
-# Social link patterns
+# Social link patterns - exclude common URL terminators and escape chars
 SOCIAL_PATTERNS = [
-    (r'https?://(?:www\.)?github\.com/[^\s"\'<>]+', "github"),
-    (r'https?://discord\.(?:gg|com/invite)/[^\s"\'<>]+', "discord"),
-    (r'https?://(?:www\.)?(?:twitter|x)\.com/[^\s"\'<>]+', "twitter"),
-    (r'https?://(?:www\.)?linkedin\.com/[^\s"\'<>]+', "linkedin"),
-    (r'https?://(?:www\.)?youtube\.com/[^\s"\'<>]+', "youtube"),
-    (r'mailto:[^\s"\'<>]+', "email"),
+    (r'https?://(?:www\.)?github\.com/[^\s"\'<>\\)\]]+', "github"),
+    (r'https?://discord\.(?:gg|com/invite)/[^\s"\'<>\\)\]]+', "discord"),
+    (r'https?://(?:www\.)?(?:twitter|x)\.com/[^\s"\'<>\\)\]]+', "twitter"),
+    (r'https?://(?:www\.)?linkedin\.com/[^\s"\'<>\\)\]]+', "linkedin"),
+    (r'https?://(?:www\.)?youtube\.com/[^\s"\'<>\\)\]]+', "youtube"),
+    (r'mailto:[^\s"\'<>\\)\]]+', "email"),
 ]
 
 
@@ -439,13 +439,17 @@ def _extract_social_links(html: str) -> list[SocialLink]:
 
     for pattern, link_type in SOCIAL_PATTERNS:
         for match in re.findall(pattern, html, flags=re.IGNORECASE):
-            # Clean up the URL
-            url = match.rstrip(".,;:)")
+            # Clean up the URL - remove trailing punctuation and common artifacts
+            url = match.rstrip(".,;:)]}\\")
+            # Skip if URL looks malformed (contains newlines, etc.)
+            if "\n" in url or "\r" in url or len(url) > 200:
+                continue
             if url not in seen:
                 links.append(SocialLink(type=link_type, url=url))
                 seen.add(url)
 
-    return links
+    # Limit to first 20 unique links
+    return links[:20]
 
 
 def _parse_cookies(headers: dict[str, str]) -> list[CookieInfo]:
