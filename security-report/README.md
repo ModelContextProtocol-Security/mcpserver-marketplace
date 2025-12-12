@@ -1,69 +1,270 @@
 # MCP Marketplace Security Evaluation Project
 
-Systematically evaluating MCP marketplaces and how MCP clients handle server installation.
-
-## What We're Evaluating
-
-1. **Marketplaces** - Where users discover MCP servers (registries, catalogs, AI recommendations, etc.)
-2. **MCP Clients** - How they install, configure, permission, and sandbox MCP servers
+Systematically evaluating MCP marketplaces, registries, directories, and how MCP clients handle server discovery and installation.
 
 ## Project Status
 
-**In Progress**
+**Active** - 40+ marketplaces cataloged, 130+ clients tracked, comprehensive evaluations in progress.
 
-See the [project goals](./MCP-MARKETPLACE-SECURITY-EVAL-GOALS.md) for full details.
+See [TODO.md](./TODO.md) for long-term goals and roadmap.
+
+---
+
+## What We're Evaluating
+
+### 1. MCP Marketplaces
+
+Places where users discover MCP servers:
+
+| Type | Description | Examples |
+|------|-------------|----------|
+| **Registry** | Programmatic API for discovery | Smithery, MCP Registry |
+| **Directory** | Website listing with search | MCP.so, PulseMCP |
+| **Code Hosting** | Hosts packages/source | Docker MCP Catalog |
+| **PaaS/Hosted** | Runs servers for users | Smithery (hosted mode) |
+| **Curated List** | Manually maintained | awesome-mcp-servers |
+| **Client-Embedded** | Built into MCP client | Cline, LobeChat |
+
+### 2. MCP Clients
+
+How clients handle server installation, permissions, and security:
+
+- Discovery/marketplace features
+- Installation and runtime security
+- Permission models and sandboxing
+- Credential storage
+- Update mechanisms
+
+---
 
 ## Directory Structure
 
 ```
 security-report/
-├── README.md                   # You are here
-├── MCP-MARKETPLACE-SECURITY-EVAL-*.md  # Project governance docs
+├── README.md                          # You are here
+├── TODO.md                            # Long-term goals and roadmap
+├── MCP-MARKETPLACE-SECURITY-EVAL-*.md # Project governance docs
 │
-├── templates/                  # Evaluation templates
-│   ├── marketplace-evaluation.md
+├── datasets/                          # Primary data and evaluations
+│   ├── mcp-marketplaces.csv           # Master list of 40+ marketplaces
+│   ├── mcp-clients.csv                # Master list of 130+ MCP clients
+│   │
+│   ├── mcp-marketplace-dataset/       # Individual marketplace evaluations
+│   │   ├── smithery-playground.md     # Comprehensive (code-hosting/PaaS)
+│   │   ├── docker-mcp-catalog.md      # Comprehensive (curated catalog)
+│   │   ├── mcp.so.md                  # Comprehensive (directory)
+│   │   └── [40+ more...]
+│   │
+│   ├── mcp-client-dataset/            # Individual client profiles
+│   │   └── [130+ client files]
+│   │
+│   └── [source HTML files]            # Raw data sources
+│
+├── templates/                         # Evaluation templates
+│   ├── marketplace-evaluation-unified-template.md  # Main template (questionnaire + report)
+│   ├── marketplace-evaluation-questionnaire.md     # Deprecated → use unified
+│   ├── marketplace-evaluation-outreach-template.md # Email templates for operators
 │   └── mcp-client-evaluation.md
 │
-├── patterns/                   # Reusable evaluation frameworks
-│   ├── checks.md               # Security checks we look for
-│   ├── evaluation-criteria.md  # Detailed criteria and gaps
-│   └── trust-signals.md        # What good looks like
+├── prompts/                           # AI evaluation prompts
+│   ├── marketplace-evaluation-prompt.md            # How to evaluate marketplaces
+│   ├── marketplace-evaluation-validation-prompt.md # How to peer-review evaluations
+│   ├── mcp-client-evaluation-prompt.md             # How to evaluate clients
+│   └── mcp-client-evaluation-validation-prompt.md  # How to peer-review client evals
 │
-├── evaluations/                # Completed evaluations
-│   ├── marketplaces/
-│   └── mcp-clients/
-│       └── claude-desktop/     # Example completed evaluation
+├── tools/                             # Automated evaluation tools
+│   ├── tier1_audit.py                 # Security checks (headers, DNS, TLS, endpoints)
+│   └── batch_audit_marketplaces.py    # Batch processing
 │
-├── research/                   # Background research
-│   └── lessons-from-package-registries.md
+├── patterns/                          # Reusable evaluation frameworks
+│   ├── checks.md                      # Security checks we look for
+│   ├── evaluation-criteria.md         # Detailed criteria and gaps
+│   └── trust-signals.md               # What good looks like
 │
-└── conversations/              # Working notes and synthesis
+├── evaluations/                       # Legacy location (see datasets/)
+│   └── mcp-clients/claude-desktop/
+│
+└── research/                          # Background research
+    └── lessons-from-package-registries.md
 ```
+
+---
+
+## Datasets
+
+### mcp-marketplaces.csv
+
+Master list of MCP marketplaces with evaluation status:
+
+| Column | Description |
+|--------|-------------|
+| Marketplace Name | Official name |
+| Marketplace URL | Primary URL |
+| Source Code URL | GitHub/GitLab if available |
+| Is Marketplace | yes/no |
+| Is Aggregator | yes/no (lists servers from multiple sources) |
+| Is List Of Marketplaces | yes/no (meta-list) |
+| Evaluation Status | Comprehensive / Tier 1-2 / Stub / Blocked |
+
+**Current stats:** 40+ marketplaces cataloged
+
+### mcp-clients.csv
+
+Master list of MCP clients:
+
+| Column | Description |
+|--------|-------------|
+| MCP Client Name | Official name |
+| MCP Client Main URL | Primary URL |
+| MCP Client Source Code URL | GitHub/GitLab if available |
+| Listed In modelcontextprotocol.io | Yes/No |
+
+**Current stats:** 130+ clients tracked
+
+---
+
+## Evaluation Tiers
+
+### Marketplace Evaluations
+
+| Tier | Description | Checks |
+|------|-------------|--------|
+| **Tier 0** | Classification | Type, delivery model, source accessibility |
+| **Tier 1** | Automated/Observable | HTTPS, headers, DNS, policy endpoints, contact info |
+| **Tier 2** | Manual Investigation | Privacy policy, ToS, publisher verification, moderation |
+| **Tier 3** | Registry-Specific | 2FA, malware scanning, signing, provenance, isolation |
+
+### Evaluation Status
+
+| Status | Meaning |
+|--------|---------|
+| **Comprehensive** | Full Tier 0-3 evaluation with evidence |
+| **Tier 1-2 moderate** | Automated + some manual checks |
+| **Tier 1 basic** | Automated checks only |
+| **Stub** | Minimal frontmatter, needs evaluation |
+| **Blocked** | Site inaccessible (403, down, etc.) |
+
+---
+
+## Tools
+
+### tier1_audit.py
+
+Automated security checks for marketplaces:
+
+```bash
+python3 security-report/tools/tier1_audit.py https://example.com
+```
+
+**Checks performed:**
+- HTTPS and redirect chain
+- Security headers (HSTS, CSP, XFO, XCTO, Referrer-Policy, etc.)
+- TLS certificate details
+- DNS records and provider hints
+- Policy endpoints (/privacy, /terms, /security, etc.)
+- API endpoints (/api, /docs, /swagger, /openapi, etc.)
+- Mixed content detection
+- Social/contact link extraction
+
+**Output:** JSON to stdout
+
+---
+
+## Templates
+
+### Unified Marketplace Template
+
+`templates/marketplace-evaluation-unified-template.md`
+
+Single template serving three purposes:
+1. **Questionnaire** - Structured Q&A for community engagement
+2. **Report Format** - Final evaluation document
+3. **Audit Target** - Fields populated by tier1_audit.py
+
+**Sections:**
+1. Identity & Classification
+2. Discovery & Access
+3. Server Delivery Model
+4. Trust & Verification
+5. Policies & Legal
+6. Supply Chain Security
+7. Technical Security Posture
+8. Operator Transparency
+9. Security Incidents
+10. Delivery Method Security
+11. Evaluator Assessment
+
+### Outreach Template
+
+`templates/marketplace-evaluation-outreach-template.md`
+
+Email templates for contacting marketplace operators to verify findings before publication.
+
+---
 
 ## How to Contribute
 
-**Want to evaluate a marketplace or MCP client?**
+### Evaluate a Marketplace
 
-1. Use a template from `templates/`
-2. Submit a PR to `evaluations/`
+1. Check `datasets/mcp-marketplaces.csv` for status
+2. Read `prompts/marketplace-evaluation-prompt.md`
+3. Use `templates/marketplace-evaluation-unified-template.md`
+4. Run `tools/tier1_audit.py` for automated checks
+5. Create evaluation in `datasets/mcp-marketplace-dataset/`
+6. Update CSV with new evaluation status
+7. Submit PR
 
-**Think we're missing a security check?**
+### Evaluate an MCP Client
 
-Edit `patterns/checks.md` or file an issue.
+1. Check `datasets/mcp-clients.csv`
+2. Read `prompts/mcp-client-evaluation-prompt.md`
+3. Use `templates/mcp-client-evaluation.md`
+4. Create evaluation in `datasets/mcp-client-dataset/`
+5. Submit PR
 
-**Have feedback on the framework?**
+### Add a Missing Marketplace/Client
 
-File an issue to discuss.
+1. Add entry to appropriate CSV
+2. Create stub file in dataset directory
+3. Submit PR
+
+### Improve Evaluation Criteria
+
+1. Edit `patterns/checks.md` or `patterns/evaluation-criteria.md`
+2. Update templates if needed
+3. Submit PR
+
+---
 
 ## Completed Evaluations
 
-| Target | Type | Date | Link |
-|--------|------|------|------|
-| Claude Desktop | MCP Client | 2025-11-19 | [Evaluation](./evaluations/mcp-clients/claude-desktop/) |
+### Comprehensive Marketplace Evaluations
+
+| Marketplace | Type | Key Findings |
+|-------------|------|--------------|
+| [Smithery](datasets/mcp-marketplace-dataset/smithery-playground.md) | Registry/PaaS | Largest registry (3200+ servers), June 2025 path traversal vuln (fixed 48hrs), 5.2% secret leak rate |
+| [Docker MCP Catalog](datasets/mcp-marketplace-dataset/docker-mcp-catalog.md) | Curated Catalog | Signatures/provenance/SBOMs, PR review required, SECURITY.md present |
+| [MCP.so](datasets/mcp-marketplace-dataset/mcp.so.md) | Directory | Missing security headers, no ToS, ghost API endpoints |
+| [ToolHive](datasets/mcp-marketplace-dataset/toolhive-registry.md) | Registry | Container isolation, encrypted secrets, open source |
+
+### MCP Client Evaluations
+
+| Client | Date | Link |
+|--------|------|------|
+| Claude Desktop | 2025-11-19 | [Evaluation](./evaluations/mcp-clients/claude-desktop/) |
+
+---
 
 ## Related Documents
 
-- [Evaluation Criteria](./patterns/evaluation-criteria.md) - Detailed criteria and identified gaps
-- [Security Checks](./patterns/checks.md) - What we look for
+- [TODO.md](./TODO.md) - Long-term goals and roadmap
 - [Project Goals](./MCP-MARKETPLACE-SECURITY-EVAL-GOALS.md) - Full project objectives
+- [Evaluation Criteria](./patterns/evaluation-criteria.md) - Detailed criteria
+- [Security Checks](./patterns/checks.md) - What we look for
 - [Contributing Guidelines](./MCP-MARKETPLACE-SECURITY-EVAL-CONTRIBUTING.md) - How to participate
+
+---
+
+## License
+
+This security research is provided for informational purposes. Evaluations are based on publicly available information and are subject to change as marketplaces evolve.
