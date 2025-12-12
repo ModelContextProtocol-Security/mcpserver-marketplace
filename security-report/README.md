@@ -222,6 +222,27 @@ Email templates for contacting marketplace operators to verify findings before p
 
 ---
 
+## Evaluation Lifecycle
+
+This project uses a **two-AI model**: one AI creates evaluations, another AI validates them.
+
+```
+Discovery → Creation → Validation → Publication
+```
+
+| Phase | Description | Key Files |
+|-------|-------------|-----------|
+| **Discovery** | Find new marketplaces/clients | `prompts/mcp-marketplace-discovery-prompt.md` |
+| **Creation** | Produce initial evaluation | `prompts/marketplace-evaluation-prompt.md` |
+| **Validation** | Peer-review, catch errors | `prompts/marketplace-evaluation-validation-prompt.md` |
+| **Publication** | Finalize, contact operator | `templates/marketplace-evaluation-outreach-template.md` |
+
+**Why two AIs?** No single AI's output is accepted without verification. The validation step catches factual errors, omissions, and reduces bias. See [VALIDATION_GOALS.md](./VALIDATION_GOALS.md) for details.
+
+For the full workflow, see [prompts/README.md](./prompts/README.md).
+
+---
+
 ## How to Contribute
 
 ### Evaluate a Marketplace
@@ -231,8 +252,9 @@ Email templates for contacting marketplace operators to verify findings before p
 3. Use `templates/marketplace-evaluation-unified-template.md`
 4. Run `tools/tier1_audit.py` for automated checks
 5. Create evaluation in `evaluations/marketplaces/`
-6. Update CSV with new evaluation status
-7. Submit PR
+6. **Validate**: Have another AI review using `prompts/marketplace-evaluation-validation-prompt.md`
+7. Update CSV with new evaluation status
+8. Submit PR
 
 ### Evaluate an MCP Client
 
@@ -240,7 +262,8 @@ Email templates for contacting marketplace operators to verify findings before p
 2. Read `prompts/mcp-client-evaluation-prompt.md`
 3. Use `templates/mcp-client-evaluation.md`
 4. Create evaluation in `evaluations/clients/`
-5. Submit PR
+5. **Validate**: Have another AI review using `prompts/mcp-client-evaluation-validation-prompt.md`
+6. Submit PR
 
 ### Add a Missing Marketplace/Client
 
@@ -278,6 +301,7 @@ Email templates for contacting marketplace operators to verify findings before p
 ## Related Documents
 
 - [TODO.md](./TODO.md) - Long-term goals and roadmap
+- [VALIDATION_GOALS.md](./VALIDATION_GOALS.md) - Two-AI validation system
 - [Project Goals](./MCP-MARKETPLACE-SECURITY-EVAL-GOALS.md) - Full project objectives
 - [Evaluation Criteria](./patterns/evaluation-criteria.md) - Detailed criteria
 - [Security Checks](./patterns/checks.md) - What we look for
