@@ -223,6 +223,6 @@ Begin the evaluation now.
 
 For reference, see these completed evaluations:
 
-- `security-report/datasets/mcp-marketplace-dataset/smithery-playground.md` - Comprehensive (code-hosting/PaaS)
-- `security-report/datasets/mcp-marketplace-dataset/docker-mcp-catalog.md` - Comprehensive (curated catalog)
-- `security-report/datasets/mcp-marketplace-dataset/mcp.so.md` - Comprehensive (directory)
+- `security-report/evaluations/marketplaces/smithery-playground.md` - Comprehensive (code-hosting/PaaS)
+- `security-report/evaluations/marketplaces/docker-mcp-catalog.md` - Comprehensive (curated catalog)
+- `security-report/evaluations/marketplaces/mcp.so.md` - Comprehensive (directory)

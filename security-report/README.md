@@ -45,44 +45,51 @@ security-report/
 ├── TODO.md                            # Long-term goals and roadmap
 ├── MCP-MARKETPLACE-SECURITY-EVAL-*.md # Project governance docs
 │
-├── datasets/                          # Primary data and evaluations
-│   ├── mcp-marketplaces.csv           # Master list of 40+ marketplaces
-│   ├── mcp-clients.csv                # Master list of 130+ MCP clients
-│   │
-│   ├── mcp-marketplace-dataset/       # Individual marketplace evaluations
+├── working-data/                      # Development datasets (snapshot for reports)
+│   ├── mcp-marketplaces.csv           # Working list of 40+ marketplaces
+│   ├── mcp-clients.csv                # Working list of 130+ MCP clients
+│   ├── list-of-sources-*.md           # Data source documentation
+│   ├── scripts/                       # Data extraction scripts
+│   │   ├── extract_mcp_clients.py
+│   │   └── generate_marketplaces_from_csv.py
+│   └── sources/                       # Raw HTML captures for reproducibility
+│       └── [source files]
+│
+├── evaluations/                       # Security evaluation results
+│   ├── marketplaces/                  # 40+ marketplace evaluations
 │   │   ├── smithery-playground.md     # Comprehensive (code-hosting/PaaS)
 │   │   ├── docker-mcp-catalog.md      # Comprehensive (curated catalog)
 │   │   ├── mcp.so.md                  # Comprehensive (directory)
 │   │   └── [40+ more...]
-│   │
-│   ├── mcp-client-dataset/            # Individual client profiles
-│   │   └── [130+ client files]
-│   │
-│   └── [source HTML files]            # Raw data sources
-│
-├── templates/                         # Evaluation templates
-│   ├── marketplace-evaluation-unified-template.md  # Main template (questionnaire + report)
-│   ├── marketplace-evaluation-questionnaire.md     # Deprecated → use unified
-│   ├── marketplace-evaluation-outreach-template.md # Email templates for operators
-│   └── mcp-client-evaluation.md
+│   └── clients/                       # 130+ client evaluations
+│       ├── claude-desktop/            # Detailed evaluation
+│       └── [130+ client files]
 │
 ├── prompts/                           # AI evaluation prompts
 │   ├── marketplace-evaluation-prompt.md            # How to evaluate marketplaces
 │   ├── marketplace-evaluation-validation-prompt.md # How to peer-review evaluations
 │   ├── mcp-client-evaluation-prompt.md             # How to evaluate clients
-│   └── mcp-client-evaluation-validation-prompt.md  # How to peer-review client evals
+│   ├── mcp-client-evaluation-validation-prompt.md  # How to peer-review client evals
+│   ├── mcp-marketplace-discovery-prompt.md         # How to discover new marketplaces
+│   └── mcp-client-marketplace-detection-prompt.md  # Detect marketplace features in clients
+│
+├── templates/                         # Evaluation templates
+│   ├── marketplace-evaluation-unified-template.md  # Main template (questionnaire + report)
+│   ├── marketplace-evaluation-outreach-template.md # Email templates for operators
+│   └── mcp-client-evaluation.md
 │
 ├── tools/                             # Automated evaluation tools
 │   ├── tier1_audit.py                 # Security checks (headers, DNS, TLS, endpoints)
 │   └── batch_audit_marketplaces.py    # Batch processing
 │
+├── reports/                           # Published analysis reports
+│   ├── mcp-marketplaces-report.md     # Marketplace discovery snapshot
+│   └── mcp-client-marketplace-analysis-report.md  # Client marketplace features
+│
 ├── patterns/                          # Reusable evaluation frameworks
 │   ├── checks.md                      # Security checks we look for
 │   ├── evaluation-criteria.md         # Detailed criteria and gaps
 │   └── trust-signals.md               # What good looks like
-│
-├── evaluations/                       # Legacy location (see datasets/)
-│   └── mcp-clients/claude-desktop/
 │
 └── research/                          # Background research
     └── lessons-from-package-registries.md
@@ -90,11 +97,24 @@ security-report/
 
 ---
 
+## Working Data vs Stable Data
+
+This project uses a two-tier data model:
+
+| Location | Purpose | Status |
+|----------|---------|--------|
+| `security-report/working-data/` | Development datasets with evaluation status columns | Active development |
+| `../data/` (repo root) | Stable reference datasets | Synced when stable |
+
+The `working-data/` directory contains snapshots used for security reports. Once data is validated and complete, it will be synced to the root `data/` directory.
+
+---
+
 ## Datasets
 
 ### mcp-marketplaces.csv
 
-Master list of MCP marketplaces with evaluation status:
+Working list of MCP marketplaces with evaluation status:
 
 | Column | Description |
 |--------|-------------|
@@ -110,7 +130,7 @@ Master list of MCP marketplaces with evaluation status:
 
 ### mcp-clients.csv
 
-Master list of MCP clients:
+Working list of MCP clients:
 
 | Column | Description |
 |--------|-------------|
@@ -206,26 +226,26 @@ Email templates for contacting marketplace operators to verify findings before p
 
 ### Evaluate a Marketplace
 
-1. Check `datasets/mcp-marketplaces.csv` for status
+1. Check `working-data/mcp-marketplaces.csv` for status
 2. Read `prompts/marketplace-evaluation-prompt.md`
 3. Use `templates/marketplace-evaluation-unified-template.md`
 4. Run `tools/tier1_audit.py` for automated checks
-5. Create evaluation in `datasets/mcp-marketplace-dataset/`
+5. Create evaluation in `evaluations/marketplaces/`
 6. Update CSV with new evaluation status
 7. Submit PR
 
 ### Evaluate an MCP Client
 
-1. Check `datasets/mcp-clients.csv`
+1. Check `working-data/mcp-clients.csv`
 2. Read `prompts/mcp-client-evaluation-prompt.md`
 3. Use `templates/mcp-client-evaluation.md`
-4. Create evaluation in `datasets/mcp-client-dataset/`
+4. Create evaluation in `evaluations/clients/`
 5. Submit PR
 
 ### Add a Missing Marketplace/Client
 
-1. Add entry to appropriate CSV
-2. Create stub file in dataset directory
+1. Add entry to appropriate CSV in `working-data/`
+2. Create stub file in appropriate `evaluations/` subdirectory
 3. Submit PR
 
 ### Improve Evaluation Criteria
@@ -242,16 +262,16 @@ Email templates for contacting marketplace operators to verify findings before p
 
 | Marketplace | Type | Key Findings |
 |-------------|------|--------------|
-| [Smithery](datasets/mcp-marketplace-dataset/smithery-playground.md) | Registry/PaaS | Largest registry (3200+ servers), June 2025 path traversal vuln (fixed 48hrs), 5.2% secret leak rate |
-| [Docker MCP Catalog](datasets/mcp-marketplace-dataset/docker-mcp-catalog.md) | Curated Catalog | Signatures/provenance/SBOMs, PR review required, SECURITY.md present |
-| [MCP.so](datasets/mcp-marketplace-dataset/mcp.so.md) | Directory | Missing security headers, no ToS, ghost API endpoints |
-| [ToolHive](datasets/mcp-marketplace-dataset/toolhive-registry.md) | Registry | Container isolation, encrypted secrets, open source |
+| [Smithery](evaluations/marketplaces/smithery-playground.md) | Registry/PaaS | Largest registry (3200+ servers), June 2025 path traversal vuln (fixed 48hrs), 5.2% secret leak rate |
+| [Docker MCP Catalog](evaluations/marketplaces/docker-mcp-catalog.md) | Curated Catalog | Signatures/provenance/SBOMs, PR review required, SECURITY.md present |
+| [MCP.so](evaluations/marketplaces/mcp.so.md) | Directory | Missing security headers, no ToS, ghost API endpoints |
+| [ToolHive](evaluations/marketplaces/toolhive-registry.md) | Registry | Container isolation, encrypted secrets, open source |
 
 ### MCP Client Evaluations
 
 | Client | Date | Link |
 |--------|------|------|
-| Claude Desktop | 2025-11-19 | [Evaluation](./evaluations/mcp-clients/claude-desktop/) |
+| Claude Desktop | 2025-11-19 | [Evaluation](./evaluations/clients/claude-desktop/) |
 
 ---
 

@@ -44,8 +44,8 @@ For each candidate, capture the following fields:
 - confidence_note: short text
 
 ## Output Target
-- CSV row in `security-report/datasets/mcp-marketplaces.csv` with: Marketplace Name, Marketplace URL, Source Code URL, Is Marketplace, Is Aggregator, Is List Of Marketplaces
-- If additional metadata (language, features, security notes) is collected, record them in a per‑entry note in `security-report/datasets/list-of-sources-marketplaces.md` or a future per‑marketplace markdown file.
+- CSV row in `security-report/working-data/mcp-marketplaces.csv` with: Marketplace Name, Marketplace URL, Source Code URL, Is Marketplace, Is Aggregator, Is List Of Marketplaces
+- If additional metadata (language, features, security notes) is collected, record them in a per‑entry note in `security-report/working-data/list-of-sources-marketplaces.md` or a future per‑marketplace markdown file.
 
 ## Evidence Examples
 - "Title shows MCP Directory / Marketplace"
