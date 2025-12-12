@@ -1,6 +1,10 @@
 # MCP Marketplace Security Evaluation Questionnaire
 
-**Version**: 1.0 (Draft)
+> **DEPRECATED**: This file has been superseded by `marketplace-evaluation-unified-template.md`
+> which combines the questionnaire format with the report format and automated audit fields.
+> See that file for the current evaluation template.
+
+**Version**: 1.0 (Deprecated)
 **Purpose**: Structured evaluation of MCP server marketplaces, registries, and directories
 **Usage**: Internal evaluation + community engagement ("Please verify our findings")
 

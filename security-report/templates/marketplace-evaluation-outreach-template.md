@@ -48,12 +48,15 @@ publishing.
 - Goal: Help users evaluate marketplace security, not rank or shame
 - We welcome all corrections and will update our findings accordingly
 
-The attached questionnaire covers:
+The attached evaluation covers:
 - Basic identity and classification
+- Discovery and access methods
+- Server delivery model and security
 - Trust and verification processes
-- Privacy and security policies
+- Privacy, security, and legal policies
 - Supply chain security (if applicable)
-- Technical security posture
+- Technical security posture (automated checks)
+- Our assessment with strengths, weaknesses, and red flags
 
 Thank you for your time. We believe transparent security evaluation benefits
 the entire MCP ecosystem.
@@ -65,7 +68,7 @@ Best regards,
 
 ---
 
-Attached: [MARKETPLACE_NAME]-evaluation-questionnaire.md
+Attached: [MARKETPLACE_NAME]-evaluation.md (using our unified template)
 ```
 
 ---
