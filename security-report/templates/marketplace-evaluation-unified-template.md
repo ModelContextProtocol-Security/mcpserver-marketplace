@@ -41,6 +41,19 @@ evidence:
 
 [2-3 sentence summary: What is this marketplace, who operates it, what does it do]
 
+## Features Summary
+
+*Quick reference - details in Part 2*
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Discovery/search | | |
+| One-click install | | |
+| Curated list/recommendations | | |
+| Public API | | |
+| CLI tool | | |
+| Client integration | | |
+
 ---
 
 ## Part 1: Identity & Classification
@@ -167,6 +180,22 @@ evidence:
 | Distinguishes hosted vs local servers? | | |
 | Vendor-hosted servers found in search? | | |
 
+### 3.5 Vendor-Hosted Coverage Test
+
+*Methodology: Search for known vendor-hosted MCP server patterns*
+
+| Pattern Searched | Found? | Notes |
+|------------------|--------|-------|
+| mcp.vercel.com | | |
+| vercel + mcp | | |
+| cloudflare + mcp | | |
+| stripe + mcp | | |
+| linear + mcp | | |
+| huggingface.co/mcp | | |
+| [other vendor patterns] | | |
+
+**Test Result:** [Summary of vendor-hosted coverage]
+
 ---
 
 ## Part 4: Trust & Verification
@@ -217,6 +246,20 @@ evidence:
 | Analytics/tracking tools used | | |
 | Data retention policy? | | |
 | GDPR compliance claimed? | | |
+
+### 5.1.1 Third-Party Integrations Detected
+
+| Integration | Present? | Details |
+|-------------|----------|---------|
+| Google Analytics | | |
+| Google Tag Manager | | |
+| Google AdSense | | |
+| Google Fonts | | |
+| Cloudflare (CDN) | | |
+| Other CDN | | |
+| Social login providers | | |
+| Payment processors | | |
+| Other trackers | | |
 
 ### 5.2 Terms of Service
 
@@ -500,11 +543,35 @@ evidence:
 
 *Raw output from automated tools (for reproducibility):*
 
+### Testing Methodology
+
+**Automated checks performed:**
+- Command: `python3 security-report/tools/tier1_audit.py [URL]`
+- Date: [YYYY-MM-DD]
+- Tool version: [VERSION]
+
+**Manual checks performed:**
+- [List of manual investigations: privacy policy review, GitHub repo review, etc.]
+
 ### tier1_audit.py Output
 
 ```json
 [PASTE_RAW_JSON_OUTPUT_HERE]
 ```
+
+### Key Findings Summary
+
+| Category | Result |
+|----------|--------|
+| HTTP status | |
+| Provider hints | |
+| Security headers present | |
+| Security headers missing | |
+| Mixed content | |
+| Policy endpoints (200) | |
+| Policy endpoints (404) | |
+| API endpoints (200) | |
+| Social links detected | |
 
 ### Additional Evidence
 
