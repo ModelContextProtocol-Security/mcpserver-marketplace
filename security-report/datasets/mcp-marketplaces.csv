@@ -1,42 +1,42 @@
-Marketplace Name,Marketplace URL,Source Code URL,Is Marketplace,Is Aggregator,Is List Of Marketplaces
-MCP Registry,https://registry.modelcontextprotocol.io/docs#/operations/list-servers-v0.1,,no,no,no
-Registry Aggregators (Doc),https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/registry-aggregators.mdx,https://github.com/modelcontextprotocol/registry,no,no,no
-MCP Bench,https://mcpbench.ai,,yes,yes,no
-MCP Registry Database (Datasette),https://lite.datasette.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Frosmur%2Fofficial-mcp-registry-database%2Fmain%2Fofficial_mcp_registry.db#/official_mcp_registry/servers,https://github.com/rosmur/official-mcp-registry-database,yes,yes,no
-TeamSpark ToolCatalog (Registry),https://teamsparkai.github.io/ToolCatalog/registry,https://github.com/TeamSparkAI/ToolCatalog,yes,yes,no
-MCP.so,https://mcp.so,https://github.com/chatmcp/mcpso,yes,yes,no
-MCP Hub,https://mcphub.io,,yes,yes,no
-PulseMCP,https://www.pulsemcp.com,,yes,yes,no
-ToolSDK MCP Registry,https://toolsdk.ai,https://github.com/toolsdk-ai/toolsdk-mcp-registry,yes,yes,no
-Glama,https://glama.ai,,yes,yes,no
-mcp.run,https://mcp.run,,yes,yes,no
-MCP Market,https://mcpmarket.com,,yes,yes,no
-Smithery Playground,https://smithery.ai/playground,,yes,yes,no
-Composio,https://composio.dev,,yes,yes,no
-Claude Desktop Extensions Directory,https://www.anthropic.com/engineering/desktop-extensions,,yes,no,no
-Cline MCP Marketplace,https://cline.bot/mcp-marketplace,https://github.com/cline/mcp-marketplace,yes,no,no
-LobeChat MCP Marketplace,https://lobehub.com/mcp,https://github.com/lobehub/lobe-chat,yes,no,no
-XPack MCP Marketplace,https://github.com/xpack-ai/XPack-MCP-Marketplace,https://github.com/xpack-ai/XPack-MCP-Marketplace,yes,no,no
-MCP Jungle,https://github.com/mcpjungle/MCPJungle,https://github.com/mcpjungle/MCPJungle,yes,yes,no
-Storm MCP Marketplace,https://github.com/gorilli-team/storm,https://github.com/gorilli-team/storm,yes,yes,no
-aiagenta2z MCP Marketplace,https://github.com/aiagenta2z/mcp-marketplace,https://github.com/aiagenta2z/mcp-marketplace,yes,yes,no
-TP-Lab MCP Marketplace,https://github.com/TP-Lab/mcp-marketplace,https://github.com/TP-Lab/mcp-marketplace,yes,yes,no
-Nabhag8848 MCP Marketplace,https://github.com/Nabhag8848/mcp-marketplace,https://github.com/Nabhag8848/mcp-marketplace,yes,yes,no
-Awesome MCP Servers (appcypher),https://github.com/appcypher/awesome-mcp-servers,https://github.com/appcypher/awesome-mcp-servers,no,yes,no
-Awesome MCP Servers (wong2),https://github.com/wong2/awesome-mcp-servers,https://github.com/wong2/awesome-mcp-servers,no,yes,no
-Docker MCP Catalog,https://hub.docker.com/mcp,https://github.com/docker/mcp-registry,yes,yes,no
-Archestra Private MCP Registry,https://archestra.ai/docs/platform-private-registry,https://github.com/archestra-ai/archestra,yes,yes,no
-mcpm.sh Registry CLI,https://github.com/pathintegral-institute/mcpm.sh,https://github.com/pathintegral-institute/mcpm.sh,yes,yes,no
-Agentic Community MCP Gateway & Registry,https://github.com/agentic-community/mcp-gateway-registry,https://github.com/agentic-community/mcp-gateway-registry,yes,yes,no
-ToolHive Registry,https://toolhive.dev,https://github.com/stacklok/toolhive,yes,yes,no
-ToolHive Registry Server (API),https://github.com/stacklok/toolhive-registry-server,https://github.com/stacklok/toolhive-registry-server,yes,yes,no
-Community MCP Registry (ravitemer),https://github.com/ravitemer/mcp-registry,https://github.com/ravitemer/mcp-registry,yes,yes,no
-Langchain4j AIDeepin MCP Marketplace,http://www.aideepin.com,https://github.com/moyangzhan/langchain4j-aideepin,yes,yes,no
-langchain4j-aideepin (Web Client),https://github.com/moyangzhan/langchain4j-aideepin-web,https://github.com/moyangzhan/langchain4j-aideepin-web,yes,yes,no
-MCP Hub (KR) – ip99202/mcp_hub,https://github.com/ip99202/mcp_hub,https://github.com/ip99202/mcp_hub,yes,yes,no
-ShareMCP 导航,https://sharemcp.com/,https://github.com/ArcStellars/ShareMCP,yes,yes,no
-MCP Directory (AI),https://mcpdirectory.ai/,,yes,yes,no
-MCP Server Directory,https://mcpserverdirectory.org/,,yes,yes,no
-Cursor Directory – MCPs,https://cursor.directory/mcp,,yes,yes,no
-My Favorite MCP Directories (dev.to),https://dev.to/techgirl1908/my-favorite-mcp-directories-573n,,no,yes,yes
-MCP Directory (.io),https://mcpdirectory.io/,,yes,yes,no
+Marketplace Name,Marketplace URL,Source Code URL,Is Marketplace,Is Aggregator,Is List Of Marketplaces,Evaluation Status
+MCP Registry,https://registry.modelcontextprotocol.io/docs#/operations/list-servers-v0.1,,no,no,no,"Tier 1 basic - OpenAPI spec present, official API docs, minimal security analysis"
+Registry Aggregators (Doc),https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/registry-aggregators.mdx,https://github.com/modelcontextprotocol/registry,no,no,no,"Stub - documentation reference only, no security evaluation performed"
+MCP Bench,https://mcpbench.ai,,yes,yes,no,"Tier 1 basic - automated checks only, limited policy/contact info found"
+MCP Registry Database (Datasette),https://lite.datasette.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Frosmur%2Fofficial-mcp-registry-database%2Fmain%2Fofficial_mcp_registry.db#/official_mcp_registry/servers,https://github.com/rosmur/official-mcp-registry-database,yes,yes,no,"Tier 1 basic - database browser tool, GitHub-hosted source"
+TeamSpark ToolCatalog (Registry),https://teamsparkai.github.io/ToolCatalog/registry,https://github.com/TeamSparkAI/ToolCatalog,yes,yes,no,"Stub - GitHub Pages catalog, minimal security metadata"
+MCP.so,https://mcp.so,https://github.com/chatmcp/mcpso,yes,yes,no,"Comprehensive - Full Tier 1-3 evaluation with audit evidence, recommendations, red flags documented. Missing security headers, no ToS, ghost API endpoints noted"
+MCP Hub,https://mcphub.io,,yes,yes,no,"Tier 1 basic - Vercel/Cloudflare hosting verified, HSTS present, no policy pages at root"
+PulseMCP,https://www.pulsemcp.com,,yes,yes,no,"Tier 1-2 moderate - automated checks complete, privacy policy present, /api endpoint responds, good security headers"
+ToolSDK MCP Registry,https://toolsdk.ai,https://github.com/toolsdk-ai/toolsdk-mcp-registry,yes,yes,no,"Stub - minimal frontmatter, needs full evaluation"
+Glama,https://glama.ai,,yes,yes,no,"Tier 1-2 moderate - strong security headers (CSP/HSTS preload), client platform, many marketplace features unknown"
+mcp.run,https://mcp.run,,yes,yes,no,"Tier 1 moderate - Framer/Cloudflare hosting, redirects to www, many features unknown, needs deeper evaluation"
+MCP Market,https://mcpmarket.com,,yes,yes,no,"Blocked - site returns 403 for all paths, unable to evaluate (Dec 2025)"
+Smithery Playground,https://smithery.ai/playground,,yes,yes,no,"Comprehensive - Full Tier 0-3 evaluation. Dual delivery model (local + hosted). June 2025 path traversal vuln (fixed 48hrs). 5.2% secret leak rate. OAuth 2.1+PKCE. No SECURITY.md"
+Composio,https://composio.dev,,yes,yes,no,"Tier 1 moderate - Cloudflare hosting, privacy/terms present, /api responds, GitHub org linked"
+Claude Desktop Extensions Directory,https://www.anthropic.com/engineering/desktop-extensions,,yes,no,no,"Tier 1 moderate - strong headers (HSTS preload, CSP, XFO), official vendor-operated, links to anthropics/dxt"
+Cline MCP Marketplace,https://cline.bot/mcp-marketplace,https://github.com/cline/mcp-marketplace,yes,no,no,"Tier 1 moderate - Vercel hosting, privacy/tos/contact pages present, HSTS set, missing XFO/XCTO"
+LobeChat MCP Marketplace,https://lobehub.com/mcp,https://github.com/lobehub/lobe-chat,yes,no,no,"Tier 1 moderate - privacy/terms present, Cloudflare/Vercel, open source client, missing CSP/XFO"
+XPack MCP Marketplace,https://github.com/xpack-ai/XPack-MCP-Marketplace,https://github.com/xpack-ai/XPack-MCP-Marketplace,yes,no,no,"Stub - GitHub repo reference only, inherits GitHub security, needs repo content evaluation"
+MCP Jungle,https://github.com/mcpjungle/MCPJungle,https://github.com/mcpjungle/MCPJungle,yes,yes,no,"Tier 1 basic - GitHub repo, inherits platform security, needs registry feature evaluation"
+Storm MCP Marketplace,https://github.com/gorilli-team/storm,https://github.com/gorilli-team/storm,yes,yes,no,"Stub - GitHub repo reference only, minimal analysis"
+aiagenta2z MCP Marketplace,https://github.com/aiagenta2z/mcp-marketplace,https://github.com/aiagenta2z/mcp-marketplace,yes,yes,no,"Tier 1-2 moderate - GitHub repo with automated audit, inherits platform security headers"
+TP-Lab MCP Marketplace,https://github.com/TP-Lab/mcp-marketplace,https://github.com/TP-Lab/mcp-marketplace,yes,yes,no,"Stub - GitHub repo reference only, minimal analysis"
+Nabhag8848 MCP Marketplace,https://github.com/Nabhag8848/mcp-marketplace,https://github.com/Nabhag8848/mcp-marketplace,yes,yes,no,"Stub - GitHub repo reference only, minimal analysis"
+Awesome MCP Servers (appcypher),https://github.com/appcypher/awesome-mcp-servers,https://github.com/appcypher/awesome-mcp-servers,no,yes,no,"Tier 1 moderate - informational list, inherits GitHub security (HSTS/CSP/XFO), wide coverage"
+Awesome MCP Servers (wong2),https://github.com/wong2/awesome-mcp-servers,https://github.com/wong2/awesome-mcp-servers,no,yes,no,"Tier 1 moderate - informational list, inherits GitHub security (HSTS/CSP/XFO), community curated"
+Docker MCP Catalog,https://hub.docker.com/mcp,https://github.com/docker/mcp-registry,yes,yes,no,"Comprehensive - Full Tier 1-3 evaluation. Docker-built images include signatures/provenance/SBOMs. PR review required. SECURITY.md present. Strong headers (HSTS/XFO/XCTO)"
+Archestra Private MCP Registry,https://archestra.ai/docs/platform-private-registry,https://github.com/archestra-ai/archestra,yes,yes,no,"Tier 1-2 moderate - enterprise private registry, automated checks performed, needs deeper policy review"
+mcpm.sh Registry CLI,https://github.com/pathintegral-institute/mcpm.sh,https://github.com/pathintegral-institute/mcpm.sh,yes,yes,no,"Stub - CLI tool repo, GitHub-hosted, needs package/install security evaluation"
+Agentic Community MCP Gateway & Registry,https://github.com/agentic-community/mcp-gateway-registry,https://github.com/agentic-community/mcp-gateway-registry,yes,yes,no,"Tier 1 moderate - gateway/registry implementation, inherits GitHub security, reference codebase"
+ToolHive Registry,https://toolhive.dev,https://github.com/stacklok/toolhive,yes,yes,no,"Comprehensive - Full Tier 1-3 evaluation. Container isolation, encrypted secrets, SSE proxy. Stacklok operated. Open source. Missing HSTS/CSP at website"
+ToolHive Registry Server (API),https://github.com/stacklok/toolhive-registry-server,https://github.com/stacklok/toolhive-registry-server,yes,yes,no,"Tier 1 moderate - API server repo, inherits GitHub security, companion to ToolHive"
+Community MCP Registry (ravitemer),https://github.com/ravitemer/mcp-registry,https://github.com/ravitemer/mcp-registry,yes,yes,no,"Tier 1 moderate - community registry repo, inherits GitHub security, automated checks performed"
+Langchain4j AIDeepin MCP Marketplace,http://www.aideepin.com,https://github.com/moyangzhan/langchain4j-aideepin,yes,yes,no,"Tier 1 basic - Chinese marketplace, HTTP (not HTTPS) in URL - verify TLS. Needs language-specific evaluation"
+langchain4j-aideepin (Web Client),https://github.com/moyangzhan/langchain4j-aideepin-web,https://github.com/moyangzhan/langchain4j-aideepin-web,yes,yes,no,"Tier 1 basic - web client repo, inherits GitHub security"
+MCP Hub (KR) – ip99202/mcp_hub,https://github.com/ip99202/mcp_hub,https://github.com/ip99202/mcp_hub,yes,yes,no,"Tier 1 basic - Korean community hub, GitHub-hosted, automated checks done"
+ShareMCP 导航,https://sharemcp.com/,https://github.com/ArcStellars/ShareMCP,yes,yes,no,"Stub - Chinese navigation site, needs language-specific evaluation"
+MCP Directory (AI),https://mcpdirectory.ai/,,yes,yes,no,"Tier 1 basic - directory site, minimal automated checks, contact email found"
+MCP Server Directory,https://mcpserverdirectory.org/,,yes,yes,no,"Stub - needs full evaluation, minimal metadata captured"
+Cursor Directory – MCPs,https://cursor.directory/mcp,,yes,yes,no,"Tier 1 moderate - Cursor IDE marketplace section, automated checks performed"
+My Favorite MCP Directories (dev.to),https://dev.to/techgirl1908/my-favorite-mcp-directories-573n,,no,yes,yes,"Stub - blog post listing other directories, informational reference only"
+MCP Directory (.io),https://mcpdirectory.io/,,yes,yes,no,"Tier 1 basic - Vercel hosting, redirects to www, contact email found, needs www subdomain evaluation"
