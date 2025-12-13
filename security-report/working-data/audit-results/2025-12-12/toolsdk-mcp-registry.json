@@ -2,7 +2,7 @@
   "name": "ToolSDK MCP Registry",
   "marketplace_url": "https://toolsdk.ai",
   "source_url": "https://github.com/toolsdk-ai/toolsdk-mcp-registry",
-  "audited_at": "2025-12-13T04:45:16.825509Z",
+  "audited_at": "2025-12-13T04:58:11.736171Z",
   "checks_run": [
     "domain",
     "web",
@@ -31,8 +31,8 @@
         "eforward4.registrar-servers.com"
       ],
       "txt": [
-        "v=spf1 include:spf.efwd.registrar-servers.com ~all",
-        "google-site-verification=VlrvPiArJBwWZOig3sFJcqLkO8X11AEcPyBbmAYuB0I"
+        "google-site-verification=VlrvPiArJBwWZOig3sFJcqLkO8X11AEcPyBbmAYuB0I",
+        "v=spf1 include:spf.efwd.registrar-servers.com ~all"
       ]
     },
     "tls": {
@@ -70,7 +70,7 @@
       "headers": {
         "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
         "content-type": "text/html; charset=utf-8",
-        "date": "Sat, 13 Dec 2025 04:45:24 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:13 GMT",
         "link": "</_next/static/chunks/f492710c9655e256.css>; rel=preload; as=\"style\", </_next/static/chunks/df7f6499700dadfa.css>; rel=preload; as=\"style\"",
         "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
         "x-clerk-auth-reason": "session-token-and-uat-missing",
@@ -78,7 +78,7 @@
         "x-middleware-rewrite": "/",
         "x-powered-by": "Next.js"
       },
-      "response_time_ms": 548,
+      "response_time_ms": 543,
       "error": null
     },
     "security_headers": {
@@ -342,7 +342,7 @@
       "owner": "toolsdk-ai",
       "repo": "toolsdk-mcp-registry",
       "url": "https://github.com/toolsdk-ai/toolsdk-mcp-registry",
-      "is_org": false
+      "is_org": true
     },
     "security_files": {
       "security_md": false,
@@ -350,12 +350,12 @@
       "security_policy": false,
       "code_of_conduct": false,
       "contributing_md": true,
-      "license": null,
-      "license_url": null
+      "license": "MIT",
+      "license_url": "https://github.com/toolsdk-ai/toolsdk-mcp-registry/blob/main/LICENSE"
     },
     "org_verification": {
-      "is_org": false,
-      "org_name": null,
+      "is_org": true,
+      "org_name": "toolsdk.ai",
       "verified": false,
       "verified_domains": []
     },

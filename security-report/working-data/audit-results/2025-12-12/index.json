@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-13T04:46:55.817687Z",
+  "generated_at": "2025-12-13T04:59:42.774022Z",
   "csv_source": "mcp-marketplaces.csv",
   "total_marketplaces": 41,
   "successful": 41,
@@ -9,6 +9,47 @@
     {
       "name": "MCP Hub",
       "slug": "mcp-hub",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web"
+      ],
+      "errors": []
+    },
+    {
+      "name": "PulseMCP",
+      "slug": "pulsemcp",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web"
+      ],
+      "errors": []
+    },
+    {
+      "name": "TeamSpark ToolCatalog (Registry)",
+      "slug": "teamspark-toolcatalog-registry",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web",
+        "source_repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "mcp.run",
+      "slug": "mcprun",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web"
+      ],
+      "errors": []
+    },
+    {
+      "name": "Glama",
+      "slug": "glama",
       "success": true,
       "checks_run": [
         "domain",
@@ -37,16 +78,6 @@
       "errors": []
     },
     {
-      "name": "PulseMCP",
-      "slug": "pulsemcp",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web"
-      ],
-      "errors": []
-    },
-    {
       "name": "Registry Aggregators (Doc)",
       "slug": "registry-aggregators-doc",
       "success": true,
@@ -57,12 +88,13 @@
       "errors": []
     },
     {
-      "name": "Glama",
-      "slug": "glama",
+      "name": "MCP Registry Database (Datasette)",
+      "slug": "mcp-registry-database-datasette",
       "success": true,
       "checks_run": [
         "domain",
-        "web"
+        "web",
+        "source_repo"
       ],
       "errors": []
     },
@@ -88,38 +120,6 @@
       "errors": []
     },
     {
-      "name": "TeamSpark ToolCatalog (Registry)",
-      "slug": "teamspark-toolcatalog-registry",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web",
-        "source_repo"
-      ],
-      "errors": []
-    },
-    {
-      "name": "MCP Registry Database (Datasette)",
-      "slug": "mcp-registry-database-datasette",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web",
-        "source_repo"
-      ],
-      "errors": []
-    },
-    {
-      "name": "mcp.run",
-      "slug": "mcprun",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web"
-      ],
-      "errors": []
-    },
-    {
       "name": "MCP.so",
       "slug": "mcpso",
       "success": true,
@@ -131,12 +131,29 @@
       "errors": []
     },
     {
-      "name": "Composio",
-      "slug": "composio",
+      "name": "MCP Jungle",
+      "slug": "mcp-jungle",
       "success": true,
       "checks_run": [
-        "domain",
-        "web"
+        "repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "Storm MCP Marketplace",
+      "slug": "storm-mcp-marketplace",
+      "success": true,
+      "checks_run": [
+        "repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "XPack MCP Marketplace",
+      "slug": "xpack-mcp-marketplace",
+      "success": true,
+      "checks_run": [
+        "repo"
       ],
       "errors": []
     },
@@ -161,35 +178,18 @@
       "errors": []
     },
     {
-      "name": "XPack MCP Marketplace",
-      "slug": "xpack-mcp-marketplace",
+      "name": "Composio",
+      "slug": "composio",
       "success": true,
       "checks_run": [
-        "repo"
-      ],
-      "errors": []
-    },
-    {
-      "name": "Storm MCP Marketplace",
-      "slug": "storm-mcp-marketplace",
-      "success": true,
-      "checks_run": [
-        "repo"
+        "domain",
+        "web"
       ],
       "errors": []
     },
     {
       "name": "TP-Lab MCP Marketplace",
       "slug": "tp-lab-mcp-marketplace",
-      "success": true,
-      "checks_run": [
-        "repo"
-      ],
-      "errors": []
-    },
-    {
-      "name": "aiagenta2z MCP Marketplace",
-      "slug": "aiagenta2z-mcp-marketplace",
       "success": true,
       "checks_run": [
         "repo"
@@ -215,15 +215,6 @@
       "errors": []
     },
     {
-      "name": "mcpm.sh Registry CLI",
-      "slug": "mcpmsh-registry-cli",
-      "success": true,
-      "checks_run": [
-        "repo"
-      ],
-      "errors": []
-    },
-    {
       "name": "Awesome MCP Servers (wong2)",
       "slug": "awesome-mcp-servers-wong2",
       "success": true,
@@ -233,37 +224,8 @@
       "errors": []
     },
     {
-      "name": "MCP Jungle",
-      "slug": "mcp-jungle",
-      "success": true,
-      "checks_run": [
-        "repo"
-      ],
-      "errors": []
-    },
-    {
-      "name": "Agentic Community MCP Gateway & Registry",
-      "slug": "agentic-community-mcp-gateway-registry",
-      "success": true,
-      "checks_run": [
-        "repo"
-      ],
-      "errors": []
-    },
-    {
-      "name": "LobeChat MCP Marketplace",
-      "slug": "lobechat-mcp-marketplace",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web",
-        "source_repo"
-      ],
-      "errors": []
-    },
-    {
-      "name": "ToolHive Registry Server (API)",
-      "slug": "toolhive-registry-server-api",
+      "name": "mcpm.sh Registry CLI",
+      "slug": "mcpmsh-registry-cli",
       "success": true,
       "checks_run": [
         "repo"
@@ -273,6 +235,26 @@
     {
       "name": "Cline MCP Marketplace",
       "slug": "cline-mcp-marketplace",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web",
+        "source_repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "aiagenta2z MCP Marketplace",
+      "slug": "aiagenta2z-mcp-marketplace",
+      "success": true,
+      "checks_run": [
+        "repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "LobeChat MCP Marketplace",
+      "slug": "lobechat-mcp-marketplace",
       "success": true,
       "checks_run": [
         "domain",
@@ -300,11 +282,39 @@
       "errors": []
     },
     {
+      "name": "Agentic Community MCP Gateway & Registry",
+      "slug": "agentic-community-mcp-gateway-registry",
+      "success": true,
+      "checks_run": [
+        "repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "ToolHive Registry Server (API)",
+      "slug": "toolhive-registry-server-api",
+      "success": true,
+      "checks_run": [
+        "repo"
+      ],
+      "errors": []
+    },
+    {
       "name": "MCP Hub (KR) \u2013 ip99202/mcp_hub",
       "slug": "mcp-hub-kr-ip99202mcp_hub",
       "success": true,
       "checks_run": [
         "repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "Cursor Directory \u2013 MCPs",
+      "slug": "cursor-directory-mcps",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web"
       ],
       "errors": []
     },
@@ -315,17 +325,6 @@
       "checks_run": [
         "domain",
         "web"
-      ],
-      "errors": []
-    },
-    {
-      "name": "Archestra Private MCP Registry",
-      "slug": "archestra-private-mcp-registry",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web",
-        "source_repo"
       ],
       "errors": []
     },
@@ -341,6 +340,16 @@
       "errors": []
     },
     {
+      "name": "My Favorite MCP Directories (dev.to)",
+      "slug": "my-favorite-mcp-directories-devto",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web"
+      ],
+      "errors": []
+    },
+    {
       "name": "ToolHive Registry",
       "slug": "toolhive-registry",
       "success": true,
@@ -352,32 +361,13 @@
       "errors": []
     },
     {
-      "name": "MCP Directory (.io)",
-      "slug": "mcp-directory-io",
+      "name": "Archestra Private MCP Registry",
+      "slug": "archestra-private-mcp-registry",
       "success": true,
       "checks_run": [
         "domain",
-        "web"
-      ],
-      "errors": []
-    },
-    {
-      "name": "My Favorite MCP Directories (dev.to)",
-      "slug": "my-favorite-mcp-directories-devto",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web"
-      ],
-      "errors": []
-    },
-    {
-      "name": "Cursor Directory \u2013 MCPs",
-      "slug": "cursor-directory-mcps",
-      "success": true,
-      "checks_run": [
-        "domain",
-        "web"
+        "web",
+        "source_repo"
       ],
       "errors": []
     },
@@ -399,6 +389,16 @@
         "domain",
         "web",
         "source_repo"
+      ],
+      "errors": []
+    },
+    {
+      "name": "MCP Directory (.io)",
+      "slug": "mcp-directory-io",
+      "success": true,
+      "checks_run": [
+        "domain",
+        "web"
       ],
       "errors": []
     },

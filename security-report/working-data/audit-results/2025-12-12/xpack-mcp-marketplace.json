@@ -2,7 +2,7 @@
   "name": "XPack MCP Marketplace",
   "marketplace_url": "https://github.com/xpack-ai/XPack-MCP-Marketplace",
   "source_url": "https://github.com/xpack-ai/XPack-MCP-Marketplace",
-  "audited_at": "2025-12-13T04:45:53.941405Z",
+  "audited_at": "2025-12-13T04:58:38.271167Z",
   "checks_run": [
     "repo"
   ],
@@ -13,7 +13,7 @@
       "owner": "xpack-ai",
       "repo": "XPack-MCP-Marketplace",
       "url": "https://github.com/xpack-ai/XPack-MCP-Marketplace",
-      "is_org": true
+      "is_org": false
     },
     "security_files": {
       "security_md": false,
@@ -21,25 +21,25 @@
       "security_policy": false,
       "code_of_conduct": false,
       "contributing_md": false,
-      "license": "Apache-2.0",
-      "license_url": "https://github.com/xpack-ai/XPack-MCP-Marketplace/blob/main/LICENSE"
+      "license": null,
+      "license_url": null
     },
     "org_verification": {
-      "is_org": true,
-      "org_name": "XPack.AI",
+      "is_org": false,
+      "org_name": null,
       "verified": false,
       "verified_domains": []
     },
     "activity": {
-      "stars": 149,
-      "forks": 25,
+      "stars": 0,
+      "forks": 0,
       "watchers": 0,
-      "open_issues": 1,
+      "open_issues": 0,
       "open_prs": 0,
-      "last_commit": "2025-12-11T10:14:04Z",
-      "last_release": "2025-12-08T02:31:26Z",
-      "created_at": "2025-07-09T06:26:20Z",
-      "updated_at": "2025-12-12T03:37:33Z",
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
       "archived": false
     },
     "security_features": {

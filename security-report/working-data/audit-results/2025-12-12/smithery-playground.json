@@ -2,7 +2,7 @@
   "name": "Smithery Playground",
   "marketplace_url": "https://smithery.ai/playground",
   "source_url": "",
-  "audited_at": "2025-12-13T04:45:39.283692Z",
+  "audited_at": "2025-12-13T04:58:33.722256Z",
   "checks_run": [
     "domain",
     "web"
@@ -29,10 +29,10 @@
         "alt2.aspmx.l.google.com"
       ],
       "txt": [
+        "v=spf1 include:spf.messagingengine.com include:_spf.google.com ~all",
         "google-site-verification=2fdsij-hjDCyMv_816-Ed_BItLNCgPuTC8AE95wbjMk",
         "google-site-verification=XaD4FVv945UgyOCoAbvlH735PY_fXlAlJP7kLbtvBd0",
-        "v=MCPv1; k=ed25519; p=zPpyWzBnNrpfPzEEabL4e/ZeOy7ZDnG94bsmSXl+kYY=",
-        "v=spf1 include:spf.messagingengine.com include:_spf.google.com ~all"
+        "v=MCPv1; k=ed25519; p=zPpyWzBnNrpfPzEEabL4e/ZeOy7ZDnG94bsmSXl+kYY="
       ]
     },
     "tls": {
@@ -48,8 +48,8 @@
       "error": null
     },
     "provider_hints": [
-      "Google Workspace (MX)",
-      "Cloudflare (NS)"
+      "Cloudflare (NS)",
+      "Google Workspace (MX)"
     ],
     "reverse_dns": {
       "216.150.1.1": ""
@@ -73,12 +73,12 @@
       "headers": {
         "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
         "content-type": "text/html; charset=utf-8",
-        "date": "Sat, 13 Dec 2025 04:45:41 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:35 GMT",
         "location": "https://smithery.ai/signup?redirect=%2Fchat",
         "refresh": "0;url=/chat",
         "server": "Vercel",
         "strict-transport-security": "max-age=63072000",
-        "x-vercel-id": "pdx1::sfo1::tqgsh-1765601141057-65b3053fe9e4",
+        "x-vercel-id": "pdx1::sfo1::mxpfm-1765601915226-c65bdb972422",
         "age": "0",
         "link": "</_next/static/media/gt_pantheon_micro_medium-s.p.f530ffb4.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/gt_pantheon_micro_regular-s.p.65457f4e.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
         "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
@@ -86,7 +86,7 @@
         "x-powered-by": "Next.js",
         "x-vercel-cache": "MISS"
       },
-      "response_time_ms": 667,
+      "response_time_ms": 630,
       "error": null
     },
     "security_headers": {

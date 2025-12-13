@@ -2,7 +2,7 @@
   "name": "MCP Server Directory",
   "marketplace_url": "https://mcpserverdirectory.org/",
   "source_url": "",
-  "audited_at": "2025-12-13T04:46:28.285626Z",
+  "audited_at": "2025-12-13T04:59:12.782542Z",
   "checks_run": [
     "domain",
     "web"
@@ -61,7 +61,7 @@
         "age": "0",
         "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
         "content-type": "text/html; charset=utf-8",
-        "date": "Sat, 13 Dec 2025 04:46:30 GMT",
+        "date": "Sat, 13 Dec 2025 04:59:16 GMT",
         "link": "</_next/static/media/a34f9d1faa5f3315-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
         "referrer-policy": "origin-when-cross-origin",
         "server": "Vercel",
@@ -71,10 +71,10 @@
         "x-dns-prefetch-control": "on",
         "x-matched-path": "/",
         "x-vercel-cache": "MISS",
-        "x-vercel-id": "pdx1::iad1::9gznj-1765601189839-471064ca9a39",
+        "x-vercel-id": "pdx1::iad1::8dpxh-1765601955049-0280f33d2a29",
         "x-xss-protection": "1; mode=block"
       },
-      "response_time_ms": 1677,
+      "response_time_ms": 2649,
       "error": null
     },
     "security_headers": {

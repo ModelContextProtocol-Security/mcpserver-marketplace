@@ -2,7 +2,7 @@
   "name": "MCP Hub",
   "marketplace_url": "https://mcphub.io",
   "source_url": "",
-  "audited_at": "2025-12-13T04:45:16.821697Z",
+  "audited_at": "2025-12-13T04:58:11.735838Z",
   "checks_run": [
     "domain",
     "web"
@@ -17,8 +17,8 @@
         "172.67.218.211"
       ],
       "aaaa": [
-        "2606:4700:3034::ac43:dad3",
-        "2606:4700:3034::6815:4622"
+        "2606:4700:3034::6815:4622",
+        "2606:4700:3034::ac43:dad3"
       ],
       "cname": [],
       "ns": [
@@ -63,13 +63,13 @@
       ],
       "redirect_chain": [],
       "headers": {
-        "date": "Sat, 13 Dec 2025 04:45:23 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:13 GMT",
         "content-type": "text/html; charset=utf-8",
         "access-control-allow-origin": "*",
-        "age": "930164",
+        "age": "930933",
         "cache-control": "public, max-age=0, must-revalidate",
         "content-disposition": "inline",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=nh34EqpIlfuUov2sSNSlqa3R7NIfQ3H9nEQFE6RHRmRY%2BRyiM%2Flkq3qbEHFJxNBstgldY3YQs%2Bx0aAFu8Kb%2BW1LW9U0NeUE%3D\"}]}",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2BY108mve8D7lZrRH632RzY03gHkeELsasjUksuJT8daRq%2Fip3pgxyDUaTLmbgDzZuoykUGrGr%2FauwEz5dqv4aGZnY5RV9Lmkag%3D%3D\"}]}",
         "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
         "server": "cloudflare",
         "strict-transport-security": "max-age=63072000",
@@ -78,12 +78,12 @@
         "x-nextjs-prerender": "1",
         "x-nextjs-stale-time": "4294967294",
         "x-vercel-cache": "HIT",
-        "x-vercel-id": "pdx1::8jhgd-1765601123407-736b55a6aa9b",
+        "x-vercel-id": "pdx1::zzfrg-1765601893357-edbb2dd7f54c",
         "cf-cache-status": "DYNAMIC",
-        "cf-ray": "9ad2cfccd9337107-YVR",
+        "cf-ray": "9ad2e2993d3355d1-SEA",
         "alt-svc": "h3=\":443\"; ma=86400"
       },
-      "response_time_ms": 451,
+      "response_time_ms": 245,
       "error": null
     },
     "security_headers": {

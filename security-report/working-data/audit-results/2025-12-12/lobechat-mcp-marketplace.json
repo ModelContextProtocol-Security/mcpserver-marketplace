@@ -2,7 +2,7 @@
   "name": "LobeChat MCP Marketplace",
   "marketplace_url": "https://lobehub.com/mcp",
   "source_url": "https://github.com/lobehub/lobe-chat",
-  "audited_at": "2025-12-13T04:45:53.332519Z",
+  "audited_at": "2025-12-13T04:58:36.701962Z",
   "checks_run": [
     "domain",
     "web",
@@ -14,12 +14,12 @@
     "registrable_domain": "lobehub.com",
     "dns": {
       "a": [
-        "104.21.74.231",
-        "172.67.164.80"
+        "172.67.164.80",
+        "104.21.74.231"
       ],
       "aaaa": [
-        "2606:4700:3037::ac43:a450",
-        "2606:4700:3032::6815:4ae7"
+        "2606:4700:3032::6815:4ae7",
+        "2606:4700:3037::ac43:a450"
       ],
       "cname": [],
       "ns": [
@@ -27,9 +27,9 @@
         "blair.ns.cloudflare.com"
       ],
       "mx": [
+        "mx3.zoho.com",
         "mx2.zoho.com",
-        "mx.zoho.com",
-        "mx3.zoho.com"
+        "mx.zoho.com"
       ],
       "txt": [
         "google-site-verification=B0PO045qobCQJLZrZgasq6n7EvtKR2zLm9NtQ3d7PcI",
@@ -53,8 +53,8 @@
       "Cloudflare (NS)"
     ],
     "reverse_dns": {
-      "104.21.74.231": "",
-      "172.67.164.80": ""
+      "172.67.164.80": "",
+      "104.21.74.231": ""
     },
     "errors": []
   },
@@ -69,11 +69,11 @@
       ],
       "redirect_chain": [],
       "headers": {
-        "date": "Sat, 13 Dec 2025 04:45:56 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:39 GMT",
         "content-type": "text/html; charset=utf-8",
         "age": "0",
         "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=sivSmQM5d6I36wHV2UK%2B%2FTKpfvNHrUf8dL%2Bo%2FjaNE2xeUZVVJgLugKBeNwPbxqgGxEcLB4FujZGTM6Zhor5vs6eglZMRU7rmUw%3D%3D\"}]}",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=odeSQz2OggEPERGs9fhb%2FhoKGo30hVAh%2BEOdIilKBujX%2FcUTHU%2B3PniVJ6BpaBo44pJ3CU1EYEqGuzdtHUtkr0tgvNwJIjpBux2o\"}]}",
         "link": "</_next/static/media/logo.98482105.png>; rel=preload; as=\"image\", </_next/static/css/967104e9fd9cfb93.css>; rel=preload; as=\"style\"",
         "server": "cloudflare",
         "strict-transport-security": "max-age=63072000",
@@ -82,13 +82,13 @@
         "x-powered-by": "Next.js",
         "x-robots-tag": "all",
         "x-vercel-cache": "MISS",
-        "x-vercel-id": "pdx1::iad1::tqgsh-1765601155054-82fe2f805412",
+        "x-vercel-id": "pdx1::iad1::5xkb6-1765601917914-50caa8678127",
         "cf-cache-status": "DYNAMIC",
         "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "cf-ray": "9ad2d092bf9dd8fc-YVR",
+        "cf-ray": "9ad2e332eda276bc-SEA",
         "alt-svc": "h3=\":443\"; ma=86400"
       },
-      "response_time_ms": 1760,
+      "response_time_ms": 2129,
       "error": null
     },
     "security_headers": {

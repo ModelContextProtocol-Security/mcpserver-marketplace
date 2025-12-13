@@ -2,7 +2,7 @@
   "name": "mcpm.sh Registry CLI",
   "marketplace_url": "https://github.com/pathintegral-institute/mcpm.sh",
   "source_url": "https://github.com/pathintegral-institute/mcpm.sh",
-  "audited_at": "2025-12-13T04:46:08.504315Z",
+  "audited_at": "2025-12-13T04:58:56.533672Z",
   "checks_run": [
     "repo"
   ],

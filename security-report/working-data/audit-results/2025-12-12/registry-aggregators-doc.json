@@ -2,7 +2,7 @@
   "name": "Registry Aggregators (Doc)",
   "marketplace_url": "https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/registry-aggregators.mdx",
   "source_url": "https://github.com/modelcontextprotocol/registry",
-  "audited_at": "2025-12-13T04:45:16.818445Z",
+  "audited_at": "2025-12-13T04:58:11.730650Z",
   "checks_run": [
     "repo",
     "source_repo"
@@ -87,7 +87,7 @@
       "open_issues": 101,
       "open_prs": 1,
       "last_commit": "2025-12-12T22:38:26Z",
-      "last_release": "2025-11-18T08:19:35Z",
+      "last_release": null,
       "created_at": "2025-02-05T17:58:01Z",
       "updated_at": "2025-12-13T03:57:40Z",
       "archived": false
@@ -97,13 +97,10 @@
       "code_scanning_enabled": true,
       "secret_scanning_enabled": true,
       "branch_protection": false,
-      "signed_commits": true,
+      "signed_commits": false,
       "security_advisories": []
     },
-    "topics": [
-      "mcp",
-      "mcp-servers"
-    ],
+    "topics": [],
     "errors": []
   },
   "success": true

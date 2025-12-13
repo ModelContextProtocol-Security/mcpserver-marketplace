@@ -2,7 +2,7 @@
   "name": "MCP.so",
   "marketplace_url": "https://mcp.so",
   "source_url": "https://github.com/chatmcp/mcpso",
-  "audited_at": "2025-12-13T04:45:16.821375Z",
+  "audited_at": "2025-12-13T04:58:11.735085Z",
   "checks_run": [
     "domain",
     "web",
@@ -27,14 +27,14 @@
         "graham.ns.cloudflare.com"
       ],
       "mx": [
-        "mx2.feishu.cn",
         "mx1.feishu.cn",
-        "mx3.feishu.cn"
+        "mx3.feishu.cn",
+        "mx2.feishu.cn"
       ],
       "txt": [
-        "google-site-verification=GBasukejAO-ZRSCybWLG7j3JziDjl7quuys9HF3P0OE",
         "v=spf1 +include:_netblocks.m.feishu.cn -all",
-        "verification-code-site-App_feishu=qzkjAnxlebU7zRQgwGvp"
+        "verification-code-site-App_feishu=qzkjAnxlebU7zRQgwGvp",
+        "google-site-verification=GBasukejAO-ZRSCybWLG7j3JziDjl7quuys9HF3P0OE"
       ]
     },
     "tls": {
@@ -69,8 +69,9 @@
       ],
       "redirect_chain": [],
       "headers": {
-        "date": "Sat, 13 Dec 2025 04:45:27 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:14 GMT",
         "content-type": "text/html; charset=utf-8",
+        "cf-ray": "9ad2e2998d7223f4-YVR",
         "cache-control": "public, s-maxage=1800, stale-while-revalidate=7200",
         "link": "<https://mcp.so/>; rel=\"alternate\"; hreflang=\"en\", <https://mcp.so/zh>; rel=\"alternate\"; hreflang=\"zh\", <https://mcp.so/ja>; rel=\"alternate\"; hreflang=\"ja\", <https://mcp.so/>; rel=\"alternate\"; hreflang=\"x-default\"",
         "set-cookie": "NEXT_LOCALE=en; Path=/; SameSite=lax",
@@ -78,13 +79,13 @@
         "cdn-cache-control": "public, s-maxage=1800, stale-while-revalidate=7200",
         "cloudflare-cdn-cache-control": "public, s-maxage=1800, stale-while-revalidate=7200",
         "x-robots-tag": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=JshB4ebeQOn5cb%2Byn74%2BE3F%2FITxzJhqM3pfDm8mzkKM7sZXj1P8VCCD6WoRrCR8ERrUN%2BeDFzFCYE2uXtfCkjEJolmI%3D\"}]}",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=KIqpRygJf4XpFrGTsUQShAok5jY%2BJawhfgVVveMobiHwOLRQtCKcNNGYInNgyfvrjjJEZau8SZUrrrKcTpH4jZkwL0ylg6AG02ni8AyU21CgLTQN785%2FT0E%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
         "server": "cloudflare",
-        "cf-ray": "9ad2cfcf8b1dcb87-YVR",
-        "alt-svc": "h3=\":443\"; ma=86400"
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfL4;desc=\"?proto=TCP&rtt=442&min_rtt=428&rtt_var=130&sent=6&recv=9&lost=0&retrans=0&sent_bytes=2861&recv_bytes=553&delivery_rate=6596810&cwnd=252&unsent_bytes=0&cid=9e13b31817872a83&ts=1072&x=0\""
       },
-      "response_time_ms": 3977,
+      "response_time_ms": 1484,
       "error": null
     },
     "security_headers": {
@@ -411,16 +412,10 @@
       "code_scanning_enabled": true,
       "secret_scanning_enabled": true,
       "branch_protection": false,
-      "signed_commits": true,
+      "signed_commits": false,
       "security_advisories": []
     },
-    "topics": [
-      "mcp",
-      "mcp-servers",
-      "awesome-mcp-servers",
-      "mcp-server-store",
-      "mcp-servers-directory"
-    ],
+    "topics": [],
     "errors": []
   },
   "success": true

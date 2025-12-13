@@ -2,7 +2,7 @@
   "name": "ToolHive Registry",
   "marketplace_url": "https://toolhive.dev",
   "source_url": "https://github.com/stacklok/toolhive",
-  "audited_at": "2025-12-13T04:46:09.512906Z",
+  "audited_at": "2025-12-13T04:58:58.969216Z",
   "checks_run": [
     "domain",
     "web",
@@ -61,12 +61,12 @@
       ],
       "redirect_chain": [],
       "headers": {
-        "date": "Sat, 13 Dec 2025 04:46:11 GMT",
+        "date": "Sat, 13 Dec 2025 04:59:01 GMT",
         "content-type": "text/html; charset=UTF-8",
         "server": "cloudflare",
-        "cf-ray": "9ad2d0f69d0c0b14-YVR",
+        "cf-ray": "9ad2e3c45fb96816-SEA",
         "cf-cache-status": "HIT",
-        "age": "19353",
+        "age": "32371",
         "cache-control": "public, max-age=0, s-maxage=86400",
         "last-modified": "Fri, 12 Dec 2025 19:52:54 GMT",
         "vary": "Accept-Encoding",
@@ -78,12 +78,12 @@
         "ki-edge": "v=24.0.0;mv=5.0.18",
         "ki-origin": "",
         "x-kinsta-cache": "HIT",
-        "set-cookie": "__cf_bm=UfxwVis0P6NdRydpJKDDd9EP8M4XTPjuZZDC5CmSi4c-1765601171-1.0.1.1-5UhNHbcS7bEEzxLXLkVig2FWJGjuNmiO6IN971nnBcW.e8.DALwye_6S_QO7qZQiOhxX1vzGrWk_V64U_NQ4WOYlN05RjErSjXtpjddEeTY; path=/; expires=Sat, 13-Dec-25 05:16:11 GMT; domain=.toolhive.dev; HttpOnly; Secure; SameSite=None",
-        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=pNkd4kT5%2FQj5Y%2FhA6oLbXNCCkWm123p81Ekc0COWLwQ6l0E%2FId4HY5f8iIbpfR5%2Bh8A130I6sizqXVbBpSCBjTca26ZJCPxPW5x8ZkpuJx1BJFR1Szrqh8SRwGfFDA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "set-cookie": "__cf_bm=MBeK4eLUhBFGSqLb7wGgVyz4tGldcmuAzKaclyMQBmI-1765601941-1.0.1.1-OAsRard30IEK.9zN2NmvtNNAjDsNvvfi1opKWu72epPJydF7aDRRJGYpqsdGEHeGR9YhxOyuL0abp1J0rjGJ.PIwmZUQqC0Yl9y0oKitZwU; path=/; expires=Sat, 13-Dec-25 05:29:01 GMT; domain=.toolhive.dev; HttpOnly; Secure; SameSite=None",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=kjI6Kx56s81hDgJO2YnG73sXFdlMe7vO%2F8l1Pq%2BwafQQCpozmsSCtQENbSq8Q32eXdAHwuG3u4Lt0hk3%2B3Ir%2BylBo5vN9uqAMKPo4lmWggc1GZcmqV2Git0bgn8GWg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
         "nel": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}",
         "alt-svc": "h3=\":443\"; ma=86400"
       },
-      "response_time_ms": 431,
+      "response_time_ms": 1482,
       "error": null
     },
     "security_headers": {

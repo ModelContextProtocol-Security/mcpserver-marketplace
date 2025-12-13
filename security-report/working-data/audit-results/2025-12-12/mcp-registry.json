@@ -2,7 +2,7 @@
   "name": "MCP Registry",
   "marketplace_url": "https://registry.modelcontextprotocol.io/docs#/operations/list-servers-v0.1",
   "source_url": "",
-  "audited_at": "2025-12-13T04:45:16.821480Z",
+  "audited_at": "2025-12-13T04:58:11.730176Z",
   "checks_run": [
     "domain",
     "web"
@@ -28,10 +28,10 @@
         "smtp.google.com"
       ],
       "txt": [
+        "google-site-verification=0jJ1JQ6pdBjRe2r6UCzi2RJbsjvglJUmekPb5rpUQXQ",
         "google-site-verification=UI0Tjq-ecUgNu3kFATkW87qcabX6kTljsbYjms2-FdQ",
         "v=spf1 include:_spf.google.com ~all",
-        "czyymtp25a",
-        "google-site-verification=0jJ1JQ6pdBjRe2r6UCzi2RJbsjvglJUmekPb5rpUQXQ"
+        "czyymtp25a"
       ]
     },
     "tls": {
@@ -48,8 +48,8 @@
       "error": null
     },
     "provider_hints": [
-      "Google Workspace (MX)",
-      "Cloudflare (NS)"
+      "Cloudflare (NS)",
+      "Google Workspace (MX)"
     ],
     "reverse_dns": {
       "prod.registry.modelcontextprotocol.io.": "254.200.61.34.bc.googleusercontent.com",
@@ -68,13 +68,13 @@
       ],
       "redirect_chain": [],
       "headers": {
-        "date": "Sat, 13 Dec 2025 04:45:24 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:13 GMT",
         "content-type": "text/html",
         "content-length": "823",
         "vary": "Origin",
         "strict-transport-security": "max-age=31536000; includeSubDomains"
       },
-      "response_time_ms": 347,
+      "response_time_ms": 334,
       "error": null
     },
     "security_headers": {

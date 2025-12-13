@@ -2,7 +2,7 @@
   "name": "MCP Registry Database (Datasette)",
   "marketplace_url": "https://lite.datasette.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Frosmur%2Fofficial-mcp-registry-database%2Fmain%2Fofficial_mcp_registry.db#/official_mcp_registry/servers",
   "source_url": "https://github.com/rosmur/official-mcp-registry-database",
-  "audited_at": "2025-12-13T04:45:16.819459Z",
+  "audited_at": "2025-12-13T04:58:11.732876Z",
   "checks_run": [
     "domain",
     "web",
@@ -15,17 +15,17 @@
     "dns": {
       "a": [
         "simonw.github.io.",
-        "185.199.110.153",
-        "185.199.111.153",
         "185.199.108.153",
-        "185.199.109.153"
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
       ],
       "aaaa": [
         "simonw.github.io.",
-        "2606:50c0:8002::153",
-        "2606:50c0:8003::153",
         "2606:50c0:8000::153",
-        "2606:50c0:8001::153"
+        "2606:50c0:8001::153",
+        "2606:50c0:8002::153",
+        "2606:50c0:8003::153"
       ],
       "cname": [
         "simonw.github.io"
@@ -35,9 +35,9 @@
         "ns1.vercel-dns.com"
       ],
       "mx": [
-        "route3.mx.cloudflare.net",
         "route2.mx.cloudflare.net",
-        "route1.mx.cloudflare.net"
+        "route1.mx.cloudflare.net",
+        "route3.mx.cloudflare.net"
       ],
       "txt": [
         "google-site-verification=wHw15S1fkNOMzk42PEVK6XLnSG9qEfyq6paO8_G4IVU"
@@ -60,9 +60,9 @@
       "GitHub Pages (CNAME)"
     ],
     "reverse_dns": {
-      "simonw.github.io.": "cdn-185-199-109-153.github.com",
-      "185.199.110.153": "cdn-185-199-110-153.github.com",
-      "185.199.111.153": "cdn-185-199-111-153.github.com"
+      "simonw.github.io.": "cdn-185-199-111-153.github.com",
+      "185.199.108.153": "cdn-185-199-108-153.github.com",
+      "185.199.109.153": "cdn-185-199-109-153.github.com"
     },
     "errors": []
   },
@@ -88,17 +88,17 @@
         "x-github-request-id": "8B4A:12F5FE:19E5AF:1AAED3:693CEF63",
         "accept-ranges": "bytes",
         "age": "0",
-        "date": "Sat, 13 Dec 2025 04:45:25 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:13 GMT",
         "via": "1.1 varnish",
-        "x-served-by": "cache-bfi-krnt7300058-BFI",
-        "x-cache": "MISS",
+        "x-served-by": "cache-bfi-krnt7300082-BFI",
+        "x-cache": "HIT",
         "x-cache-hits": "0",
-        "x-timer": "S1765601126.800039,VS0,VE68",
+        "x-timer": "S1765601893.255637,VS0,VE89",
         "vary": "Accept-Encoding",
-        "x-fastly-request-id": "92e2245aa9ab9ce98001f80e58f166a3771d2394",
+        "x-fastly-request-id": "cf3be1048e30d8b42c91c29356aced6268a9779a",
         "content-length": "11147"
       },
-      "response_time_ms": 258,
+      "response_time_ms": 279,
       "error": null
     },
     "security_headers": {
@@ -305,7 +305,7 @@
       "watchers": 0,
       "open_issues": 0,
       "open_prs": 0,
-      "last_commit": "2025-12-13T00:20:44Z",
+      "last_commit": null,
       "last_release": null,
       "created_at": "2025-09-12T00:30:11Z",
       "updated_at": "2025-12-13T00:20:48Z",

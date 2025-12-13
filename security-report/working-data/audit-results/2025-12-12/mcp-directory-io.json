@@ -2,7 +2,7 @@
   "name": "MCP Directory (.io)",
   "marketplace_url": "https://mcpdirectory.io/",
   "source_url": "",
-  "audited_at": "2025-12-13T04:46:34.696239Z",
+  "audited_at": "2025-12-13T04:59:22.103849Z",
   "checks_run": [
     "domain",
     "web"
@@ -64,15 +64,15 @@
       "headers": {
         "cache-control": "public, max-age=0, must-revalidate",
         "content-type": "text/html; charset=utf-8",
-        "date": "Sat, 13 Dec 2025 04:46:37 GMT",
+        "date": "Sat, 13 Dec 2025 04:59:24 GMT",
         "location": "https://www.mcpdirectory.io/",
         "refresh": "0;url=https://www.mcpdirectory.io/",
         "server": "Vercel",
         "strict-transport-security": "max-age=63072000",
-        "x-vercel-id": "pdx1::9kkss-1765601197580-9b2e4d73b364",
+        "x-vercel-id": "pdx1::5qb2w-1765601964597-b25c7d878c07",
         "accept-ranges": "bytes",
         "access-control-allow-origin": "*",
-        "age": "1338422",
+        "age": "1339189",
         "content-disposition": "inline",
         "etag": "\"580f5c3adbbfe8a02c88fd1fa844565b\"",
         "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
@@ -82,7 +82,7 @@
         "x-vercel-cache": "HIT",
         "content-length": "21746"
       },
-      "response_time_ms": 883,
+      "response_time_ms": 610,
       "error": null
     },
     "security_headers": {

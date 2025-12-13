@@ -2,7 +2,7 @@
   "name": "PulseMCP",
   "marketplace_url": "https://www.pulsemcp.com",
   "source_url": "",
-  "audited_at": "2025-12-13T04:45:16.821900Z",
+  "audited_at": "2025-12-13T04:58:11.736083Z",
   "checks_run": [
     "domain",
     "web"
@@ -67,21 +67,21 @@
         "alt-svc": "h3=\":443\"; ma=2592000",
         "cache-control": "max-age=0, private, must-revalidate",
         "content-type": "text/html; charset=utf-8",
-        "date": "Sat, 13 Dec 2025 04:45:20 GMT",
-        "etag": "W/\"cea8289e04e88512f5812485bf397b1c\"",
+        "date": "Sat, 13 Dec 2025 04:58:13 GMT",
+        "etag": "W/\"8145e42302837efa9f796bb1338b857d\"",
         "link": "</assets/tailwind-f176ee988496ad3d24cc9d10766bd1597577da7a5314444a2263d954f2ba4422.css>; rel=preload; as=style; nopush,</assets/fonts-3081ff0998ece685a3fcf78c2df043c926883ad15b83f48a6d01a37c40bd8ec6.css>; rel=preload; as=style; nopush,</assets/application-4b52082300000b66c943ad80b18cf1b3782c8262094833b536c6801205905c2a.css>; rel=preload; as=style; nopush",
         "referrer-policy": "strict-origin-when-cross-origin",
-        "set-cookie": "mt=276023d0-4620-4711-aab0-daf39cfdd368; domain=.pulsemcp.com; path=/; expires=Wed, 13 Dec 2045 04:45:20 GMT; secure; samesite=lax\n_pulsemcp_session=cLE%2B3jDFuYf4rwyxaWUEQAnviBSOQOahpZXi8VXfJ69%2FbUgogxd5bHqldA3AIwMyb6b5ECc7dzfnp0lmv4095nptn6Z2f9KxxIILMDVux52c3sr4JGfhOKSr5lJNEAL7rG14giaZR24Qt5px79Ml9juMdM3MMF9ItLGRQ6PWwP6bPUb5S1ZGJnDkD4c1ZRtlIELs77%2FPIsv%2FERydpwNEsZGY%2FcvdnLtexLxVjQ6le5vDzDoEZY4VTzlHfFUeeTOHjgreDYzo3eLTH%2FZwAiiBTe4DmcFhRT%2BGeQ%3D%3D--5I2ViadktpNjSEo3--H94ecRdGQ6tZfgrwOcCGBA%3D%3D; domain=.pulsemcp.com; path=/; secure; httponly; samesite=lax",
+        "set-cookie": "mt=6fb3ead8-4bdb-4756-929c-c76b6dac76b8; domain=.pulsemcp.com; path=/; expires=Wed, 13 Dec 2045 04:58:13 GMT; secure; samesite=lax\n_pulsemcp_session=PcxhFn5BS%2FLYAbigQjTzVwYZePCiIJpnrRi2ccycjY8zpWPbvXMXIiF%2Fhl25ibFBhnEY%2BlsiB9f7Xy8zkfbASpWPrVqrNlKwaMlSRUf3fnt6F1rsAAowRD6lVvRAjaubZlzz%2BiedzW7%2FmPLNKC0ujO8LitK7a4w2kxdz381ABv%2FKPbLsDgUjMP9ayhKJaWmYHwK1g%2BwHBXzu4ZK9NcvebeYTqvuWffHmEyRCLmmyiYwqC%2BKqWV8L9YbKdqIYD93yVhJeL1CcDsbER3NU3HeWYWF8%2BH7LjYYrgA%3D%3D--9lSloiVc0aJtuJZK--%2B%2BIfKovrcyyX9r%2B1ZJH9HQ%3D%3D; domain=.pulsemcp.com; path=/; secure; httponly; samesite=lax",
         "strict-transport-security": "max-age=63072000; includeSubDomains",
         "vary": "Accept-Encoding",
         "x-content-type-options": "nosniff",
         "x-frame-options": "SAMEORIGIN",
         "x-permitted-cross-domain-policies": "none",
-        "x-request-id": "a7ba1068-317a-4174-8be4-935b24908228",
-        "x-runtime": "0.067177",
+        "x-request-id": "26b31d03-ac46-43cb-8661-b620e8b9307f",
+        "x-runtime": "0.063778",
         "x-xss-protection": "0"
       },
-      "response_time_ms": 429,
+      "response_time_ms": 420,
       "error": null
     },
     "security_headers": {

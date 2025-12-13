@@ -2,7 +2,7 @@
   "name": "TP-Lab MCP Marketplace",
   "marketplace_url": "https://github.com/TP-Lab/mcp-marketplace",
   "source_url": "https://github.com/TP-Lab/mcp-marketplace",
-  "audited_at": "2025-12-13T04:45:57.288808Z",
+  "audited_at": "2025-12-13T04:58:48.244568Z",
   "checks_run": [
     "repo"
   ],
@@ -13,7 +13,7 @@
       "owner": "TP-Lab",
       "repo": "mcp-marketplace",
       "url": "https://github.com/TP-Lab/mcp-marketplace",
-      "is_org": true
+      "is_org": false
     },
     "security_files": {
       "security_md": false,
@@ -25,21 +25,21 @@
       "license_url": null
     },
     "org_verification": {
-      "is_org": true,
-      "org_name": "TokenPocket Lab",
+      "is_org": false,
+      "org_name": null,
       "verified": false,
       "verified_domains": []
     },
     "activity": {
-      "stars": 5,
-      "forks": 2,
-      "watchers": 6,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
       "open_issues": 0,
       "open_prs": 0,
       "last_commit": null,
       "last_release": null,
-      "created_at": "2025-04-21T10:08:14Z",
-      "updated_at": "2025-05-10T07:23:40Z",
+      "created_at": null,
+      "updated_at": null,
       "archived": false
     },
     "security_features": {

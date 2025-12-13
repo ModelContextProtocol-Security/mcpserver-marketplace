@@ -2,7 +2,7 @@
   "name": "Cursor Directory \u2013 MCPs",
   "marketplace_url": "https://cursor.directory/mcp",
   "source_url": "",
-  "audited_at": "2025-12-13T04:46:28.710374Z",
+  "audited_at": "2025-12-13T04:59:12.880986Z",
   "checks_run": [
     "domain",
     "web"
@@ -58,7 +58,7 @@
       ],
       "redirect_chain": [],
       "headers": {
-        "age": "1947",
+        "age": "2711",
         "cache-control": "public, max-age=0, must-revalidate",
         "content-type": "text/html; charset=utf-8",
         "date": "Sat, 13 Dec 2025 04:14:03 GMT",
@@ -71,10 +71,10 @@
         "x-nextjs-stale-time": "300",
         "x-powered-by": "Next.js",
         "x-vercel-cache": "HIT",
-        "x-vercel-id": "pdx1::fra1::l86lx-1765601191270-73bb9a2a31f1",
+        "x-vercel-id": "pdx1::fra1::t8sg4-1765601955092-ea8749e9a779",
         "content-length": "87247"
       },
-      "response_time_ms": 351,
+      "response_time_ms": 353,
       "error": null
     },
     "security_headers": {

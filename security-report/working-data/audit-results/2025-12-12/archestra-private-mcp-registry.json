@@ -2,7 +2,7 @@
   "name": "Archestra Private MCP Registry",
   "marketplace_url": "https://archestra.ai/docs/platform-private-registry",
   "source_url": "https://github.com/archestra-ai/archestra",
-  "audited_at": "2025-12-13T04:46:07.511785Z",
+  "audited_at": "2025-12-13T04:58:56.361398Z",
   "checks_run": [
     "domain",
     "web",
@@ -47,8 +47,8 @@
       "error": null
     },
     "provider_hints": [
-      "Google Workspace (MX)",
-      "GoDaddy (NS)"
+      "GoDaddy (NS)",
+      "Google Workspace (MX)"
     ],
     "reverse_dns": {
       "216.150.1.193": ""
@@ -69,7 +69,7 @@
         "age": "0",
         "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
         "content-type": "text/html; charset=utf-8",
-        "date": "Sat, 13 Dec 2025 04:46:09 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:58 GMT",
         "link": "</_next/static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </docs/automated_screenshots/platform_mcp_registry.png>; rel=preload; as=\"image\"",
         "server": "Vercel",
         "strict-transport-security": "max-age=63072000",
@@ -77,9 +77,9 @@
         "x-matched-path": "/docs/[slug]",
         "x-powered-by": "Next.js",
         "x-vercel-cache": "MISS",
-        "x-vercel-id": "pdx1::iad1::tq42x-1765601168748-79e689f86467"
+        "x-vercel-id": "pdx1::iad1::r66qh-1765601937713-33515a1320d3"
       },
-      "response_time_ms": 1477,
+      "response_time_ms": 873,
       "error": null
     },
     "security_headers": {

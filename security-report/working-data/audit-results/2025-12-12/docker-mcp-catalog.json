@@ -2,7 +2,7 @@
   "name": "Docker MCP Catalog",
   "marketplace_url": "https://hub.docker.com/mcp",
   "source_url": "https://github.com/docker/mcp-registry",
-  "audited_at": "2025-12-13T04:46:05.317426Z",
+  "audited_at": "2025-12-13T04:58:55.482810Z",
   "checks_run": [
     "domain",
     "web",
@@ -55,8 +55,8 @@
       "error": null
     },
     "provider_hints": [
-      "Google Workspace (MX)",
       "Cloudflare (IP range)",
+      "Google Workspace (MX)",
       "AWS Route53 (NS)"
     ],
     "reverse_dns": {
@@ -77,16 +77,16 @@
       ],
       "redirect_chain": [],
       "headers": {
-        "date": "Sat, 13 Dec 2025 04:46:09 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:59 GMT",
         "content-type": "text/html; charset=utf-8",
-        "cf-ray": "9ad2d0eed8b058a4-YVR",
+        "cf-ray": "9ad2e3ba2be8a384-SEA",
         "x-ratelimit-limit": "180",
-        "x-ratelimit-reset": "1765601229",
+        "x-ratelimit-reset": "1765601999",
         "x-ratelimit-remaining": "180",
         "x-ratelimit-ip": "176.100.43.210",
-        "set-cookie": "dckr-sessid=ImlEN0Y1Z2V6U2h5dXVUZHY0SEV3eXci.v5ndcEZE1Lj1KyZ5b6xbygP9mGWcyWBOMAyqaNEU6Cs; Path=/; HttpOnly; Secure; SameSite=Lax\n__cf_bm=uc.sYmvg9W8_xntMBokFvyZ1GII1Zsp0soeB9B42X5w-1765601169-1.0.1.1-AmzwJx2lznT2ly0dpqCGZoId9iJ9qN6fM3ZtJhfyPha86taLORNygHDq90UxfFIHwSrpaJiSGGlGK7MS.E1cvIunqEzXpGzAIiB3wuBmt4Y; path=/; expires=Sat, 13-Dec-25 05:16:09 GMT; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None\n_cfuvid=fWY_orjnIU1oMFoReJGyKnnBP1ZojCG9Q_JZd7dLTl4-1765601169971-0.0.1.1-604800000; path=/; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None",
+        "set-cookie": "dckr-sessid=IkVjcmZBYTNZU0R5aHlIQWxJdjFJdHci.6snr1ssfdAhWChhkQKuFb5Psuu8uhLH4TSVtk%2BBPBVs; Path=/; HttpOnly; Secure; SameSite=Lax\n__cf_bm=TfexuL9.lDEZyo3h7RuNuMB_HIw3dgIkCy3jkMoSZuA-1765601939-1.0.1.1-JONR8X7Z8MhDy2hN5S.nSj0k8UZ9G0w6pFeIgNg1iJ6FE_QAcsv4SWPdrDAwGqM9lj79dsiIs9yU1NPZ3gfdROdd.M8zlPbjWrOMREsQpqo; path=/; expires=Sat, 13-Dec-25 05:28:59 GMT; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None\n_cfuvid=hbq44CCJyvtwewBJMazU60PQrTweliEvpgIWICrrG20-1765601939763-0.0.1.1-604800000; path=/; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None",
         "x-docker-app-version": "v7524",
-        "x-trace-id": "9389981046e17e4218f9e06d4d592cff",
+        "x-trace-id": "2c7eb9a80a04549e049386773b896870",
         "vary": "Accept-Encoding",
         "x-frame-options": "deny",
         "x-content-type-options": "nosniff",
@@ -95,7 +95,7 @@
         "cf-cache-status": "DYNAMIC",
         "server": "cloudflare"
       },
-      "response_time_ms": 675,
+      "response_time_ms": 680,
       "error": null
     },
     "security_headers": {

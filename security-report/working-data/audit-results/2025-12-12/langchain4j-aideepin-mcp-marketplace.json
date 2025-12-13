@@ -2,7 +2,7 @@
   "name": "Langchain4j AIDeepin MCP Marketplace",
   "marketplace_url": "http://www.aideepin.com",
   "source_url": "https://github.com/moyangzhan/langchain4j-aideepin",
-  "audited_at": "2025-12-13T04:46:17.331639Z",
+  "audited_at": "2025-12-13T04:59:04.524989Z",
   "checks_run": [
     "domain",
     "web",
@@ -60,7 +60,7 @@
       "redirect_chain": [],
       "headers": {
         "Server": "nginx/1.18.0 (Ubuntu)",
-        "Date": "Sat, 13 Dec 2025 04:46:24 GMT",
+        "Date": "Sat, 13 Dec 2025 04:59:09 GMT",
         "Content-Type": "text/html",
         "Content-Length": "1739",
         "Last-Modified": "Sat, 25 Oct 2025 01:24:14 GMT",
@@ -68,7 +68,7 @@
         "ETag": "\"68fc26be-6cb\"",
         "Accept-Ranges": "bytes"
       },
-      "response_time_ms": 456,
+      "response_time_ms": 436,
       "error": null
     },
     "security_headers": {

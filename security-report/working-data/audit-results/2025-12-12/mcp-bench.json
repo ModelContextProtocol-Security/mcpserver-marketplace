@@ -2,7 +2,7 @@
   "name": "MCP Bench",
   "marketplace_url": "https://mcpbench.ai",
   "source_url": "",
-  "audited_at": "2025-12-13T04:45:16.819292Z",
+  "audited_at": "2025-12-13T04:58:11.731937Z",
   "checks_run": [
     "domain",
     "web"
@@ -57,12 +57,12 @@
       "redirect_chain": [],
       "headers": {
         "server": "nginx/1.24.0 (Ubuntu)",
-        "date": "Sat, 13 Dec 2025 04:45:23 GMT",
+        "date": "Sat, 13 Dec 2025 04:58:13 GMT",
         "content-type": "text/html;charset=utf-8",
         "x-robots-tag": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
         "x-powered-by": "Nuxt"
       },
-      "response_time_ms": 538,
+      "response_time_ms": 498,
       "error": null
     },
     "security_headers": {
