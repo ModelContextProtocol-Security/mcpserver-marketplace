@@ -1,0 +1,320 @@
+{
+  "name": "Claude Desktop Extensions Directory",
+  "marketplace_url": "https://www.anthropic.com/engineering/desktop-extensions",
+  "source_url": "",
+  "audited_at": "2025-12-13T04:45:40.872987Z",
+  "checks_run": [
+    "domain",
+    "web"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "www.anthropic.com",
+    "registrable_domain": "anthropic.com",
+    "dns": {
+      "a": [
+        "160.79.104.10"
+      ],
+      "aaaa": [
+        "2607:6bc0::10"
+      ],
+      "cname": [],
+      "ns": [
+        "randy.ns.cloudflare.com",
+        "isla.ns.cloudflare.com"
+      ],
+      "mx": [
+        "alt1.aspmx.l.google.com",
+        "alt2.aspmx.l.google.com",
+        "aspmx.l.google.com",
+        "alt3.aspmx.l.google.com",
+        "alt4.aspmx.l.google.com"
+      ],
+      "txt": []
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Let's Encrypt, CN=E7",
+      "subject": "CN=www.anthropic.com",
+      "not_before": "Nov 14 16:29:01 2025 GMT",
+      "not_after": "Feb 12 16:29:00 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "www.anthropic.com"
+      ],
+      "error": null
+    },
+    "provider_hints": [
+      "Google Workspace (MX)",
+      "Cloudflare (NS)"
+    ],
+    "reverse_dns": {
+      "160.79.104.10": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://www.anthropic.com/engineering/desktop-extensions",
+    "http": {
+      "ok": true,
+      "final_url": "https://www.anthropic.com/engineering/desktop-extensions",
+      "status_code": 200,
+      "status_chain": [
+        "HTTP/2 200"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "date": "Sat, 13 Dec 2025 04:45:46 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "cloudflare",
+        "cf-ray": "9ad2d05b4e7f8450-YVR",
+        "cf-cache-status": "DYNAMIC",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "link": "</_next/static/media/AnthropicSans_Italic_Variable-s.p.dfc8e235.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/AnthropicSans_Roman_Variable-s.p.52cc3a10.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/AnthropicSerif_Italic_Variable-s.p.9d7ca5ec.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/AnthropicSerif_Roman_Variable-s.p.55835b1f.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/Copernicus_Book-s.p.f166c0ba.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/Copernicus_Medium-s.p.59728346.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/JetBrainsMono_VF-s.p.8dac7c36.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/ttf\", </_next/static/media/StyreneA_MediumItalic_Web-s.p.e9bc3c6e.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/StyreneA_Medium_Web-s.p.e5135f7e.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/StyreneA_RegularItalic_Web-s.p.7c6a646d.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/StyreneA_Regular_Web-s.p.429c699d.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/StyreneB_Medium_Web-s.p.88fa5a67.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/StyreneB_Regular_Web-s.p.cb3cc1a3.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/TiemposText_Medium-s.p.520d99f8.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/TiemposText_MediumItalic-s.p.10f44518.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/TiemposText_Regular-s.p.7f1d46d6.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\", </_next/static/media/TiemposText_RegularItalic-s.p.1a798fcf.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex\"; type=\"font/woff2\"",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "via": "1.1 google",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "content-security-policy": "script-src 'strict-dynamic' https: 'nonce-MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex'; style-src 'self' 'unsafe-inline' https://forms.hsforms.com; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; upgrade-insecure-requests; block-all-mixed-content",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "set-cookie": "__cf_bm=qLjjPXmmGJcqwOSVmRRyfsZVLRxbkt40X.t692gVODI-1765601146-1.0.1.1-Q2O_qiVDGK_1n_1p9Z_zgBXN6XBrTLXW2pV7ZFobxKPSS8QMbx4MCPMKhlQydhsmk5gK0bT1lpQq1Mv.OI7KPAunijGKbneieD26rCVemQk; path=/; expires=Sat, 13-Dec-25 05:15:46 GMT; domain=.anthropic.com; HttpOnly; Secure; SameSite=None"
+      },
+      "response_time_ms": 532,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": "max-age=63072000; includeSubDomains; preload",
+      "content_security_policy": "script-src 'strict-dynamic' https: 'nonce-MDQwOWIxZjYtNjU3Mi00MjM3LWJkYjQtODY4ZDA0MTYxY2Ex'; style-src 'self' 'unsafe-inline' https://forms.hsforms.com; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; upgrade-insecure-requests; block-all-mixed-content",
+      "x_frame_options": "SAMEORIGIN",
+      "x_content_type_options": "nosniff",
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "strict_transport_security",
+        "content_security_policy",
+        "x_frame_options",
+        "x_content_type_options"
+      ],
+      "_missing": [
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 307,
+        "redirect_to": "https://www.anthropic.com/legal/privacy"
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 307,
+        "redirect_to": "https://www.anthropic.com/legal/consumer-terms"
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 307,
+        "redirect_to": "https://www.anthropic.com/legal/consumer-terms"
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 307,
+        "redirect_to": "https://status.anthropic.com/"
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 301,
+        "redirect_to": "https://claude.com/platform/api"
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 307,
+        "redirect_to": "https://docs.anthropic.com/"
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 3,
+      "http_subresources_count": 1,
+      "samples": [
+        "http://console.anthropic.com/"
+      ]
+    },
+    "trackers": [],
+    "social_links": [
+      {
+        "type": "github",
+        "url": "https://github.com/anthropics/dxt/blob/main/MANIFEST.md"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/your-username/my-mcp-extension&quot"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/your-username/my-extension/issues&quot"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/anthropics/dxt/tree/main/examples"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/anthropics/dxt"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/anthropics/mcpb/blob/main/README.md"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/anthropics/mcpb/blob/main/MANIFEST.md"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/anthropics/mcpb/tree/main/examples"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/Baekalfen/PyBoy"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/your-username/my-mcp-extension"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/your-username/my-extension/issues"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/AnthropicAI"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/company/anthropicresearch"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/@anthropic-ai"
+      }
+    ],
+    "cookies": [
+      {
+        "name": "__cf_bm",
+        "secure": true,
+        "httponly": true,
+        "samesite": "none"
+      }
+    ],
+    "server_info": {
+      "server": "cloudflare",
+      "via": "1.1 google",
+      "cdn": "Cloudflare"
+    },
+    "errors": []
+  },
+  "success": true
+}

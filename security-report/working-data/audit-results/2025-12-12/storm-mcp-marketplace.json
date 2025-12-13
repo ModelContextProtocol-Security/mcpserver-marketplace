@@ -1,0 +1,57 @@
+{
+  "name": "Storm MCP Marketplace",
+  "marketplace_url": "https://github.com/gorilli-team/storm",
+  "source_url": "https://github.com/gorilli-team/storm",
+  "audited_at": "2025-12-13T04:45:54.200575Z",
+  "checks_run": [
+    "repo"
+  ],
+  "errors": [],
+  "repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "gorilli-team",
+      "repo": "storm",
+      "url": "https://github.com/gorilli-team/storm",
+      "is_org": true
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": "MIT",
+      "license_url": "https://github.com/gorilli-team/storm/blob/main/LICENSE"
+    },
+    "org_verification": {
+      "is_org": true,
+      "org_name": "Gorilli",
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 4,
+      "forks": 0,
+      "watchers": 3,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": "2025-04-14T09:50:20Z",
+      "last_release": null,
+      "created_at": "2025-04-01T21:58:12Z",
+      "updated_at": "2025-05-09T13:05:07Z",
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

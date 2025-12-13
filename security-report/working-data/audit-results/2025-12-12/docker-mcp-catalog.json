@@ -1,0 +1,425 @@
+{
+  "name": "Docker MCP Catalog",
+  "marketplace_url": "https://hub.docker.com/mcp",
+  "source_url": "https://github.com/docker/mcp-registry",
+  "audited_at": "2025-12-13T04:46:05.317426Z",
+  "checks_run": [
+    "domain",
+    "web",
+    "source_repo"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "hub.docker.com",
+    "registrable_domain": "docker.com",
+    "dns": {
+      "a": [
+        "hub.docker.com.cdn.cloudflare.net.",
+        "104.18.43.187",
+        "172.64.144.69"
+      ],
+      "aaaa": [
+        "hub.docker.com.cdn.cloudflare.net.",
+        "2606:4700:4409::ac40:9045",
+        "2606:4700:440c::6812:2bbb"
+      ],
+      "cname": [
+        "hub.docker.com.cdn.cloudflare.net"
+      ],
+      "ns": [
+        "ns-1289.awsdns-33.org",
+        "ns-1981.awsdns-55.co.uk",
+        "ns-207.awsdns-25.com",
+        "ns-568.awsdns-07.net"
+      ],
+      "mx": [
+        "alt1.aspmx.l.google.com",
+        "alt2.aspmx.l.google.com",
+        "aspmx.l.google.com",
+        "alt3.aspmx.l.google.com",
+        "alt4.aspmx.l.google.com"
+      ],
+      "txt": []
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Let's Encrypt, CN=E7",
+      "subject": "CN=hub.docker.com",
+      "not_before": "Nov 12 20:55:39 2025 GMT",
+      "not_after": "Feb 10 20:55:38 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "*.hub.docker.com",
+        "hub.docker.com"
+      ],
+      "error": null
+    },
+    "provider_hints": [
+      "Google Workspace (MX)",
+      "Cloudflare (IP range)",
+      "AWS Route53 (NS)"
+    ],
+    "reverse_dns": {
+      "hub.docker.com.cdn.cloudflare.net.": "",
+      "104.18.43.187": "",
+      "172.64.144.69": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://hub.docker.com/mcp",
+    "http": {
+      "ok": true,
+      "final_url": "https://hub.docker.com/mcp",
+      "status_code": 200,
+      "status_chain": [
+        "HTTP/2 200"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "date": "Sat, 13 Dec 2025 04:46:09 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "9ad2d0eed8b058a4-YVR",
+        "x-ratelimit-limit": "180",
+        "x-ratelimit-reset": "1765601229",
+        "x-ratelimit-remaining": "180",
+        "x-ratelimit-ip": "176.100.43.210",
+        "set-cookie": "dckr-sessid=ImlEN0Y1Z2V6U2h5dXVUZHY0SEV3eXci.v5ndcEZE1Lj1KyZ5b6xbygP9mGWcyWBOMAyqaNEU6Cs; Path=/; HttpOnly; Secure; SameSite=Lax\n__cf_bm=uc.sYmvg9W8_xntMBokFvyZ1GII1Zsp0soeB9B42X5w-1765601169-1.0.1.1-AmzwJx2lznT2ly0dpqCGZoId9iJ9qN6fM3ZtJhfyPha86taLORNygHDq90UxfFIHwSrpaJiSGGlGK7MS.E1cvIunqEzXpGzAIiB3wuBmt4Y; path=/; expires=Sat, 13-Dec-25 05:16:09 GMT; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None\n_cfuvid=fWY_orjnIU1oMFoReJGyKnnBP1ZojCG9Q_JZd7dLTl4-1765601169971-0.0.1.1-604800000; path=/; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None",
+        "x-docker-app-version": "v7524",
+        "x-trace-id": "9389981046e17e4218f9e06d4d592cff",
+        "vary": "Accept-Encoding",
+        "x-frame-options": "deny",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1; mode=block",
+        "strict-transport-security": "max-age=31536000",
+        "cf-cache-status": "DYNAMIC",
+        "server": "cloudflare"
+      },
+      "response_time_ms": 675,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": "max-age=31536000",
+      "content_security_policy": null,
+      "x_frame_options": "deny",
+      "x_content_type_options": "nosniff",
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "strict_transport_security",
+        "x_frame_options",
+        "x_content_type_options"
+      ],
+      "_missing": [
+        "content_security_policy",
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 403,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 49,
+      "http_subresources_count": 0,
+      "samples": [
+        "http://desktop.docker.com/mcp/catalog/v2/readme/aws-core-mcp-server.md\\",
+        "http://desktop.docker.com/mcp/catalog/v2/tools/aws-core-mcp-server.json\\",
+        "http://desktop.docker.com/mcp/catalog/v2/readme/brave.md\\",
+        "http://desktop.docker.com/mcp/catalog/v2/tools/brave.json\\",
+        "http://desktop.docker.com/mcp/catalog/v2/readme/context7.md\\"
+      ]
+    },
+    "trackers": [
+      {
+        "name": "Google Tag Manager",
+        "type": "analytics",
+        "evidence": "GTM-WL2QLG5"
+      }
+    ],
+    "social_links": [
+      {
+        "type": "github",
+        "url": "https://github.com/docker/mcp-registry/blob/main/CONTRIBUTING.md"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/awslabs/mcp/tree/666202ec3c13ac2ca9f9490b80c6eb19d25a8b10/src/core-mcp-server"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/awslabs/mcp"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/brave/brave-search-mcp-server/tree/42138c5f768c1a2e2ca5801e52d45ba0868d6c49"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/brave/brave-search-mcp-server"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/brave/brave-search-mcp-server?tab=readme-ov-file#getting-an-api-key"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/upstash/context7/tree/d2083b92a79ec02579e75e2fac6548c057b8c0a8"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/upstash/context7"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/Couchbase-Ecosystem/mcp-server-couchbase/tree/5aa2c1ab63977bf967c309e5d3ee7eca0a69baf8"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/Couchbase-Ecosystem/mcp-server-couchbase"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP/tree/6b3b7e58b0110d26718229cf4211c80eafb31d5e"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/docker/hub-mcp/tree/2ff4b20e40bba93c8002ff8aa4fb10f66c95943a"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/docker/hub-mcp"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/elastic/mcp-server-elasticsearch/tree/b2912b2ba544060962c7fabf38eb36cc940e9098"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/elastic/mcp-server-elasticsearch"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/github/github-mcp-server/tree/23fa0dd1a821d1346c1de2abafe7327d26981606"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/github/github-mcp-server"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/settings/personal-access-tokens/new"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/grafana/mcp-grafana/tree/5ff432c30928e5cf93d419f194be73058e3a83c3"
+      }
+    ],
+    "cookies": [
+      {
+        "name": "dckr-sessid",
+        "secure": true,
+        "httponly": true,
+        "samesite": "lax"
+      },
+      {
+        "name": "__cf_bm",
+        "secure": true,
+        "httponly": true,
+        "samesite": "none"
+      },
+      {
+        "name": "_cfuvid",
+        "secure": true,
+        "httponly": true,
+        "samesite": "none"
+      }
+    ],
+    "server_info": {
+      "server": "cloudflare",
+      "cdn": "Cloudflare"
+    },
+    "errors": []
+  },
+  "source_repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "docker",
+      "repo": "mcp-registry",
+      "url": "https://github.com/docker/mcp-registry",
+      "is_org": false
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": false,
+      "org_name": null,
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

@@ -1,0 +1,259 @@
+{
+  "name": "Smithery Playground",
+  "marketplace_url": "https://smithery.ai/playground",
+  "source_url": "",
+  "audited_at": "2025-12-13T04:45:39.283692Z",
+  "checks_run": [
+    "domain",
+    "web"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "smithery.ai",
+    "registrable_domain": "smithery.ai",
+    "dns": {
+      "a": [
+        "216.150.1.1"
+      ],
+      "aaaa": [],
+      "cname": [],
+      "ns": [
+        "iris.ns.cloudflare.com",
+        "walt.ns.cloudflare.com"
+      ],
+      "mx": [
+        "aspmx.l.google.com",
+        "alt3.aspmx.l.google.com",
+        "alt4.aspmx.l.google.com",
+        "alt1.aspmx.l.google.com",
+        "alt2.aspmx.l.google.com"
+      ],
+      "txt": [
+        "google-site-verification=2fdsij-hjDCyMv_816-Ed_BItLNCgPuTC8AE95wbjMk",
+        "google-site-verification=XaD4FVv945UgyOCoAbvlH735PY_fXlAlJP7kLbtvBd0",
+        "v=MCPv1; k=ed25519; p=zPpyWzBnNrpfPzEEabL4e/ZeOy7ZDnG94bsmSXl+kYY=",
+        "v=spf1 include:spf.messagingengine.com include:_spf.google.com ~all"
+      ]
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Let's Encrypt, CN=R12",
+      "subject": "CN=smithery.ai",
+      "not_before": "Oct 23 19:16:59 2025 GMT",
+      "not_after": "Jan 21 19:16:58 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "smithery.ai"
+      ],
+      "error": null
+    },
+    "provider_hints": [
+      "Google Workspace (MX)",
+      "Cloudflare (NS)"
+    ],
+    "reverse_dns": {
+      "216.150.1.1": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://smithery.ai/playground",
+    "http": {
+      "ok": true,
+      "final_url": "https://smithery.ai/signup?redirect=%2Fchat",
+      "status_code": 308,
+      "status_chain": [
+        "HTTP/2 308"
+      ],
+      "redirect_chain": [
+        "/chat/",
+        "/chat",
+        "https://smithery.ai/signup?redirect=%2Fchat"
+      ],
+      "headers": {
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 13 Dec 2025 04:45:41 GMT",
+        "location": "https://smithery.ai/signup?redirect=%2Fchat",
+        "refresh": "0;url=/chat",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "pdx1::sfo1::tqgsh-1765601141057-65b3053fe9e4",
+        "age": "0",
+        "link": "</_next/static/media/gt_pantheon_micro_medium-s.p.f530ffb4.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/gt_pantheon_micro_regular-s.p.65457f4e.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/signup",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS"
+      },
+      "response_time_ms": 667,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": "max-age=63072000",
+      "content_security_policy": null,
+      "x_frame_options": null,
+      "x_content_type_options": null,
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "strict_transport_security"
+      ],
+      "_missing": [
+        "content_security_policy",
+        "x_frame_options",
+        "x_content_type_options",
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 0,
+      "http_subresources_count": 0,
+      "samples": []
+    },
+    "trackers": [],
+    "social_links": [],
+    "cookies": [],
+    "server_info": {
+      "server": "Vercel",
+      "powered_by": "Next.js",
+      "cdn": "Vercel"
+    },
+    "errors": []
+  },
+  "success": true
+}

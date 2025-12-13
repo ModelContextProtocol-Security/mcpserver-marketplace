@@ -1,0 +1,363 @@
+{
+  "name": "ToolHive Registry",
+  "marketplace_url": "https://toolhive.dev",
+  "source_url": "https://github.com/stacklok/toolhive",
+  "audited_at": "2025-12-13T04:46:09.512906Z",
+  "checks_run": [
+    "domain",
+    "web",
+    "source_repo"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "toolhive.dev",
+    "registrable_domain": "toolhive.dev",
+    "dns": {
+      "a": [
+        "162.159.134.42"
+      ],
+      "aaaa": [],
+      "cname": [],
+      "ns": [
+        "ns-1953.awsdns-52.co.uk",
+        "ns-602.awsdns-11.net",
+        "ns-1258.awsdns-29.org",
+        "ns-138.awsdns-17.com"
+      ],
+      "mx": [],
+      "txt": [
+        "_cf-custom-hostname - 6c53ab68-293b-4c10-a0dc-1fc16da15cdb"
+      ]
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Let's Encrypt, CN=E8",
+      "subject": "CN=toolhive.dev",
+      "not_before": "Dec  1 03:25:26 2025 GMT",
+      "not_after": "Mar  1 03:25:25 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "*.toolhive.dev",
+        "toolhive.dev"
+      ],
+      "error": null
+    },
+    "provider_hints": [
+      "AWS Route53 (NS)"
+    ],
+    "reverse_dns": {
+      "162.159.134.42": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://toolhive.dev",
+    "http": {
+      "ok": true,
+      "final_url": "https://toolhive.dev",
+      "status_code": 200,
+      "status_chain": [
+        "HTTP/2 200"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "date": "Sat, 13 Dec 2025 04:46:11 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "cloudflare",
+        "cf-ray": "9ad2d0f69d0c0b14-YVR",
+        "cf-cache-status": "HIT",
+        "age": "19353",
+        "cache-control": "public, max-age=0, s-maxage=86400",
+        "last-modified": "Fri, 12 Dec 2025 19:52:54 GMT",
+        "vary": "Accept-Encoding",
+        "ki-cf-cache-status": "HIT",
+        "x-content-type-options": "nosniff",
+        "x-edge-location-klb": "1",
+        "ki-cache-tag": "ea715eaf-130f-42aa-8d18-c70cc290f594,4bdd6d92c0e4db60af9f7fa4251688c56d019ddc7ad77d4ff4e436398c60e3da",
+        "ki-cache-type": "Edge",
+        "ki-edge": "v=24.0.0;mv=5.0.18",
+        "ki-origin": "",
+        "x-kinsta-cache": "HIT",
+        "set-cookie": "__cf_bm=UfxwVis0P6NdRydpJKDDd9EP8M4XTPjuZZDC5CmSi4c-1765601171-1.0.1.1-5UhNHbcS7bEEzxLXLkVig2FWJGjuNmiO6IN971nnBcW.e8.DALwye_6S_QO7qZQiOhxX1vzGrWk_V64U_NQ4WOYlN05RjErSjXtpjddEeTY; path=/; expires=Sat, 13-Dec-25 05:16:11 GMT; domain=.toolhive.dev; HttpOnly; Secure; SameSite=None",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=pNkd4kT5%2FQj5Y%2FhA6oLbXNCCkWm123p81Ekc0COWLwQ6l0E%2FId4HY5f8iIbpfR5%2Bh8A130I6sizqXVbBpSCBjTca26ZJCPxPW5x8ZkpuJx1BJFR1Szrqh8SRwGfFDA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "nel": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "response_time_ms": 431,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": null,
+      "content_security_policy": null,
+      "x_frame_options": null,
+      "x_content_type_options": "nosniff",
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "x_content_type_options"
+      ],
+      "_missing": [
+        "strict_transport_security",
+        "content_security_policy",
+        "x_frame_options",
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 301,
+        "redirect_to": "https://toolhive.dev/sitemaps.xml"
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 403,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 403,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 0,
+      "http_subresources_count": 0,
+      "samples": []
+    },
+    "trackers": [
+      {
+        "name": "Google Tag Manager",
+        "type": "analytics",
+        "evidence": "gtm.js"
+      }
+    ],
+    "social_links": [
+      {
+        "type": "github",
+        "url": "https://github.com/stacklok/toolhive-studio/releases/download/v0.14.1/ToolHive-arm64.dmg"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/stacklok/toolhive-studio/releases/download/v0.14.1/ToolHive-x64.dmg"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/stacklok/toolhive-studio/releases/download/v0.14.1/ToolHive.Setup.exe"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/stacklok/toolhive-studio/releases/download/v0.14.1/toolhive_0.14.1_amd64.deb"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/stacklok/toolhive-studio/releases/download/v0.14.1/ToolHive-0.14.1-1.x86_64.rpm"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/stacklok/toolhive"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/stacklok"
+      },
+      {
+        "type": "discord",
+        "url": "https://discord.gg/stacklok"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/stacklokhq"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/company/stacklok/"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/@Stacklok"
+      },
+      {
+        "type": "email",
+        "url": "mailto:hello@stacklok.com"
+      }
+    ],
+    "cookies": [
+      {
+        "name": "__cf_bm",
+        "secure": true,
+        "httponly": true,
+        "samesite": "none"
+      }
+    ],
+    "server_info": {
+      "server": "cloudflare",
+      "cdn": "Cloudflare"
+    },
+    "errors": []
+  },
+  "source_repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "stacklok",
+      "repo": "toolhive",
+      "url": "https://github.com/stacklok/toolhive",
+      "is_org": false
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": false,
+      "org_name": null,
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

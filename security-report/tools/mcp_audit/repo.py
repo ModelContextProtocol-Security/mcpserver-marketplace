@@ -147,13 +147,21 @@ def _parse_repo_url(url: str) -> Optional[RepoInfo]:
 
 
 def _github_api(endpoint: str, token: Optional[str] = None) -> tuple[int, dict]:
-    """Make a GitHub API request."""
-    headers = "Accept: application/vnd.github.v3+json"
-    if token:
-        headers += f"\nAuthorization: token {token}"
+    """Make a GitHub API request.
 
-    cmd = f'curl -sS -H "{headers}" "https://api.github.com{endpoint}"'
-    code, out, err = _run(cmd, timeout=15)
+    Uses separate -H flags to avoid malformed headers and includes a User-Agent.
+    """
+    header_values = [
+        "Accept: application/vnd.github+json",
+        "X-GitHub-Api-Version: 2022-11-28",
+        "User-Agent: mcp-audit",
+    ]
+    if token:
+        header_values.append(f"Authorization: token {token}")
+
+    header_flags = " ".join(f"-H {shlex.quote(h)}" for h in header_values)
+    cmd = f"curl -sS {header_flags} {shlex.quote(f'https://api.github.com{endpoint}')}"
+    code, out, err = _run(cmd, timeout=20)
 
     if code != 0:
         return code, {"error": err}

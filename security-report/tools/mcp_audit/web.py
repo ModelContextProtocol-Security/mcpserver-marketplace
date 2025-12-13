@@ -155,6 +155,21 @@ def _http_request(url: str, method: str = "GET", follow_redirects: bool = True) 
         result.error = err or "Request failed"
         return result
 
+    # Extract and remove curl timing marker if present
+    # We use a leading newline in the marker, so find from the end.
+    timing_marker = "\n__TIME__:"
+    if timing_marker in out:
+        try:
+            idx = out.rfind(timing_marker)
+            timing_str = out[idx + len(timing_marker):].strip()
+            # Some curl builds may append additional info; parse up to first whitespace
+            timing_val = timing_str.split()[0]
+            result.response_time_ms = int(float(timing_val) * 1000)
+            out = out[:idx]
+        except Exception:
+            # If parsing fails, continue without response_time_ms
+            pass
+
     # Parse response
     result.ok = True
     headers = {}
@@ -194,7 +209,11 @@ def _http_request(url: str, method: str = "GET", follow_redirects: bool = True) 
                 key, value = line.split(":", 1)
                 key = key.strip()
                 value = value.strip()
-                headers[key] = value
+                # Preserve multiple Set-Cookie headers by concatenating with newlines
+                if key.lower() == "set-cookie" and key in headers:
+                    headers[key] = f"{headers[key]}\n{value}"
+                else:
+                    headers[key] = value
 
                 # Track redirects
                 if key.lower() == "location":
@@ -459,34 +478,37 @@ def _parse_cookies(headers: dict[str, str]) -> list[CookieInfo]:
     # Look for Set-Cookie headers (may be multiple)
     for key, value in headers.items():
         if key.lower() == "set-cookie":
-            # Parse cookie string
-            parts = value.split(";")
-            if not parts:
-                continue
+            # Support multiple Set-Cookie headers concatenated with newlines
+            all_cookie_lines = value.split("\n") if value else []
+            for cookie_line in all_cookie_lines:
+                if not cookie_line:
+                    continue
+                parts = cookie_line.split(";")
+                if not parts:
+                    continue
+                # First part is name=value
+                name_value = parts[0].strip()
+                name = name_value.split("=")[0] if "=" in name_value else name_value
 
-            # First part is name=value
-            name_value = parts[0].strip()
-            name = name_value.split("=")[0] if "=" in name_value else name_value
+                secure = False
+                httponly = False
+                samesite = None
 
-            secure = False
-            httponly = False
-            samesite = None
+                for part in parts[1:]:
+                    part = part.strip().lower()
+                    if part == "secure":
+                        secure = True
+                    elif part == "httponly":
+                        httponly = True
+                    elif part.startswith("samesite="):
+                        samesite = part.split("=", 1)[1]
 
-            for part in parts[1:]:
-                part = part.strip().lower()
-                if part == "secure":
-                    secure = True
-                elif part == "httponly":
-                    httponly = True
-                elif part.startswith("samesite="):
-                    samesite = part.split("=")[1]
-
-            cookies.append(CookieInfo(
-                name=name,
-                secure=secure,
-                httponly=httponly,
-                samesite=samesite,
-            ))
+                cookies.append(CookieInfo(
+                    name=name,
+                    secure=secure,
+                    httponly=httponly,
+                    samesite=samesite,
+                ))
 
     return cookies
 

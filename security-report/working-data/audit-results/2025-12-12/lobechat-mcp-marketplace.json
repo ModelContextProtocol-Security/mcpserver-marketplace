@@ -1,0 +1,399 @@
+{
+  "name": "LobeChat MCP Marketplace",
+  "marketplace_url": "https://lobehub.com/mcp",
+  "source_url": "https://github.com/lobehub/lobe-chat",
+  "audited_at": "2025-12-13T04:45:53.332519Z",
+  "checks_run": [
+    "domain",
+    "web",
+    "source_repo"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "lobehub.com",
+    "registrable_domain": "lobehub.com",
+    "dns": {
+      "a": [
+        "104.21.74.231",
+        "172.67.164.80"
+      ],
+      "aaaa": [
+        "2606:4700:3037::ac43:a450",
+        "2606:4700:3032::6815:4ae7"
+      ],
+      "cname": [],
+      "ns": [
+        "kianchau.ns.cloudflare.com",
+        "blair.ns.cloudflare.com"
+      ],
+      "mx": [
+        "mx2.zoho.com",
+        "mx.zoho.com",
+        "mx3.zoho.com"
+      ],
+      "txt": [
+        "google-site-verification=B0PO045qobCQJLZrZgasq6n7EvtKR2zLm9NtQ3d7PcI",
+        "v=spf1 include:zoho.com ~all"
+      ]
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Google Trust Services, CN=WE1",
+      "subject": "CN=lobehub.com",
+      "not_before": "Nov  3 13:27:04 2025 GMT",
+      "not_after": "Feb  1 14:27:02 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "lobehub.com",
+        "market.lobehub.com"
+      ],
+      "error": null
+    },
+    "provider_hints": [
+      "Cloudflare (NS)"
+    ],
+    "reverse_dns": {
+      "104.21.74.231": "",
+      "172.67.164.80": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://lobehub.com/mcp",
+    "http": {
+      "ok": true,
+      "final_url": "https://lobehub.com/mcp",
+      "status_code": 200,
+      "status_chain": [
+        "HTTP/2 200"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "date": "Sat, 13 Dec 2025 04:45:56 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=sivSmQM5d6I36wHV2UK%2B%2FTKpfvNHrUf8dL%2Bo%2FjaNE2xeUZVVJgLugKBeNwPbxqgGxEcLB4FujZGTM6Zhor5vs6eglZMRU7rmUw%3D%3D\"}]}",
+        "link": "</_next/static/media/logo.98482105.png>; rel=preload; as=\"image\", </_next/static/css/967104e9fd9cfb93.css>; rel=preload; as=\"style\"",
+        "server": "cloudflare",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "accept-encoding",
+        "x-matched-path": "/[variants]/[locale]/mcp",
+        "x-powered-by": "Next.js",
+        "x-robots-tag": "all",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "pdx1::iad1::tqgsh-1765601155054-82fe2f805412",
+        "cf-cache-status": "DYNAMIC",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "cf-ray": "9ad2d092bf9dd8fc-YVR",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "response_time_ms": 1760,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": "max-age=63072000",
+      "content_security_policy": null,
+      "x_frame_options": null,
+      "x_content_type_options": null,
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "strict_transport_security"
+      ],
+      "_missing": [
+        "content_security_policy",
+        "x_frame_options",
+        "x_content_type_options",
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 308,
+        "redirect_to": "https://lobehub.com/sitemap-index.xml"
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 308,
+        "redirect_to": "https://lobehub.com/docs/usage/start"
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 0,
+      "http_subresources_count": 0,
+      "samples": []
+    },
+    "trackers": [
+      {
+        "name": "Google Analytics",
+        "type": "analytics",
+        "evidence": "gtag"
+      },
+      {
+        "name": "Google Tag Manager",
+        "type": "analytics",
+        "evidence": "googletagmanager.com"
+      }
+    ],
+    "social_links": [
+      {
+        "type": "github",
+        "url": "https://github.com/lobehub"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/lobehub/lobe-chat"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/arvinxx"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/microsoft.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/microsoft/playwright-mcp"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/upstash.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/upstash/context7"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/vercel"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/tavily-ai.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/tavily-ai/tavily-mcp"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/ahujasid.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/ahujasid/blender-mcp"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/mendableai.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/mendableai/firecrawl-mcp-server"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/crystaldba.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/crystaldba/postgres-mcp"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/antvis.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/antvis/mcp-server-chart"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/21st-dev.png"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/21st-dev/magic-mcp"
+      }
+    ],
+    "cookies": [],
+    "server_info": {
+      "server": "cloudflare",
+      "powered_by": "Next.js",
+      "cdn": "Cloudflare"
+    },
+    "errors": []
+  },
+  "source_repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "lobehub",
+      "repo": "lobe-chat",
+      "url": "https://github.com/lobehub/lobe-chat",
+      "is_org": false
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": false,
+      "org_name": null,
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

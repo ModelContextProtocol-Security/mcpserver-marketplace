@@ -1,0 +1,57 @@
+{
+  "name": "aiagenta2z MCP Marketplace",
+  "marketplace_url": "https://github.com/aiagenta2z/mcp-marketplace",
+  "source_url": "https://github.com/aiagenta2z/mcp-marketplace",
+  "audited_at": "2025-12-13T04:45:54.228848Z",
+  "checks_run": [
+    "repo"
+  ],
+  "errors": [],
+  "repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "aiagenta2z",
+      "repo": "mcp-marketplace",
+      "url": "https://github.com/aiagenta2z/mcp-marketplace",
+      "is_org": true
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": true,
+      "org_name": "AI Agent A2Z",
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 2,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": "2025-12-03T12:14:30Z",
+      "last_release": null,
+      "created_at": "2025-11-06T03:46:15Z",
+      "updated_at": "2025-12-03T12:14:47Z",
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

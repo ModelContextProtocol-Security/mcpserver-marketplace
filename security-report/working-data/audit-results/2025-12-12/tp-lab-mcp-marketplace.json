@@ -1,0 +1,57 @@
+{
+  "name": "TP-Lab MCP Marketplace",
+  "marketplace_url": "https://github.com/TP-Lab/mcp-marketplace",
+  "source_url": "https://github.com/TP-Lab/mcp-marketplace",
+  "audited_at": "2025-12-13T04:45:57.288808Z",
+  "checks_run": [
+    "repo"
+  ],
+  "errors": [],
+  "repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "TP-Lab",
+      "repo": "mcp-marketplace",
+      "url": "https://github.com/TP-Lab/mcp-marketplace",
+      "is_org": true
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": true,
+      "org_name": "TokenPocket Lab",
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 5,
+      "forks": 2,
+      "watchers": 6,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": "2025-04-21T10:08:14Z",
+      "updated_at": "2025-05-10T07:23:40Z",
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

@@ -1,0 +1,387 @@
+{
+  "name": "Archestra Private MCP Registry",
+  "marketplace_url": "https://archestra.ai/docs/platform-private-registry",
+  "source_url": "https://github.com/archestra-ai/archestra",
+  "audited_at": "2025-12-13T04:46:07.511785Z",
+  "checks_run": [
+    "domain",
+    "web",
+    "source_repo"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "archestra.ai",
+    "registrable_domain": "archestra.ai",
+    "dns": {
+      "a": [
+        "216.150.1.193"
+      ],
+      "aaaa": [],
+      "cname": [],
+      "ns": [
+        "ns09.domaincontrol.com",
+        "ns10.domaincontrol.com"
+      ],
+      "mx": [
+        "aspmx.l.google.com",
+        "alt1.aspmx.l.google.com",
+        "alt2.aspmx.l.google.com",
+        "alt3.aspmx.l.google.com",
+        "alt4.aspmx.l.google.com"
+      ],
+      "txt": [
+        "v=spf1 include:dc-aa8e722993._spfm.archestra.ai ~all",
+        "google-site-verification=IL6Xho5IVg5wcvxAIdptq_YZ4TOfLQqwXD3iAasn5CE"
+      ]
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Let's Encrypt, CN=R12",
+      "subject": "CN=archestra.ai",
+      "not_before": "Dec 12 22:01:26 2025 GMT",
+      "not_after": "Mar 12 22:01:25 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "archestra.ai"
+      ],
+      "error": null
+    },
+    "provider_hints": [
+      "Google Workspace (MX)",
+      "GoDaddy (NS)"
+    ],
+    "reverse_dns": {
+      "216.150.1.193": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://archestra.ai/docs/platform-private-registry",
+    "http": {
+      "ok": true,
+      "final_url": "https://archestra.ai/docs/platform-private-registry",
+      "status_code": 200,
+      "status_chain": [
+        "HTTP/2 200"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 13 Dec 2025 04:46:09 GMT",
+        "link": "</_next/static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </docs/automated_screenshots/platform_mcp_registry.png>; rel=preload; as=\"image\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/docs/[slug]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "pdx1::iad1::tq42x-1765601168748-79e689f86467"
+      },
+      "response_time_ms": 1477,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": "max-age=63072000",
+      "content_security_policy": null,
+      "x_frame_options": null,
+      "x_content_type_options": null,
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "strict_transport_security"
+      ],
+      "_missing": [
+        "content_security_policy",
+        "x_frame_options",
+        "x_content_type_options",
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 307,
+        "redirect_to": "https://archestra.ai/docs/platform-quickstart"
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 11,
+      "http_subresources_count": 0,
+      "samples": [
+        "http://your-collector:4318/v1/traces\\n```\\n\\nIf",
+        "http://tryhandlebarsjs.com/)",
+        "http://github.com/archestra-ai/archestra/tree/main/platform/examples/mastra-ai).\\n\\n###",
+        "http://platform-archestra-1:9000/v1/openai",
+        "http://platform-archestra-1:9000/v1/openai\\"
+      ]
+    },
+    "trackers": [
+      {
+        "name": "PostHog",
+        "type": "analytics",
+        "evidence": "PostHog"
+      }
+    ],
+    "social_links": [
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/edit/main/docs/pages/platform-private-registry.md"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/blob/main/platform/helm/archestra/values.yaml"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/issues/720"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/blob/main/platform/dev/grafana/dashboards/platform.json"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/settings/developers"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/settings/profile"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra.git"
+      },
+      {
+        "type": "github",
+        "url": "http://github.com/archestra-ai/archestra/tree/main/platform/examples/mastra-ai"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/github/github-mcp-server"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/issues/647"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/tree/main/platform/examples/pydantic-ai"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/issues/669"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/settings/tokens"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra/tree/main/platform/examples/ai-sdk-express"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/archestra-ai/archestra?tab=readme-ov-file#-non-probabalistic-security-to-prevent-data-exfiltration"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/embed/L_p7CPzFEW0"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/embed/SkmluS-xzmM?si=zjTk5TVzOMpo7sx9"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/embed/k_67sbC-ITY"
+      }
+    ],
+    "cookies": [],
+    "server_info": {
+      "server": "Vercel",
+      "powered_by": "Next.js",
+      "cdn": "Vercel"
+    },
+    "errors": []
+  },
+  "source_repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "archestra-ai",
+      "repo": "archestra",
+      "url": "https://github.com/archestra-ai/archestra",
+      "is_org": false
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": false,
+      "org_name": null,
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

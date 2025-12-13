@@ -1,0 +1,284 @@
+{
+  "name": "Langchain4j AIDeepin MCP Marketplace",
+  "marketplace_url": "http://www.aideepin.com",
+  "source_url": "https://github.com/moyangzhan/langchain4j-aideepin",
+  "audited_at": "2025-12-13T04:46:17.331639Z",
+  "checks_run": [
+    "domain",
+    "web",
+    "source_repo"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "www.aideepin.com",
+    "registrable_domain": "aideepin.com",
+    "dns": {
+      "a": [
+        "107.155.55.44"
+      ],
+      "aaaa": [],
+      "cname": [],
+      "ns": [
+        "dns14.hichina.com",
+        "dns13.hichina.com"
+      ],
+      "mx": [
+        "mxbiz1.qq.com",
+        "mxbiz2.qq.com"
+      ],
+      "txt": [
+        "v=spf1 include:spf.mail.qq.com ~all"
+      ]
+    },
+    "tls": {
+      "ok": false,
+      "issuer": null,
+      "subject": null,
+      "not_before": null,
+      "not_after": null,
+      "sha256_fingerprint": null,
+      "san": [],
+      "error": "Failed to connect or retrieve certificate"
+    },
+    "provider_hints": [],
+    "reverse_dns": {
+      "107.155.55.44": "ucmail06.sendcloud.org"
+    },
+    "errors": [
+      "Failed to connect or retrieve certificate"
+    ]
+  },
+  "web": {
+    "url": "http://www.aideepin.com",
+    "http": {
+      "ok": true,
+      "final_url": "http://www.aideepin.com",
+      "status_code": 200,
+      "status_chain": [
+        "HTTP/1.1 200 OK"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "Server": "nginx/1.18.0 (Ubuntu)",
+        "Date": "Sat, 13 Dec 2025 04:46:24 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "1739",
+        "Last-Modified": "Sat, 25 Oct 2025 01:24:14 GMT",
+        "Connection": "keep-alive",
+        "ETag": "\"68fc26be-6cb\"",
+        "Accept-Ranges": "bytes"
+      },
+      "response_time_ms": 456,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": null,
+      "content_security_policy": null,
+      "x_frame_options": null,
+      "x_content_type_options": null,
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [],
+      "_missing": [
+        "strict_transport_security",
+        "content_security_policy",
+        "x_frame_options",
+        "x_content_type_options",
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 301,
+        "redirect_to": "http://www.aideepin.com/api/"
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 0,
+      "http_subresources_count": 0,
+      "samples": []
+    },
+    "trackers": [],
+    "social_links": [],
+    "cookies": [],
+    "server_info": {
+      "server": "nginx/1.18.0 (Ubuntu)"
+    },
+    "errors": []
+  },
+  "source_repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "moyangzhan",
+      "repo": "langchain4j-aideepin",
+      "url": "https://github.com/moyangzhan/langchain4j-aideepin",
+      "is_org": false
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": false,
+      "org_name": null,
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

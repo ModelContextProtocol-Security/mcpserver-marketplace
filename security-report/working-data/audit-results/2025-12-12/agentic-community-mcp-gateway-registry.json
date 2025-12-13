@@ -1,0 +1,57 @@
+{
+  "name": "Agentic Community MCP Gateway & Registry",
+  "marketplace_url": "https://github.com/agentic-community/mcp-gateway-registry",
+  "source_url": "https://github.com/agentic-community/mcp-gateway-registry",
+  "audited_at": "2025-12-13T04:46:09.341968Z",
+  "checks_run": [
+    "repo"
+  ],
+  "errors": [],
+  "repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "agentic-community",
+      "repo": "mcp-gateway-registry",
+      "url": "https://github.com/agentic-community/mcp-gateway-registry",
+      "is_org": false
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": false,
+      "org_name": null,
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

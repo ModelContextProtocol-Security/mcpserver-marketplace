@@ -1,0 +1,57 @@
+{
+  "name": "Nabhag8848 MCP Marketplace",
+  "marketplace_url": "https://github.com/Nabhag8848/mcp-marketplace",
+  "source_url": "https://github.com/Nabhag8848/mcp-marketplace",
+  "audited_at": "2025-12-13T04:45:59.469363Z",
+  "checks_run": [
+    "repo"
+  ],
+  "errors": [],
+  "repo": {
+    "repo_info": {
+      "platform": "github",
+      "owner": "Nabhag8848",
+      "repo": "mcp-marketplace",
+      "url": "https://github.com/Nabhag8848/mcp-marketplace",
+      "is_org": false
+    },
+    "security_files": {
+      "security_md": false,
+      "security_md_url": null,
+      "security_policy": false,
+      "code_of_conduct": false,
+      "contributing_md": false,
+      "license": null,
+      "license_url": null
+    },
+    "org_verification": {
+      "is_org": false,
+      "org_name": null,
+      "verified": false,
+      "verified_domains": []
+    },
+    "activity": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "open_prs": 0,
+      "last_commit": null,
+      "last_release": null,
+      "created_at": null,
+      "updated_at": null,
+      "archived": false
+    },
+    "security_features": {
+      "dependabot_enabled": true,
+      "code_scanning_enabled": true,
+      "secret_scanning_enabled": true,
+      "branch_protection": false,
+      "signed_commits": false,
+      "security_advisories": []
+    },
+    "topics": [],
+    "errors": []
+  },
+  "success": true
+}

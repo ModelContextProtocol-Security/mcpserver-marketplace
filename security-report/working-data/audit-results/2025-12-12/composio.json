@@ -1,0 +1,350 @@
+{
+  "name": "Composio",
+  "marketplace_url": "https://composio.dev",
+  "source_url": "",
+  "audited_at": "2025-12-13T04:45:40.454469Z",
+  "checks_run": [
+    "domain",
+    "web"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "composio.dev",
+    "registrable_domain": "composio.dev",
+    "dns": {
+      "a": [
+        "104.18.20.5",
+        "104.18.21.5"
+      ],
+      "aaaa": [
+        "2606:4700::6812:1405",
+        "2606:4700::6812:1505"
+      ],
+      "cname": [],
+      "ns": [
+        "serenity.ns.cloudflare.com",
+        "simon.ns.cloudflare.com"
+      ],
+      "mx": [
+        "alt2.aspmx.l.google.com",
+        "aspmx.l.google.com",
+        "alt3.aspmx.l.google.com",
+        "alt4.aspmx.l.google.com",
+        "alt1.aspmx.l.google.com"
+      ],
+      "txt": [
+        "google-site-verification=ZbLAosDUbPz5USgsdkiQbYuYHqwVtSx_3BOprVyb-gU",
+        "google-site-verification=lO_YvnNsuZoPl0kLMocQzRs7ZcHoK-dvA2o__g4Kah4",
+        "hubspot-developer-verification=NWUxNTEzYTUtZDdkNi00OTliLTkzYzUtZjAyZGE5YTViZDg0",
+        "openai-domain-verification=dv-d6luEi066K8VedloSbdNoDuI",
+        "tiktok-developers-site-verification=FpHYyysTCkGuhFgAZfFVXGePuKHghurF",
+        "turbopuffer-domain-verification-gbdk89=UTHpusfpMuBRPyJCGkFjFVAtc",
+        "v=spf1 include:dc-aa8e722993._spfm.composio.dev ~all",
+        "zoom-domain-verification=ZOOM_verify_0aa18bea6fe841bfafb3a1a1c890bffc",
+        "{\" \"apps\" \":[{\" \"clientID\" \":\" \"96b038435fc029e045f9ba800e66fefa\" \"}]}",
+        "MS=ms54189639"
+      ]
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Google Trust Services, CN=WE1",
+      "subject": "CN=composio.dev",
+      "not_before": "Dec  7 07:08:14 2025 GMT",
+      "not_after": "Mar  7 08:08:12 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "composio.dev",
+        "telemetry.composio.dev"
+      ],
+      "error": null
+    },
+    "provider_hints": [
+      "Google Workspace (MX)",
+      "Cloudflare (NS)"
+    ],
+    "reverse_dns": {
+      "104.18.20.5": "",
+      "104.18.21.5": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://composio.dev",
+    "http": {
+      "ok": true,
+      "final_url": "https://composio.dev",
+      "status_code": 103,
+      "status_chain": [
+        "HTTP/2 103"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "link": "<https://framerusercontent.com>; rel=\"preconnect\", <https://framerusercontent.com>; rel=\"preconnect\"; crossorigin=\"\"",
+        "date": "Sat, 13 Dec 2025 04:45:43 GMT",
+        "content-type": "text/html",
+        "server": "cloudflare",
+        "cf-ray": "9ad2d047ede5295d-YVR",
+        "cf-cache-status": "DYNAMIC",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "last-modified": "Fri, 12 Dec 2025 09:12:10 GMT",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Accept-Encoding",
+        "server-timing": "region;desc=\"us-west-2\", cache;desc=\"cached\", ssg-status;desc=\"optimized\", version;desc=\"9339d38\", route;dur=1;desc=\"id=Bm9d5O6HU&locale=default\"",
+        "x-content-type-options": "nosniff"
+      },
+      "response_time_ms": 1640,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": "max-age=31536000",
+      "content_security_policy": null,
+      "x_frame_options": null,
+      "x_content_type_options": "nosniff",
+      "referrer_policy": null,
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "strict_transport_security",
+        "x_content_type_options"
+      ],
+      "_missing": [
+        "content_security_policy",
+        "x_frame_options",
+        "referrer_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 308,
+        "redirect_to": "https://discord.com/invite/cNruWaAhQk?_gl=1*8tvkce*_ga*NjkxMzYwODAuMTc1MzM1NDc1MA..*_ga_YKMWVQS9W0*czE3NTQ1MTc5MzAkbzMzJGcxJHQxNzU0NTE4Njg1JGo1OSRsMCRoMTYxMTc4NzE4Nw..*_gcl_au*MTI5OTQyNTcxOC4xNzUzMzU0NzUw"
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 500,
+        "redirect_to": null
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 0,
+      "http_subresources_count": 0,
+      "samples": []
+    },
+    "trackers": [
+      {
+        "name": "Google Analytics",
+        "type": "analytics",
+        "evidence": "gtag"
+      },
+      {
+        "name": "Google Tag Manager",
+        "type": "analytics",
+        "evidence": "googletagmanager.com"
+      },
+      {
+        "name": "Segment",
+        "type": "analytics",
+        "evidence": "Segment.io"
+      },
+      {
+        "name": "PostHog",
+        "type": "analytics",
+        "evidence": "POSTHOG"
+      }
+    ],
+    "social_links": [
+      {
+        "type": "github",
+        "url": "https://github.com/composiohq/composio/"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/login/oauth/authorize?client_id={CLIENT_ID}&amp;scope=repo&quot"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/login/oauth/access_token&quot"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/login/oauth/authorize?client_id={CLIENT_ID}&amp;scope=repo"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/login/oauth/access_token"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/composio"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/slavakurilyak/status/1773813858668360071"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/yoheinakajima/status/1881855207379992714"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/tereza_tizkova/status/1797711172063625597"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/tomosman/status/1898808198016197092"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/jerryjliu0/status/1854318701736309181"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/paul1493/status/1821836341082022397"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/joaomdmoura/status/1773506776018702683"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/togethercompute/status/1904606851591004479"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/company/composiohq/"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/@Composio"
+      }
+    ],
+    "cookies": [],
+    "server_info": {
+      "server": "cloudflare",
+      "cdn": "Cloudflare"
+    },
+    "errors": []
+  },
+  "success": true
+}

@@ -1,0 +1,314 @@
+{
+  "name": "PulseMCP",
+  "marketplace_url": "https://www.pulsemcp.com",
+  "source_url": "",
+  "audited_at": "2025-12-13T04:45:16.821900Z",
+  "checks_run": [
+    "domain",
+    "web"
+  ],
+  "errors": [],
+  "domain": {
+    "hostname": "www.pulsemcp.com",
+    "registrable_domain": "pulsemcp.com",
+    "dns": {
+      "a": [
+        "209.38.78.103"
+      ],
+      "aaaa": [],
+      "cname": [],
+      "ns": [
+        "ns4.dnsimple-edge.org",
+        "ns1.dnsimple.com",
+        "ns2.dnsimple-edge.net",
+        "ns3.dnsimple.com"
+      ],
+      "mx": [
+        "mailsec.protonmail.ch",
+        "mail.protonmail.ch"
+      ],
+      "txt": [
+        "v=spf1 include:_spf.protonmail.ch ~all",
+        "google-site-verification=n7AzCW--DId0f2xNLGIb7llVbEabVELoXrWTfUMzyzs",
+        "google-site-verification=pDnUScvIHkG_OjRAVYYr9Lleq5xpHZ7sr_F7WzUn4Lk",
+        "google-site-verification=vymzDqoBLMrGuqXfHWr4Ea-1qHDnk0bztwOB0JvlAgk",
+        "protonmail-verification=ae13aac07f10d01db0a9743669d817e302f16b09"
+      ]
+    },
+    "tls": {
+      "ok": true,
+      "issuer": "C=US, O=Let's Encrypt, CN=E8",
+      "subject": "CN=www.pulsemcp.com",
+      "not_before": "Nov 25 12:18:38 2025 GMT",
+      "not_after": "Feb 23 12:18:37 2026 GMT",
+      "sha256_fingerprint": null,
+      "san": [
+        "www.pulsemcp.com"
+      ],
+      "error": null
+    },
+    "provider_hints": [],
+    "reverse_dns": {
+      "209.38.78.103": ""
+    },
+    "errors": []
+  },
+  "web": {
+    "url": "https://www.pulsemcp.com",
+    "http": {
+      "ok": true,
+      "final_url": "https://www.pulsemcp.com",
+      "status_code": 200,
+      "status_chain": [
+        "HTTP/2 200"
+      ],
+      "redirect_chain": [],
+      "headers": {
+        "alt-svc": "h3=\":443\"; ma=2592000",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 13 Dec 2025 04:45:20 GMT",
+        "etag": "W/\"cea8289e04e88512f5812485bf397b1c\"",
+        "link": "</assets/tailwind-f176ee988496ad3d24cc9d10766bd1597577da7a5314444a2263d954f2ba4422.css>; rel=preload; as=style; nopush,</assets/fonts-3081ff0998ece685a3fcf78c2df043c926883ad15b83f48a6d01a37c40bd8ec6.css>; rel=preload; as=style; nopush,</assets/application-4b52082300000b66c943ad80b18cf1b3782c8262094833b536c6801205905c2a.css>; rel=preload; as=style; nopush",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "set-cookie": "mt=276023d0-4620-4711-aab0-daf39cfdd368; domain=.pulsemcp.com; path=/; expires=Wed, 13 Dec 2045 04:45:20 GMT; secure; samesite=lax\n_pulsemcp_session=cLE%2B3jDFuYf4rwyxaWUEQAnviBSOQOahpZXi8VXfJ69%2FbUgogxd5bHqldA3AIwMyb6b5ECc7dzfnp0lmv4095nptn6Z2f9KxxIILMDVux52c3sr4JGfhOKSr5lJNEAL7rG14giaZR24Qt5px79Ml9juMdM3MMF9ItLGRQ6PWwP6bPUb5S1ZGJnDkD4c1ZRtlIELs77%2FPIsv%2FERydpwNEsZGY%2FcvdnLtexLxVjQ6le5vDzDoEZY4VTzlHfFUeeTOHjgreDYzo3eLTH%2FZwAiiBTe4DmcFhRT%2BGeQ%3D%3D--5I2ViadktpNjSEo3--H94ecRdGQ6tZfgrwOcCGBA%3D%3D; domain=.pulsemcp.com; path=/; secure; httponly; samesite=lax",
+        "strict-transport-security": "max-age=63072000; includeSubDomains",
+        "vary": "Accept-Encoding",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-request-id": "a7ba1068-317a-4174-8be4-935b24908228",
+        "x-runtime": "0.067177",
+        "x-xss-protection": "0"
+      },
+      "response_time_ms": 429,
+      "error": null
+    },
+    "security_headers": {
+      "strict_transport_security": "max-age=63072000; includeSubDomains",
+      "content_security_policy": null,
+      "x_frame_options": "SAMEORIGIN",
+      "x_content_type_options": "nosniff",
+      "referrer_policy": "strict-origin-when-cross-origin",
+      "permissions_policy": null,
+      "cross_origin_opener_policy": null,
+      "cross_origin_resource_policy": null,
+      "cross_origin_embedder_policy": null,
+      "_present": [
+        "strict_transport_security",
+        "x_frame_options",
+        "x_content_type_options",
+        "referrer_policy"
+      ],
+      "_missing": [
+        "content_security_policy",
+        "permissions_policy",
+        "cross_origin_opener_policy",
+        "cross_origin_resource_policy",
+        "cross_origin_embedder_policy"
+      ]
+    },
+    "paths": {
+      "/privacy": {
+        "path": "/privacy",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/privacy-policy": {
+        "path": "/privacy-policy",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/terms": {
+        "path": "/terms",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/tos": {
+        "path": "/tos",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/terms-of-service": {
+        "path": "/terms-of-service",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/security": {
+        "path": "/security",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/security.txt": {
+        "path": "/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/.well-known/security.txt": {
+        "path": "/.well-known/security.txt",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/legal": {
+        "path": "/legal",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/about": {
+        "path": "/about",
+        "status_code": 301,
+        "redirect_to": "https://www.pulsemcp.com/#about-us"
+      },
+      "/contact": {
+        "path": "/contact",
+        "status_code": 301,
+        "redirect_to": "https://www.pulsemcp.com/#contact"
+      },
+      "/robots.txt": {
+        "path": "/robots.txt",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/sitemap.xml": {
+        "path": "/sitemap.xml",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/status": {
+        "path": "/status",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/health": {
+        "path": "/health",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api": {
+        "path": "/api",
+        "status_code": 200,
+        "redirect_to": null
+      },
+      "/docs": {
+        "path": "/docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/api-docs": {
+        "path": "/api-docs",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/documentation": {
+        "path": "/documentation",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger": {
+        "path": "/swagger",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.json": {
+        "path": "/swagger.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/swagger.yaml": {
+        "path": "/swagger.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.json": {
+        "path": "/openapi.json",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/openapi.yaml": {
+        "path": "/openapi.yaml",
+        "status_code": 404,
+        "redirect_to": null
+      },
+      "/graphql": {
+        "path": "/graphql",
+        "status_code": 404,
+        "redirect_to": null
+      }
+    },
+    "mixed_content": {
+      "http_links_count": 0,
+      "http_subresources_count": 0,
+      "samples": []
+    },
+    "trackers": [
+      {
+        "name": "Google Analytics",
+        "type": "analytics",
+        "evidence": "ga.js"
+      }
+    ],
+    "social_links": [
+      {
+        "type": "github",
+        "url": "https://github.com/tadasant"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/macoughl"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/modelcontextprotocol/registry"
+      },
+      {
+        "type": "discord",
+        "url": "https://discord.gg/dP2evEyTjS"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/pulsemcp"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/tadasayy"
+      },
+      {
+        "type": "twitter",
+        "url": "https://x.com/grumpygrowthguy"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/company/pulsemcp"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/tadas-antanavicius/"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/mike-coughlin-ggg/"
+      },
+      {
+        "type": "email",
+        "url": "mailto:hello@pulsemcp.com"
+      }
+    ],
+    "cookies": [
+      {
+        "name": "mt",
+        "secure": true,
+        "httponly": false,
+        "samesite": "lax"
+      },
+      {
+        "name": "_pulsemcp_session",
+        "secure": true,
+        "httponly": true,
+        "samesite": "lax"
+      }
+    ],
+    "server_info": {},
+    "errors": []
+  },
+  "success": true
+}
