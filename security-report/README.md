@@ -49,6 +49,10 @@ security-report/
 │   ├── mcp-marketplaces.csv           # Working list of 40+ marketplaces
 │   ├── mcp-clients.csv                # Working list of 130+ MCP clients
 │   ├── list-of-sources-*.md           # Data source documentation
+│   ├── audit-results/                 # Batch audit output (JSON per marketplace)
+│   │   └── YYYY-MM-DD/                # Date-stamped runs
+│   │       ├── index.json             # Summary manifest
+│   │       └── [marketplace].json     # Individual audit results
 │   ├── scripts/                       # Data extraction scripts
 │   │   ├── extract_mcp_clients.py
 │   │   └── generate_marketplaces_from_csv.py
@@ -79,8 +83,13 @@ security-report/
 │   └── mcp-client-evaluation.md
 │
 ├── tools/                             # Automated evaluation tools
-│   ├── tier1_audit.py                 # Security checks (headers, DNS, TLS, endpoints)
-│   └── batch_audit_marketplaces.py    # Batch processing
+│   ├── audit.py                       # Main CLI for single-marketplace audits
+│   ├── batch_audit.py                 # Batch processing from CSV
+│   ├── mcp_audit/                     # Modular audit package
+│   │   ├── domain.py                  # DNS, TLS, provider detection
+│   │   ├── web.py                     # HTTP, headers, paths, trackers
+│   │   └── repo.py                    # GitHub security analysis
+│   └── tier1_audit.py                 # Legacy script (still works)
 │
 ├── reports/                           # Published analysis reports
 │   ├── mcp-marketplaces-report.md     # Marketplace discovery snapshot
@@ -168,25 +177,56 @@ Working list of MCP clients:
 
 ## Tools
 
-### tier1_audit.py
+See [tools/README.md](./tools/README.md) for full documentation.
 
-Automated security checks for marketplaces:
+### Automated Audit Package (`mcp_audit/`)
+
+Modular Python package for security checks, organized by input type:
+
+| Module | Input | Checks |
+|--------|-------|--------|
+| `domain.py` | hostname | DNS (A/AAAA/CNAME/NS/MX/TXT), TLS cert, provider detection |
+| `web.py` | URL | HTTP, 9 security headers, path probes, trackers, social links |
+| `repo.py` | repo URL | SECURITY.md, org verification, activity, security features |
 
 ```bash
-python3 security-report/tools/tier1_audit.py https://example.com
+# Single marketplace
+python audit.py https://mcp.so --format summary
+
+# With repository
+python audit.py https://mcp.so --repo https://github.com/chatmcp/mcpso
+
+# Individual checks
+python -m mcp_audit.domain mcp.so
+python -m mcp_audit.web https://mcp.so
+python -m mcp_audit.repo https://github.com/owner/repo
 ```
 
-**Checks performed:**
-- HTTPS and redirect chain
-- Security headers (HSTS, CSP, XFO, XCTO, Referrer-Policy, etc.)
-- TLS certificate details
-- DNS records and provider hints
-- Policy endpoints (/privacy, /terms, /security, etc.)
-- API endpoints (/api, /docs, /swagger, /openapi, etc.)
-- Mixed content detection
-- Social/contact link extraction
+### Batch Audit (`batch_audit.py`)
 
-**Output:** JSON to stdout
+Runs audits on all marketplaces from CSV in parallel:
+
+```bash
+python batch_audit.py              # All 41 marketplaces
+python batch_audit.py --dry-run    # Preview what would run
+python batch_audit.py --limit 5    # Test with subset
+```
+
+### Pre-collected Audit Data
+
+**Location:** `working-data/audit-results/YYYY-MM-DD/`
+
+Batch audit results are stored as JSON files. Before manually running checks, look here first:
+
+```
+working-data/audit-results/2025-12-12/
+├── index.json              # Summary of all audits
+├── mcpso.json              # MCP.so domain + web + repo data
+├── smithery-playground.json
+└── ... (41 total)
+```
+
+Each JSON contains domain checks, web checks, and/or repo checks depending on the marketplace type.
 
 ---
 
@@ -247,14 +287,17 @@ For the full workflow, see [prompts/README.md](./prompts/README.md).
 
 ### Evaluate a Marketplace
 
-1. Check `working-data/mcp-marketplaces.csv` for status
-2. Read `prompts/marketplace-evaluation-prompt.md`
-3. Use `templates/marketplace-evaluation-unified-template.md`
-4. Run `tools/tier1_audit.py` for automated checks
-5. Create evaluation in `evaluations/marketplaces/`
+1. **Check status**: Look in `working-data/mcp-marketplaces.csv` for current evaluation status
+2. **Get audit data**: Check `working-data/audit-results/YYYY-MM-DD/` for pre-collected JSON data
+   - If missing or stale, run `python audit.py <url>` to generate fresh data
+3. **Read the prompt**: `prompts/marketplace-evaluation-prompt.md` explains the full evaluation process
+4. **Use the template**: `templates/marketplace-evaluation-unified-template.md` is the target format
+5. **Create evaluation**: Write markdown file in `evaluations/marketplaces/`
+   - Use audit JSON to fill in Tier 1 (automated) sections
+   - Manually investigate Tier 2-3 sections (policies, verification, security features)
 6. **Validate**: Have another AI review using `prompts/marketplace-evaluation-validation-prompt.md`
-7. Update CSV with new evaluation status
-8. Submit PR
+7. **Update CSV**: Set new evaluation status in `working-data/mcp-marketplaces.csv`
+8. **Submit PR**
 
 ### Evaluate an MCP Client
 
