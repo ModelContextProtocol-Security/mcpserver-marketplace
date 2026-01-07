@@ -288,6 +288,8 @@ POLICY_PATHS = [
     "/tos",
     "/terms-of-service",
     "/security",
+    "/security/",
+    "/security.html",
     "/security.txt",
     "/.well-known/security.txt",
     "/legal",
