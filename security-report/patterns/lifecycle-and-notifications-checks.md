@@ -1,31 +1,78 @@
 ---
-title: Comprehensive MCP Marketplace Security Checks - Lifecycle & Notifications Update
-description: Additional checks for versioning, updates, notifications, deprecation, and emergency response
-version: 1.0.0
+title: Lifecycle & Notifications Security Checks for MCP Marketplaces and Servers
+description: Security checks for versioning, updates, notifications, deprecation, and emergency response - applicable to both MCP marketplaces and MCP servers
+version: 1.1.0
 created: 2025-01-07
 updated: 2025-01-07
 author: MCP Security Working Group
-status: draft - to be merged into comprehensive-marketplace-checks.md
+status: active
 tags:
   - mcp-security
   - marketplace-evaluation
+  - mcp-server-evaluation
   - versioning
   - notifications
   - lifecycle
   - security-advisories
+  - paas
+  - hosted-servers
+applies_to:
+  - MCP Marketplaces (all types)
+  - MCP Servers (especially vendor-hosted)
+  - PaaS/Hosting Platforms
 usage: |
-  This document contains additional checks to be added to comprehensive-marketplace-checks.md.
-  These checks focus on the lifecycle of MCP servers: versioning, updates, problem notifications,
-  deprecation, and emergency response capabilities. These are critical for ongoing security
-  but are often overlooked in initial marketplace evaluations.
+  This document contains lifecycle and notification security checks that apply to:
+  1. MCP Marketplaces - how they handle versioning, updates, and notifications for listed servers
+  2. MCP Servers - how individual servers handle their own lifecycle
+  3. PaaS/Hosting Marketplaces - these inherit BOTH marketplace AND server concerns
+
+  Use these checks alongside comprehensive-marketplace-checks.md for full evaluations.
 related:
   - comprehensive-marketplace-checks.md
   - evaluation-criteria.md
 ---
 
-# MCP Marketplace Checks: Lifecycle & Notifications
+# Lifecycle & Notifications Security Checks
 
-This document covers checks related to the ongoing lifecycle of MCP servers listed in marketplaces - how versions are managed, how users are notified of problems, and how bad servers can be removed or disabled.
+This document covers security checks related to the ongoing lifecycle of MCP servers and marketplaces - how versions are managed, how users are notified of problems, and how bad servers can be removed or disabled.
+
+---
+
+## Applicability Note: Marketplaces That Host/Execute Code
+
+**Critical distinction**: These checks apply differently based on marketplace type.
+
+| Marketplace Type | Runs Code? | Applicability |
+|------------------|-----------|---------------|
+| **Directory** (mcp.so, awesome-lists) | No | Basic - just links to external servers |
+| **Registry/API** (metadata only) | No | Moderate - accuracy of version/status info |
+| **Code-hosting** (npm-style package hosting) | No* | High - supply chain, package integrity |
+| **PaaS/Hosting** (Smithery hosted, mcp.run) | **Yes** | **Critical - ALL checks apply** |
+| **Hybrid** (offers both modes) | Both | Evaluate each mode separately |
+
+*Code runs on user's machine, not marketplace infrastructure
+
+### Why PaaS/Hosting Marketplaces Are Different
+
+When a marketplace **hosts and executes** MCP server code on their infrastructure, they effectively become an **MCP server operator**. This means they inherit ALL the security concerns of running MCP servers:
+
+- **They ARE the execution environment** - responsible for isolation, sandboxing
+- **They handle credentials/secrets** - must secure API keys, tokens passed to servers
+- **They control network egress** - servers can make outbound requests
+- **They ARE the attack surface** - vulnerabilities in their platform affect all hosted servers
+- **They need incident response** - must be able to respond to compromised servers
+
+**Example**: The June 2025 Smithery vulnerability exposed secrets because their build pipeline (part of their hosting infrastructure) was compromised. This affected all servers hosted on their platform.
+
+### Checks Marked by Criticality
+
+Throughout this document:
+- Checks marked **[Directory]** - relevant even for simple directories
+- Checks marked **[Registry]** - relevant for API-based registries
+- Checks marked **[PaaS-Critical]** - essential for hosting/execution platforms
+- Unmarked checks - generally applicable to all types
+
+---
 
 ---
 
