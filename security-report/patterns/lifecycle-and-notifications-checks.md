@@ -457,6 +457,40 @@ When a server is removed:
 - **Name squatting protection**: Is removed name reserved?
 - **Historical record**: Is there record it existed?
 
+### 42.5 Malicious Server Removal Process
+
+Specific process for handling malicious or harmful servers:
+
+- **Malicious server policy exists**: Is there a documented policy for handling malicious servers?
+- **Definition of malicious**: What criteria define a server as malicious?
+  - Contains malware
+  - Exfiltrates data
+  - Performs unauthorized actions
+  - Misrepresents capabilities
+  - Impersonates another server
+  - Violates user privacy
+- **Reporting mechanism**: How can users report a potentially malicious server?
+  - Dedicated security email
+  - Report button on listing
+  - Public issue tracker
+  - Security.txt contact
+- **Investigation process**: What happens after a report?
+  - Who investigates?
+  - What evidence is gathered?
+  - Is the server quarantined during investigation?
+  - Is the publisher contacted?
+- **Decision criteria**: How is the decision to remove made?
+  - Single reviewer or committee?
+  - Evidence threshold?
+  - Severity classification?
+- **Publisher recourse**: Can publisher appeal or dispute?
+- **Transparency**: Are malicious removals disclosed publicly?
+
+**Evidence to capture**:
+- Malicious server policy documentation (if exists)
+- Reporting mechanism availability
+- Any public record of past malicious removals
+
 **Evidence to capture**:
 - Removal policy documentation
 - Example of removed server page (if accessible)
@@ -689,6 +723,99 @@ Some notifications that cannot be disabled:
 
 ---
 
+## 48. Capability & Tool Change Tracking
+
+Tracking changes to MCP server capabilities over time. This is a more mature capability, but there's no reason marketplaces can't implement it - similar to how unofficial changelog bots track software releases.
+
+### 48.1 Change Detection
+
+- **Tool changes tracked**: Does marketplace detect when server's tools change?
+- **Capability changes tracked**: Does marketplace detect capability additions/removals?
+- **Description changes tracked**: Are changes to server description surfaced?
+- **Permission changes tracked**: Are changes to required permissions flagged?
+- **Breaking changes flagged**: Are changes that break compatibility highlighted?
+
+### 48.2 Change Visibility
+
+How are changes surfaced to users:
+
+- **Changelog visible**: Is there a changelog showing what changed between versions?
+- **Diff view**: Can users see exactly what changed?
+- **Change notifications**: Are users notified when servers they use change?
+- **API for changes**: Can changes be queried programmatically?
+- **RSS/feed for changes**: Feed of capability changes?
+
+### 48.3 Change Analysis
+
+- **AI-generated summaries**: Are changes summarized in plain language?
+- **Risk assessment**: Are potentially risky changes flagged?
+- **Comparison view**: Can users compare two versions side by side?
+- **Historical view**: Can users see full history of changes?
+
+### 48.4 Change Approval (for enterprise)
+
+- **Change review workflow**: Can organizations require review of capability changes?
+- **Auto-block on change**: Can new capabilities be blocked until approved?
+- **Change alerts**: Alerts when installed servers gain new capabilities?
+
+**Why this matters**: An MCP server could be safe when installed, then later add capabilities that access sensitive data or perform risky actions. Without change tracking, users have no visibility into this.
+
+**Evidence to capture**:
+- Whether any change tracking exists
+- How changes are surfaced (if at all)
+- Whether users are notified of changes
+
+---
+
+## 49. MCP Protocol Message History
+
+Tracking MCP servers' protocol-level behavior over time. This is a mature capability for hosted/PaaS marketplaces particularly.
+
+### 49.1 Initialization Message Tracking
+
+The MCP protocol includes initialization messages where servers declare their capabilities:
+
+- **Hello message recorded**: Is the server's initialization response recorded?
+- **Capabilities declared**: What tools, resources, and prompts does it claim?
+- **Version declared**: What version does the server report?
+- **History available**: Can users see how these changed over time?
+
+### 49.2 Tool Definition Tracking
+
+- **Tool schemas recorded**: Are the full tool definitions captured?
+- **Tool descriptions tracked**: Changes to how tools describe themselves?
+- **Parameter changes tracked**: Changes to tool inputs/outputs?
+- **New tools detected**: Alerts when servers add new tools?
+- **Removed tools detected**: Alerts when tools are removed?
+
+### 49.3 Runtime Behavior Tracking (PaaS only)
+
+For marketplaces that host/execute servers:
+
+- **Call patterns recorded**: What tools are actually being called?
+- **Response patterns analyzed**: What kind of responses are returned?
+- **Error rates tracked**: Is the server failing frequently?
+- **Anomaly detection**: Are unusual patterns flagged?
+
+### 49.4 Comparison with Source (where applicable)
+
+- **Source vs runtime match**: Do declared capabilities match source code?
+- **Documentation vs runtime match**: Do docs match actual behavior?
+- **Discrepancy alerts**: Flags when behavior doesn't match claims?
+
+**Why this matters**:
+- For source-available servers, git history shows code changes, but not runtime behavior
+- For hosted servers, there's no git history - protocol message history is the only record
+- Servers could misrepresent their capabilities in documentation
+- Runtime behavior can differ from declared capabilities
+
+**Evidence to capture**:
+- Whether any protocol-level tracking exists
+- Whether capability history is visible to users
+- Whether hosted server behavior is monitored
+
+---
+
 ## Appendix: Comparison with Package Registries
 
 How mature package registries handle these concerns:
@@ -785,3 +912,4 @@ When evaluating or engaging with marketplace operators:
 | Date | Version | Changes |
 |------|---------|---------|
 | 2025-01-07 | 1.0.0 | Initial lifecycle & notifications checks |
+| 2025-01-07 | 1.2.0 | Added malicious server removal process (42.5), capability & tool change tracking (48), MCP protocol message history (49) |
