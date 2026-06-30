@@ -33,3 +33,10 @@ medium-nimrita-tutorial,Medium MCP Tutorial,tutorial,https://medium.com/@nimrita
 newstack-tutorial,The New Stack MCP Tutorial,tutorial,https://thenewstack.io/how-to-set-up-a-model-context-protocol-server/,The New Stack,active,,tier-3,2025-11-19,Setup guide
 simplescraper-tutorial,Simplescraper MCP Guide,tutorial,https://simplescraper.io/blog/how-to-mcp,Simplescraper,active,,tier-3,2025-11-19,How to MCP complete guide
 apidog-tutorial,Apidog MCP Tutorial,tutorial,https://apidog.com/blog/build-an-mcp-server/,Apidog,active,,tier-3,2025-11-19,Beginner guide
+mcp-directory,MCP.Directory,catalog-site,https://mcp.directory/,Unknown,active,3000+,tier-1,2026-05-04,Specialized servers for browser automation and API management
+cursor-ide-mcp,Cursor IDE MCP Marketplace,built-in-app,https://cursor.com/marketplace,Cursor,active,,tier-1,2026-05-04,IDE-native MCP discovery for agentic coding
+github-copilot-extensions,GitHub Copilot MCP Extensions,built-in-app,https://github.com/marketplace,GitHub,active,,tier-1,2026-05-04,Copilot Extensions predominantly MCP-compliant
+jetbrains-eclipse-mcp,JetBrains/Eclipse MCP Marketplace,built-in-app,https://plugins.jetbrains.com/,JetBrains / Eclipse Foundation,active,,tier-1,2026-05-04,IDE-specific registry with allowlist controls - public preview Oct 2025
+mcpmed,MCPmed,catalog-site,https://mcpmed.org,Community / Academic,active,,tier-2,2026-05-04,"Specialized bioinformatics and genomics MCP servers (GEOmcp, STRING MCP)"
+databricks-mcp-marketplace,Databricks MCP Marketplace,marketplace,https://marketplace.databricks.com/,Databricks,announced,Unknown,tier-2,2026-05-04,Enterprise focus with Moody's LSEG S&P Global FactSet Nasdaq - announced Nov 2025
+mcp-universe,MCP-Universe,research-dataset,https://mcp-universe.github.io/mcp-servers-hubs.html,Academic,active,11,tier-3,2026-05-04,Curated benchmark set (~11 servers) used for evaluation research
