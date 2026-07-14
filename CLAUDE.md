@@ -8,7 +8,9 @@ This is the **MCP Marketplace Security** project, part of the Cloud Security All
 
 ## Repository Structure
 
-- `data/` - Stable reference datasets (CSV files for marketplaces, clients, vendors)
+- `data/` - Stable reference datasets (CSV files for marketplaces, clients, vendors, marketplace-types). **Validated by CI** — see CSV validation below.
+- `scripts/` - Repo-level tooling (`validate_csv.py`, the CSV field-count validator)
+- `guidance/` - Marketplace security guidance material
 - `security-report/` - Primary project directory containing:
   - `working-data/` - Development datasets and audit results
   - `evaluations/` - Security evaluation markdown files (40+ marketplaces, 130+ clients)
@@ -70,6 +72,17 @@ This project uses a **two-AI model**: one AI creates evaluations, another valida
 - `data/` (repo root) - Stable reference datasets (synced when validated)
 
 **CSV schemas:** See README.md files in each data subdirectory.
+
+## CSV validation (CI)
+
+`scripts/validate_csv.py` checks that every row in each `data/*.csv` has the same field count as its header — catching the two classic hand-edited-CSV bugs: a trailing comma (extra empty field) and an unquoted comma inside a value (splits one field in two). It uses the stdlib `csv` parser, so commas inside properly *quoted* fields are fine.
+
+```bash
+python3 scripts/validate_csv.py            # validate all data/*.csv
+python3 scripts/validate_csv.py data/foo.csv   # specific file(s)
+```
+
+The `.github/workflows/validate-csv.yml` workflow runs it automatically on any PR that touches `data/*.csv` (and on push to `main`). **Note the scope:** CI validates the stable `data/*.csv` datasets, *not* the `security-report/working-data/` CSVs — run the validator manually before promoting working-data into `data/`.
 
 ## Key Files
 
