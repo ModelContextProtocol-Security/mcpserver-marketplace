@@ -6,20 +6,24 @@ Output: DNS records, TLS certificate details, provider detection
 """
 
 import json
-import shlex
 import socket
 import subprocess
 from dataclasses import dataclass, field, asdict
 from typing import Optional
 
 
-def _run(cmd: str, timeout: int = 15) -> tuple[int, str, str]:
-    """Run a shell command with timeout."""
+def _run(cmd: list[str], timeout: int = 15, stdin_devnull: bool = False) -> tuple[int, str, str]:
+    """Run a command with a timeout.
+
+    Executed without a shell (argv list, shell=False) so that no element of
+    ``cmd`` is ever interpreted as a shell metacharacter — hostnames and other
+    inputs are passed as literal arguments, eliminating command injection.
+    """
     try:
         p = subprocess.run(
             cmd,
-            shell=True,
             timeout=timeout,
+            stdin=subprocess.DEVNULL if stdin_devnull else None,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -27,6 +31,8 @@ def _run(cmd: str, timeout: int = 15) -> tuple[int, str, str]:
         return p.returncode, p.stdout.strip(), p.stderr.strip()
     except subprocess.TimeoutExpired:
         return 124, "", "timeout"
+    except FileNotFoundError as e:
+        return 127, "", str(e)
     except Exception as e:
         return 1, "", str(e)
 
@@ -90,32 +96,32 @@ def _check_dns(hostname: str, registrable_domain: str) -> tuple[DNSRecords, list
     records = DNSRecords()
 
     # Tight timeouts to avoid hangs
-    dig_flags = "+time=3 +tries=1 +retry=0 +nocmd +nocomments +short"
+    dig_flags = ["+time=3", "+tries=1", "+retry=0", "+nocmd", "+nocomments", "+short"]
 
     # A records
-    code, out, err = _run(f"dig {dig_flags} {shlex.quote(hostname)} A")
+    code, out, err = _run(["dig", *dig_flags, hostname, "A"])
     if code == 0 and out:
         records.a = [line for line in out.splitlines() if line and not line.startswith(";")]
     elif err:
         errors.append(f"DNS A lookup failed: {err}")
 
     # AAAA records
-    code, out, err = _run(f"dig {dig_flags} {shlex.quote(hostname)} AAAA")
+    code, out, err = _run(["dig", *dig_flags, hostname, "AAAA"])
     if code == 0 and out:
         records.aaaa = [line for line in out.splitlines() if line and not line.startswith(";")]
 
     # CNAME records
-    code, out, err = _run(f"dig {dig_flags} {shlex.quote(hostname)} CNAME")
+    code, out, err = _run(["dig", *dig_flags, hostname, "CNAME"])
     if code == 0 and out:
         records.cname = [line.rstrip(".") for line in out.splitlines() if line and not line.startswith(";")]
 
     # NS records (on registrable domain)
-    code, out, err = _run(f"dig {dig_flags} {shlex.quote(registrable_domain)} NS")
+    code, out, err = _run(["dig", *dig_flags, registrable_domain, "NS"])
     if code == 0 and out:
         records.ns = [line.rstrip(".") for line in out.splitlines() if line and not line.startswith(";")]
 
     # MX records (on registrable domain)
-    code, out, err = _run(f"dig {dig_flags} {shlex.quote(registrable_domain)} MX")
+    code, out, err = _run(["dig", *dig_flags, registrable_domain, "MX"])
     if code == 0 and out:
         # MX records have priority prefix, extract just the hostname
         mx_lines = []
@@ -129,7 +135,7 @@ def _check_dns(hostname: str, registrable_domain: str) -> tuple[DNSRecords, list
         records.mx = mx_lines
 
     # TXT records (sample - can be verbose)
-    code, out, err = _run(f"dig {dig_flags} {shlex.quote(registrable_domain)} TXT")
+    code, out, err = _run(["dig", *dig_flags, registrable_domain, "TXT"])
     if code == 0 and out:
         # Limit TXT records to avoid huge output
         txt_lines = [line.strip('"') for line in out.splitlines() if line and not line.startswith(";")]
@@ -142,22 +148,26 @@ def _check_tls(hostname: str, port: int = 443) -> TLSCertificate:
     """Check TLS certificate."""
     result = TLSCertificate()
 
-    # Use openssl s_client to get certificate
-    sclient_cmd = (
-        f"openssl s_client -servername {shlex.quote(hostname)} "
-        f"-connect {shlex.quote(hostname)}:{port} -showcerts < /dev/null 2>/dev/null"
+    # Use openssl s_client to get certificate. stdin_devnull replaces the
+    # former "< /dev/null" so s_client sends EOF and exits instead of hanging.
+    code, pem, _ = _run(
+        [
+            "openssl", "s_client",
+            "-servername", hostname,
+            "-connect", f"{hostname}:{port}",
+            "-showcerts",
+        ],
+        timeout=15,
+        stdin_devnull=True,
     )
-    code, pem, _ = _run(sclient_cmd, timeout=15)
 
     if code != 0 or not pem:
         result.error = "Failed to connect or retrieve certificate"
         return result
 
     # Parse certificate details
-    x509_cmd = "openssl x509 -noout -issuer -subject -dates -fingerprint -sha256"
     p = subprocess.Popen(
-        x509_cmd,
-        shell=True,
+        ["openssl", "x509", "-noout", "-issuer", "-subject", "-dates", "-fingerprint", "-sha256"],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -183,10 +193,8 @@ def _check_tls(hostname: str, port: int = 443) -> TLSCertificate:
             result.sha256_fingerprint = line.split("=", 1)[1].strip()
 
     # Get Subject Alternative Names (SAN)
-    san_cmd = "openssl x509 -noout -ext subjectAltName"
     p = subprocess.Popen(
-        san_cmd,
-        shell=True,
+        ["openssl", "x509", "-noout", "-ext", "subjectAltName"],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,

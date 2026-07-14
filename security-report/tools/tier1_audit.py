@@ -21,19 +21,25 @@ Outputs JSON to stdout for easy embedding/processing.
 
 import json
 import re
-import shlex
 import socket
 import subprocess
 import sys
 from urllib.parse import urlparse
 
 
-def run(cmd: str, timeout: int = 20) -> tuple[int, str, str]:
+def run(cmd: list[str], timeout: int = 20) -> tuple[int, str, str]:
+    """Run a command with a timeout.
+
+    Executed without a shell (argv list, shell=False), so no element of ``cmd``
+    is interpreted as a shell metacharacter — inputs are literal arguments,
+    eliminating command injection. stdin is closed (DEVNULL) so tools such as
+    ``openssl s_client`` receive EOF and exit instead of hanging.
+    """
     try:
         p = subprocess.run(
             cmd,
-            shell=True,
             timeout=timeout,
+            stdin=subprocess.DEVNULL,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -41,11 +47,18 @@ def run(cmd: str, timeout: int = 20) -> tuple[int, str, str]:
         return p.returncode, p.stdout.strip(), p.stderr.strip()
     except subprocess.TimeoutExpired:
         return 124, "", "timeout"
+    except FileNotFoundError as e:
+        return 127, "", str(e)
 
 
 def http_head(url: str):
     # Use curl with short timeouts and no body
-    cmd = f"curl -sS -o /dev/null -D - -L --max-redirs 5 --connect-timeout 8 --max-time 15 {shlex.quote(url)}"
+    cmd = [
+        "curl", "-sS", "-o", "/dev/null", "-D", "-",
+        "-L", "--max-redirs", "5",
+        "--connect-timeout", "8", "--max-time", "15",
+        url,
+    ]
     code, out, err = run(cmd)
     headers = {}
     status_chain = []
@@ -72,21 +85,28 @@ def http_head(url: str):
 
 
 def http_get(url: str):
-    cmd = f"curl -sS -L --connect-timeout 8 --max-time 20 {shlex.quote(url)}"
+    cmd = ["curl", "-sS", "-L", "--connect-timeout", "8", "--max-time", "20", url]
     code, out, err = run(cmd)
     return {"ok": code == 0, "body": out, "stderr": err}
 
 
 def tls_info(host: str, port: int = 443):
-    # Use openssl s_client and pipe to openssl x509
-    sclient = f"openssl s_client -servername {shlex.quote(host)} -connect {shlex.quote(host)}:{port} -showcerts < /dev/null 2>/dev/null"
+    # Use openssl s_client; run() closes stdin (DEVNULL) so it exits cleanly.
+    sclient = [
+        "openssl", "s_client",
+        "-servername", host,
+        "-connect", f"{host}:{port}",
+        "-showcerts",
+    ]
     code, pem, _ = run(sclient, timeout=20)
     if code != 0 or not pem:
         return {"ok": False}
     # Extract leaf certificate (first cert block)
     # Then parse issuer/subject/dates/fingerprint
-    x509_cmd = "openssl x509 -noout -issuer -subject -dates -fingerprint -sha256"
-    p = subprocess.Popen(x509_cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    p = subprocess.Popen(
+        ["openssl", "x509", "-noout", "-issuer", "-subject", "-dates", "-fingerprint", "-sha256"],
+        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+    )
     out, err = p.communicate(pem)
     info = {"ok": p.returncode == 0, "raw": out}
     if out:
@@ -112,11 +132,11 @@ def dns_info(host: str):
         domain = ".".join(parts[-2:])
 
     # Add tight timeouts/retries to avoid hangs in batch mode
-    dig_flags = "+time=2 +tries=1 +retry=0 +nocmd +nocomments"
-    dig_a = run(f"dig {dig_flags} +short {shlex.quote(host)} A")[1].splitlines()
-    dig_aaaa = run(f"dig {dig_flags} +short {shlex.quote(host)} AAAA")[1].splitlines()
-    dig_cname = run(f"dig {dig_flags} +short {shlex.quote(host)} CNAME")[1].splitlines()
-    dig_ns = run(f"dig {dig_flags} +short NS {shlex.quote(domain)}")[1].splitlines()
+    dig_flags = ["+time=2", "+tries=1", "+retry=0", "+nocmd", "+nocomments"]
+    dig_a = run(["dig", *dig_flags, "+short", host, "A"])[1].splitlines()
+    dig_aaaa = run(["dig", *dig_flags, "+short", host, "AAAA"])[1].splitlines()
+    dig_cname = run(["dig", *dig_flags, "+short", host, "CNAME"])[1].splitlines()
+    dig_ns = run(["dig", *dig_flags, "+short", "NS", domain])[1].splitlines()
 
     # Heuristics for provider
     provider = []
@@ -213,7 +233,7 @@ def check_paths(base_url: str, paths: list[str]) -> dict:
     results = {}
     for p in paths:
         url = base_url.rstrip("/") + p
-        code, out, err = run(f"curl -s -o /dev/null -w '%{{http_code}}' {shlex.quote(url)}", timeout=15)
+        code, out, err = run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", url], timeout=15)
         try:
             status = int(out.strip() or 0)
         except Exception:

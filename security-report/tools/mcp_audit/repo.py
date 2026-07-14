@@ -8,20 +8,24 @@ Output: Security files, org verification, activity metrics, security advisories
 import json
 import os
 import re
-import shlex
 import subprocess
 from dataclasses import dataclass, field, asdict
 from typing import Optional
 from urllib.parse import urlparse
 
 
-def _run(cmd: str, timeout: int = 20) -> tuple[int, str, str]:
-    """Run a shell command with timeout."""
+def _run(cmd: list[str], timeout: int = 20) -> tuple[int, str, str]:
+    """Run a command with a timeout.
+
+    Executed without a shell (argv list, shell=False) so no element of ``cmd`` —
+    including the API endpoint or header values — is interpreted as a shell
+    metacharacter, eliminating command injection.
+    """
     try:
         p = subprocess.run(
             cmd,
-            shell=True,
             timeout=timeout,
+            stdin=subprocess.DEVNULL,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -29,6 +33,8 @@ def _run(cmd: str, timeout: int = 20) -> tuple[int, str, str]:
         return p.returncode, p.stdout.strip(), p.stderr.strip()
     except subprocess.TimeoutExpired:
         return 124, "", "timeout"
+    except FileNotFoundError as e:
+        return 127, "", str(e)
     except Exception as e:
         return 1, "", str(e)
 
@@ -159,8 +165,10 @@ def _github_api(endpoint: str, token: Optional[str] = None) -> tuple[int, dict]:
     if token:
         header_values.append(f"Authorization: token {token}")
 
-    header_flags = " ".join(f"-H {shlex.quote(h)}" for h in header_values)
-    cmd = f"curl -sS {header_flags} {shlex.quote(f'https://api.github.com{endpoint}')}"
+    cmd = ["curl", "-sS"]
+    for h in header_values:
+        cmd += ["-H", h]
+    cmd.append(f"https://api.github.com{endpoint}")
     code, out, err = _run(cmd, timeout=20)
 
     if code != 0:

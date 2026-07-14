@@ -7,20 +7,24 @@ Output: HTTP status, security headers, path probes, content analysis, trackers
 
 import json
 import re
-import shlex
 import subprocess
 from dataclasses import dataclass, field, asdict
 from typing import Optional
 from urllib.parse import urlparse, urljoin
 
 
-def _run(cmd: str, timeout: int = 20) -> tuple[int, str, str]:
-    """Run a shell command with timeout."""
+def _run(cmd: list[str], timeout: int = 20) -> tuple[int, str, str]:
+    """Run a command with a timeout.
+
+    Executed without a shell (argv list, shell=False) so no element of ``cmd``
+    is interpreted as a shell metacharacter — the target URL is passed as a
+    literal argument, eliminating command injection.
+    """
     try:
         p = subprocess.run(
             cmd,
-            shell=True,
             timeout=timeout,
+            stdin=subprocess.DEVNULL,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -28,6 +32,8 @@ def _run(cmd: str, timeout: int = 20) -> tuple[int, str, str]:
         return p.returncode, p.stdout.strip(), p.stderr.strip()
     except subprocess.TimeoutExpired:
         return 124, "", "timeout"
+    except FileNotFoundError as e:
+        return 127, "", str(e)
     except Exception as e:
         return 1, "", str(e)
 
@@ -138,16 +144,17 @@ def _http_request(url: str, method: str = "GET", follow_redirects: bool = True) 
     """Make an HTTP request using curl."""
     result = HTTPResponse()
 
-    redirect_flag = "-L --max-redirs 10" if follow_redirects else ""
-    time_format = "%{time_total}"
-
-    # Use curl to get headers and timing
-    cmd = (
-        f"curl -sS -o /dev/null -D - {redirect_flag} "
-        f"-w '\\n__TIME__:%{{time_total}}' "
-        f"--connect-timeout 10 --max-time 30 "
-        f"{shlex.quote(url)}"
-    )
+    # Use curl to get headers and timing. curl's -w engine turns the literal
+    # "\n" into a newline, matching the timing_marker parsed from output below.
+    cmd = ["curl", "-sS", "-o", "/dev/null", "-D", "-"]
+    if follow_redirects:
+        cmd += ["-L", "--max-redirs", "10"]
+    cmd += [
+        "-w", "\\n__TIME__:%{time_total}",
+        "--connect-timeout", "10",
+        "--max-time", "30",
+        url,
+    ]
 
     code, out, err = _run(cmd, timeout=35)
 
@@ -234,7 +241,7 @@ def _http_request(url: str, method: str = "GET", follow_redirects: bool = True) 
 
 def _get_body(url: str) -> str:
     """Fetch page body."""
-    cmd = f"curl -sS -L --connect-timeout 10 --max-time 30 {shlex.quote(url)}"
+    cmd = ["curl", "-sS", "-L", "--connect-timeout", "10", "--max-time", "30", url]
     code, out, err = _run(cmd, timeout=35)
     return out if code == 0 else ""
 
@@ -323,10 +330,12 @@ def _probe_paths(base_url: str, paths: list[str]) -> dict[str, PathProbe]:
 
     for path in paths:
         url = urljoin(base, path)
-        cmd = (
-            f"curl -sS -o /dev/null -w '%{{http_code}}:%{{redirect_url}}' "
-            f"--connect-timeout 5 --max-time 10 {shlex.quote(url)}"
-        )
+        cmd = [
+            "curl", "-sS", "-o", "/dev/null",
+            "-w", "%{http_code}:%{redirect_url}",
+            "--connect-timeout", "5", "--max-time", "10",
+            url,
+        ]
         code, out, err = _run(cmd, timeout=12)
 
         status = 0
