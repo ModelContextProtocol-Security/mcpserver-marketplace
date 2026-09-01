@@ -130,3 +130,21 @@ To move beyond documentation-based reviews and validate security claims with pra
         - Making unauthorized network calls.
         - Testing for prompt fatigue or bypass vulnerabilities.
     - **[ ] Develop Client/Server Interaction Loggers:** Tools to intercept and log the traffic between a client and a server to analyze the protocol usage and data being exchanged.
+## 10. Publication Infrastructure and Website Refresh
+
+Serving this project's data as a public, citable, machine-readable resource. Scoped separately because it is a substantially larger project than any single dataset, and spans the whole Model Context Protocol Security initiative rather than the marketplace work alone.
+
+The data model design (`docs/superpowers/specs/2026-08-31-mcp-marketplace-data-model-design.md`) is deliberately **not blocked** on any of this: raw GitHub URLs are the canonical published interface in the interim, and the dataset generator normalises the `$schema` value from a single constant, so adopting vanity URLs later is a rebuild rather than a migration.
+
+- **[ ] Renew and refresh `modelcontextprotocol-security.io`:** The site predates most of the current work. Needs an assessment of what it is for now, what it should host, and what it costs to maintain, before committing to serving datasets from it.
+
+- **[ ] Serve datasets and schemas at stable URLs:** Once the site is renewed:
+    - `modelcontextprotocol-security.io/schemas/marketplace/v1.json` → alias to the repo's canonical raw URL, **both kept resolving permanently** (never break a `$schema` that has been published)
+    - `modelcontextprotocol-security.io/data/marketplaces.json` → the generated aggregate
+    - Correct `Content-Type: application/json`, permissive CORS, and cache headers appropriate to a weekly-refreshed dataset
+
+- **[ ] Publish the CSA `_meta` namespace:** Document `org.cloudsecurityalliance.mcp-marketplace-security/…` so marketplace operators can embed CSA findings in their own `server.json` payloads (the extension point defined by `server.schema.json`). Requires a stable schema URL first.
+
+- **[ ] Decide the citation story:** How should a paper or a marketplace operator cite a specific dataset revision? Options include dated release tags, a Zenodo DOI per release, or content-addressed snapshots. Relevant because the liveness data is time-sensitive and claims like "20% of catalogued marketplaces were dead on 2026-08-31" only hold against a pinned revision.
+
+- **[ ] Confirm data licence display:** CC-BY-4.0 for data (decided 2026-09-01), Apache-2.0 for code. Ensure the distinction is visible wherever data is served, not only in the repo.

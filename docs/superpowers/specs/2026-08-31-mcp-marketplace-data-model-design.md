@@ -416,11 +416,32 @@ The existing `scripts/validate_csv.py` is retained for the generated CSV.
 
 ## 10. Publication
 
-- `data/marketplaces.json` + `data/schema/marketplace.v1.json` served at stable URLs.
-- Schema versioned in the path; `v1` never breaks. Additive changes only within a major version.
-- Explicit data licence (proposal: **CC-BY-4.0** for data, matching the repo's Apache-2.0 for code — ecosyste.ms uses CC-BY-SA for comparable data).
-- Publish the CSA `_meta` namespace (§3.4) so operators can embed findings in their own payloads.
-- Possible upstream contributions, out of scope for implementation but enabled by this design: a `pkg:mcp` purl type; a machine-readable encoding of the OpenSSF principles; supplying `modelcontextprotocol/registry` with a structured aggregator list to replace hand-curated `community-projects.md`.
+### 10.1 Licence — decided
+
+Data is licensed **CC-BY-4.0**, distinct from the repository's Apache-2.0 for code. (ecosyste.ms uses CC-BY-SA for comparable data; CC-BY was chosen as the more permissive option, to maximise downstream adoption by marketplace operators and clients.) The licence is recorded in `data/LICENSE-DATA` and asserted per-record in the generated aggregate.
+
+### 10.2 Schema URL — decoupled from the website
+
+Publication at a vanity URL is **deferred**: it depends on a website refresh that is a substantially larger project than this one (§10.3). The data model must not be blocked by it, and must not ship a `$schema` that 404s — that would break validation for every consumer from day one.
+
+Therefore:
+
+| | Value |
+|---|---|
+| **Canonical now** | `https://raw.githubusercontent.com/ModelContextProtocol-Security/mcpserver-marketplace/main/data/schema/marketplace.v1.json` |
+| **Future alias** | `https://modelcontextprotocol-security.io/schemas/marketplace/v1.json` → redirects to canonical; **both keep resolving permanently** |
+
+The switch costs nothing because **`$schema` is normalised by the generator on every build**, from a single constant in `scripts/build_dataset.py`. Changing the vanity URL later is `python3 scripts/build_dataset.py`, not 41 hand edits. Records are never hand-authored with a schema URL; the scaffold tool writes it.
+
+Schema is versioned in the path. `v1` never breaks — additive changes only within a major version.
+
+### 10.3 Deferred to the website project
+
+Serving the dataset, the schema, and the CSA `_meta` namespace at stable vanity URLs is tracked in `security-report/TODO.md` §10. Until then the raw GitHub URLs are the published interface, which is sufficient for machine consumers and for citation.
+
+### 10.4 Upstream contributions enabled (not in scope)
+
+Out of scope for implementation, but unlocked by having this data in a schema: a `pkg:mcp` purl type; a machine-readable encoding of the OpenSSF principles; supplying `modelcontextprotocol/registry` with a structured aggregator list to replace hand-curated `community-projects.md`.
 
 ---
 
@@ -459,8 +480,8 @@ Deliverables: 41 records, the generator, the validator, the liveness collector, 
 
 ## 13. Open questions
 
-1. **Data licence** — CC-BY-4.0 proposed. Needs a CSA decision.
-2. **Publication URL** — `modelcontextprotocol-security.io/schemas/…` assumed; needs confirmation the site can serve static JSON.
+1. ~~**Data licence**~~ — **decided 2026-09-01: CC-BY-4.0** (§10.1).
+2. ~~**Publication URL**~~ — **decided 2026-09-01: deferred** to the website project; raw GitHub URLs are canonical in the interim and the generator normalises `$schema`, so the later switch is a rebuild (§10.2, TODO §10).
 3. **`working-data/` after migration** — does the working tier remain for discovery, or collapse into `data/` with a `status: draft` field? Recommend collapsing; two tiers with different schemas caused the original problem.
 4. **Client dataset** — this design covers marketplaces. `mcp-clients.csv` (132 working / 25 stable rows) has the same disease and wants a parallel `client.v1.json`. Recommend a follow-on spec rather than expanding this one.
 5. **Scoring D1–D3 at scale** — 41 marketplaces × 3 human-judgement dimensions is a real workload. Worth considering whether the two-AI evaluation model produces a draft score with a confidence level for human confirmation.
