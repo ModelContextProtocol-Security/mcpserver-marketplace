@@ -1,7 +1,7 @@
 # MCP Marketplace Data Model — Design
 
 **Date:** 2026-08-31
-**Status:** Proposed
+**Status:** Approved 2026-09-01 — proceeding to implementation plan
 **Author:** Drafted with Claude Code, for review by Kurt Seifried (CSA)
 
 ---
@@ -69,9 +69,9 @@ Surveyed 2026-08-31:
 
 **Non-goals**
 
+- Human-authored scoring. All ten dimensions are AI-scored under the two-AI create/validate model, with provenance recorded per score (§6.4).
 - Evaluating individual MCP *servers*. That space is occupied (Canopii, polygraph, Glama) and is a different repo's job.
 - Replacing the narrative evaluations. Prose stays in `evaluations/`; it stops duplicating structured fields.
-- Automating D1–D3 scoring. Those require human judgement (§7.3).
 - Real-time monitoring. Liveness refresh is scheduled, not continuous.
 
 ---
@@ -253,12 +253,21 @@ One JSON file per marketplace at `data/marketplaces/<id>.json`.
   // ---- SCORES (only where applicable) ----
 
   "dimensions": {
-    "D1": { "applicable": true,  "level": null, "needs_review": true,
-            "rationale": null, "evidence": [] },
-    "D5": { "applicable": true,  "level": 1,
-            "rationale": "Builds and hosts servers; no signing, attestations or SBOM observed.",
-            "evidence": ["https://smithery.ai/docs/use/registry"] }
-    // … D2, D3, D4, D6, D7, D8, D9, D10
+    "D5": {
+      "applicable": true,
+      "level": 1,
+      "rationale": "Builds and hosts servers; no signing, attestations or SBOM observed.",
+      "evidence": ["https://smithery.ai/docs/use/registry"],
+      "provenance": {
+        "scored_by":  "ai_evaluation",   // see §6.4
+        "confidence": "high",            // high | medium | low
+        "scored_at":  "2026-09-01",
+        "validated_by": "ai_validation", // null until the second pass runs
+        "validated_at": "2026-09-01",
+        "model_run": "2026-09-01/marketplace-scoring/run-0007"
+      }
+    }
+    // … D1, D2, D3, D4, D6, D7, D8, D9, D10 — same shape
   },
 
   "evaluation": {
@@ -301,6 +310,29 @@ A third-party wrapper is not evidence of marketplace maturity — it is an extra
 ### 6.3 Claim-vs-gate mismatch
 
 `intake.curation_claim` alongside `intake.gate` makes visible the dangerous combination: a marketplace that **crawls the world while implying curation**. Crawling and self-submission are a trust *trade*, not a ranking — broad coverage with no gate is honest; broad coverage advertised as vetted is not.
+
+### 6.4 Score provenance — every level says where it came from
+
+All ten dimensions are scored by AI, including D1–D3. This is not a departure from the project's methodology; it *is* the methodology (`prompts/*-validation-prompt.md`, `VALIDATION_GOALS.md`): one AI produces, a second AI independently validates.
+
+For a public, citable dataset this makes provenance mandatory rather than optional. A consumer must be able to tell an unvalidated first-pass score from a twice-checked one from an operator-confirmed one, and to filter on it. `scored_by` takes:
+
+| Value | Meaning |
+|---|---|
+| `automated_check` | Derived mechanically from a tool observation (headers, DNS, git log). Not a judgement. |
+| `ai_evaluation` | First-pass AI score. Evidence-backed but unvalidated. |
+| `ai_validation` | Confirmed by an independent second AI pass (`validated_by` set). |
+| `human_reviewed` | A person examined and confirmed it. |
+| `operator_verified` | The marketplace operator confirmed it (see `evaluation.operator_verified`). |
+
+`confidence` (`high` / `medium` / `low`) is the scorer's own assessment and is **independent of** `scored_by` — a high-confidence first pass and a low-confidence validated score are both meaningful and different.
+
+Two rules survive from §6.1 unchanged, and they are what keep AI scoring honest:
+
+1. **A non-null `level` requires non-empty `evidence`.** Enforced by the validator (§9.4). An AI that cannot cite a source cannot score; it emits `null` with `confidence: low` and a rationale explaining what it could not establish.
+2. **`applicable: false` still beats a low score.** The AI must decide applicability from the facts before scoring, so an awesome-list is not marked down on Authentication.
+
+`model_run` points at a retained run identifier, so any score can be traced back to the prompt, model and inputs that produced it. Re-scoring is expected as marketplaces change; history is preserved by the run log rather than in the record.
 
 ---
 
@@ -456,8 +488,8 @@ All 41 marketplaces are converted. Fields are populated only where they can be *
 | `liveness.observations` | live probe + GitHub API | `check_liveness.py` |
 | `feedback.security_txt`, headers, paths | `working-data/audit-results/` | mechanical |
 | `distribution.has_api`, `openness.*` | evaluation prose + repo metadata | extract, flag low-confidence |
-| **D1, D2, D3 levels** | — | **`null` + `needs_review: true`** |
-| D5–D10 levels | facts above | derived where the rule is unambiguous; else `null` |
+| D5–D10 levels | facts above | derived mechanically where the rule is unambiguous (`scored_by: automated_check`); AI-scored otherwise |
+| **D1, D2, D3 levels** | marketplace docs, policies, observed behaviour | **AI-scored** (`ai_evaluation`), then a second AI validation pass (`ai_validation`). Evidence required; `null` + `confidence: low` where nothing citable exists |
 
 **Conflicts are surfaced, not resolved.** Where representations disagree (Smithery `code-hosting` vs `registry-api`), migration emits a `conflicts.md` worklist naming the field, the competing values and their sources, for adjudication. The migration never silently picks a winner.
 
@@ -482,6 +514,11 @@ Deliverables: 41 records, the generator, the validator, the liveness collector, 
 
 1. ~~**Data licence**~~ — **decided 2026-09-01: CC-BY-4.0** (§10.1).
 2. ~~**Publication URL**~~ — **decided 2026-09-01: deferred** to the website project; raw GitHub URLs are canonical in the interim and the generator normalises `$schema`, so the later switch is a rebuild (§10.2, TODO §10).
-3. **`working-data/` after migration** — does the working tier remain for discovery, or collapse into `data/` with a `status: draft` field? Recommend collapsing; two tiers with different schemas caused the original problem.
-4. **Client dataset** — this design covers marketplaces. `mcp-clients.csv` (132 working / 25 stable rows) has the same disease and wants a parallel `client.v1.json`. Recommend a follow-on spec rather than expanding this one.
-5. **Scoring D1–D3 at scale** — 41 marketplaces × 3 human-judgement dimensions is a real workload. Worth considering whether the two-AI evaluation model produces a draft score with a confidence level for human confirmation.
+3. ~~**`working-data/` after migration**~~ — **decided 2026-09-01: collapse** into `data/` with `status: draft | published` on each record. Two tiers with divergent schemas caused the original drift; retaining them would re-create it. `working-data/audit-results/` remains as dated tool output (it is evidence, not an entity store), and `list-of-sources-marketplaces.md` is retired once its `[lang: xx]` tags and source URLs are absorbed into records (§11).
+4. ~~**Client dataset**~~ — **decided 2026-09-01: follow-on spec.** `mcp-clients.csv` (132 working / 25 stable rows) has the identical schema break and wants a parallel `client.v1.json` reusing this schema's conventions. Out of scope here.
+5. ~~**Scoring D1–D3**~~ — **decided 2026-09-01: AI-scored, all ten dimensions**, under the existing two-AI create/validate model, with `provenance.scored_by` / `confidence` / `validated_by` recorded per score (§6.4). Evidence remains mandatory for any non-null level.
+
+### 13.1 Remaining
+
+- **Re-scoring cadence.** Marketplaces change; scores decay. Liveness refreshes weekly (§9), but nothing yet triggers re-scoring. Candidate rule: re-score when `liveness.observations` change materially, or on a fixed interval, whichever is sooner. Deferred to the implementation plan.
+- **Disputes.** A marketplace operator disagreeing with an AI-assigned level needs a path. `evaluation.operator_verified` and `feedback.observed_response` exist, but the workflow (who adjudicates, what evidence overrides a score) is unspecified. Worth settling before the dataset is publicised, not after.
